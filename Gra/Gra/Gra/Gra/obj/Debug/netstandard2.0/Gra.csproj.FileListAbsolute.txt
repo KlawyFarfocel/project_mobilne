@@ -1,0 +1,15 @@
+C:\Users\misze\Source\Repos\KlawyFarfocel\project_mobilne\Gra\Gra\Gra\Gra\bin\Debug\netstandard2.0\Gra.deps.json
+C:\Users\misze\Source\Repos\KlawyFarfocel\project_mobilne\Gra\Gra\Gra\Gra\bin\Debug\netstandard2.0\Gra.dll
+C:\Users\misze\Source\Repos\KlawyFarfocel\project_mobilne\Gra\Gra\Gra\Gra\bin\Debug\netstandard2.0\Gra.pdb
+C:\Users\misze\Source\Repos\KlawyFarfocel\project_mobilne\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\Gra.csproj.AssemblyReference.cache
+C:\Users\misze\Source\Repos\KlawyFarfocel\project_mobilne\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\Gra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\misze\Source\Repos\KlawyFarfocel\project_mobilne\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\misze\Source\Repos\KlawyFarfocel\project_mobilne\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\misze\Source\Repos\KlawyFarfocel\project_mobilne\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\Gra.AssemblyInfoInputs.cache
+C:\Users\misze\Source\Repos\KlawyFarfocel\project_mobilne\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\Gra.AssemblyInfo.cs
+C:\Users\misze\Source\Repos\KlawyFarfocel\project_mobilne\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\Gra.csproj.CoreCompileInputs.cache
+C:\Users\misze\Source\Repos\KlawyFarfocel\project_mobilne\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\misze\Source\Repos\KlawyFarfocel\project_mobilne\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\Gra.dll
+C:\Users\misze\Source\Repos\KlawyFarfocel\project_mobilne\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\refint\Gra.dll
+C:\Users\misze\Source\Repos\KlawyFarfocel\project_mobilne\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\Gra.pdb
+C:\Users\misze\Source\Repos\KlawyFarfocel\project_mobilne\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\ref\Gra.dll

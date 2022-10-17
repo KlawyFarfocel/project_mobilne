@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VjoWfMcaZFVSJ/aZKvfndVwbtS9gStjAv/yNcwvJSrFxinzvpnpQEWCbs5H0FQYu0AxlDEUwlcIE6qXqypfbcg==",
+  "dgSpecHash": "MGPEm1zewPglxxcdfVFloSweqaTGiWxe4XKseBnFvMdL6q3ELIxpZ4Ys2KUSRxRMM+x1cgrWpnsgo1q47Cy9Gw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\misze\\source\\repos\\project_mobilne\\Gra\\Gra\\Gra\\Gra.Android\\Gra.Android.csproj",
+  "projectFilePath": "C:\\Users\\misze\\Source\\Repos\\KlawyFarfocel\\project_mobilne\\Gra\\Gra\\Gra\\Gra.Android\\Gra.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\misze\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\misze\\.nuget\\packages\\xamarin.androidx.activity\\1.2.4.1\\xamarin.androidx.activity.1.2.4.1.nupkg.sha512",
