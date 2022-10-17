@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "NzhyUMXLhcU27dx524v/Wdbbb7A6GqU4Mi8NZk9si9K2fumtPSt+vNhzsXMQWbZ9dgXudI7sZJwK+ZRid/FN/A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\misze\\source\\repos\\project_mobilne\\Gra\\Gra\\Gra\\Gra\\Gra.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\misze\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\misze\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\misze\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\misze\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\misze\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}
