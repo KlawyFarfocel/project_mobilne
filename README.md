@@ -36,7 +36,6 @@
                 <li>Umożliwi to pracę nad wieloma <cite>"poziomami"</cite> jednocześnie</li>
                 <li>Łatwość implementacji - można przetestować każdy moduł osobno</li>
                 <li>Prostota w testowaniu i ewentualnym debuggingu</li>
-                TEST TEST TEST
             </ul>
         </li>
     </ul>
