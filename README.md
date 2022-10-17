@@ -14,7 +14,7 @@
         <li>
             <i>Tryb graficzny</i>
             <ul>
-                <li>Opiera sie on na rozwiazywaniu zagadek,</li>
+                <li>Opi era sie on na rozwiazywaniu zag adek,</li>
                 <li>Sami nie jestesmy w stanie rozwiazac tych zagadek,</li>
                 <li>Potrzebny jest nam do tego partner, który uruchomi grę w trybie <i>tekstowym;</i></li>
             </ul>
@@ -36,6 +36,7 @@
                 <li>Umożliwi to pracę nad wieloma <cite>"poziomami"</cite> jednocześnie</li>
                 <li>Łatwość implementacji - można przetestować każdy moduł osobno</li>
                 <li>Prostota w testowaniu i ewentualnym debuggingu</li>
+                TEST TEST TEST
             </ul>
         </li>
     </ul>
