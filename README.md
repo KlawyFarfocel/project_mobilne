@@ -7,7 +7,7 @@
         <li>Konrad Szczurek</li>
     </ul>
     <p><b>Nazwa: </b><i>TODO: Wstawić nazwę</i></p>
-<h3>Opis projektu:</h3>
+<h3>Opis projektu :</h3>
     <p style="text-align:justify;">Projektem jest gra logiczna możliwa do zagrania tylko w trybie kooperacji
     Ogólnym konceptem jest podzielenie gry na <strong>2 główne części:</strong></p>
     <ul>
