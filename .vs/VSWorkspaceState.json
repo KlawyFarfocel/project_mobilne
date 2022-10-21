@@ -1,7 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Gra",
+    "\\Gra\\Gra",
+    "\\Gra\\Gra\\Gra",
+    "\\Gra\\Gra\\Gra\\Gra",
+    "\\Gra\\Gra\\Gra\\Gra.Android",
+    "\\Gra\\Gra\\Gra\\Gra.Android\\Resources",
+    "\\Gra\\Gra\\Gra\\Gra.Android\\Resources\\drawable",
+    "\\Gra\\Gra\\Gra\\Gra.Android\\Resources\\mipmap-anydpi-v26",
+    "\\Gra\\Gra\\Gra\\Gra.Android\\Resources\\mipmap-hdpi"
   ],
-  "SelectedNode": "\\Gra.sln",
+  "SelectedNode": "\\Gra\\Gra\\Gra.sln",
   "PreviewInSolutionExplorer": false
 }

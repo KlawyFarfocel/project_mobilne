@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "zadanie-lightbulb-icon",
+      "appliesTo": "Gra/Gra/Gra/Gra.Android/Resources/drawable/lightbulb-icon.png",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "zadanie-lightbulb-icon",
+      "appliesTo": "Gra/Gra/Gra/Gra.Android/Resources/mipmap-anydpi-v26/lightbulb-icon.png",
+      "type": "launch"
+    }
+  ]
+}
