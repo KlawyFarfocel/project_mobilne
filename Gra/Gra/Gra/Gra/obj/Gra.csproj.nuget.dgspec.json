@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nevermore\\Source\\Repos\\KlawyFarfocel\\project_mobilne\\Gra\\Gra\\Gra\\Gra\\Gra.csproj": {}
+    "C:\\Users\\misze\\source\\repos\\project_mobilne\\Gra\\Gra1\\Gra\\Gra\\Gra\\Gra\\Gra.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nevermore\\Source\\Repos\\KlawyFarfocel\\project_mobilne\\Gra\\Gra\\Gra\\Gra\\Gra.csproj": {
+    "C:\\Users\\misze\\source\\repos\\project_mobilne\\Gra\\Gra1\\Gra\\Gra\\Gra\\Gra\\Gra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nevermore\\Source\\Repos\\KlawyFarfocel\\project_mobilne\\Gra\\Gra\\Gra\\Gra\\Gra.csproj",
+        "projectUniqueName": "C:\\Users\\misze\\source\\repos\\project_mobilne\\Gra\\Gra1\\Gra\\Gra\\Gra\\Gra\\Gra.csproj",
         "projectName": "Gra",
-        "projectPath": "C:\\Users\\Nevermore\\Source\\Repos\\KlawyFarfocel\\project_mobilne\\Gra\\Gra\\Gra\\Gra\\Gra.csproj",
-        "packagesPath": "C:\\Users\\Nevermore\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nevermore\\Source\\Repos\\KlawyFarfocel\\project_mobilne\\Gra\\Gra\\Gra\\Gra\\obj\\",
+        "projectPath": "C:\\Users\\misze\\source\\repos\\project_mobilne\\Gra\\Gra1\\Gra\\Gra\\Gra\\Gra\\Gra.csproj",
+        "packagesPath": "C:\\Users\\misze\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\misze\\source\\repos\\project_mobilne\\Gra\\Gra1\\Gra\\Gra\\Gra\\Gra\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nevermore\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\misze\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -51,13 +51,33 @@
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Plugin.MediaManager.Forms": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "Xamarin.CommunityToolkit": {
+              "target": "Package",
+              "version": "[2.0.5, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.7.0, )"
+              "version": "[1.7.3, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[5.0.0.2196, )"
+              "version": "[5.0.0.2515, )"
+            },
+            "Xamarin.Forms.PancakeView": {
+              "target": "Package",
+              "version": "[2.3.0.759, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.8.116, )"
             }
           },
           "imports": [

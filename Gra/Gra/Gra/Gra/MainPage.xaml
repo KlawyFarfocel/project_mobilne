@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Gra.MainPage">
-    
+             x:Class="Gra.MainPage"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
     <Grid BackgroundColor="Gray">
         <!-- Header -->
         <!--Definicja grida-->
@@ -14,8 +14,9 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="0.375*"/>
         </Grid.RowDefinitions>
+        <!--<xct:MediaElement x:Name="soundtrack" Source="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" HeightRequest="1" IsLooping="True" ></xct:MediaElement>-->
         <!--Koniec definicji-->
-        <Label Grid.Row="0" Grid.Column="0" Text="Tytuł" Grid.ColumnSpan="4" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="White" />
+        <Label Grid.Row="0" Grid.Column="0" Text="Tytuł" Grid.ColumnSpan="4" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="White" x:Name="title"/>
         <Label Grid.Row="5" Grid.Column="0"  Text="Stopka - nie pamietam co tu mialo byc" Grid.ColumnSpan="4" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="White" />
         <!-- Koniec headera -->
    
@@ -27,7 +28,7 @@
         <!-- Koniec strzałek-->
 
         <Grid Grid.Row="1" Grid.Column="0">
-            <Button Grid.Row="0" Grid.Column="0" Text="&#x2699;" Padding="0,0,2,2" FontAttributes="Bold"  FontSize="24"></Button>
+            <Button Grid.Row="0" Grid.Column="0" Text="&#x2699;" Padding="0,0,2,2" FontAttributes="Bold"  FontSize="24" Clicked="OnButtonClicked"></Button>
             <Label Grid.Column="0" Grid.Row="1"></Label>
             <Label Grid.Column="1" Grid.Row="1"></Label>
             <Label Grid.Row="2"></Label>

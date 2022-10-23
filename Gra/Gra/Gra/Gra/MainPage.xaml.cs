@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,5 +48,13 @@ namespace Gra
             };
             a.Commit(this, Objname, 16, 2750, Easing.CubicIn, (v, c) => obj.Opacity = 1, () => true);
         }
+      private async void OnButtonClicked(object sender, EventArgs e)
+        {
+            Console.WriteLine("True!");
+            await Navigation.PushAsync(new Page1());
+        }
+        
+
+       
     }
 }
