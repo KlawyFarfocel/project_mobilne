@@ -5,6 +5,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -24,13 +26,13 @@ namespace Gra
             arrow_3 = (Label)FindByName("arrow_3");
             arrow_4 = (Label)FindByName("arrow_4");
             bigRed = (Button)FindByName("bigRed");
-            animate_pulse(arrow_1);
-            animate_pulse(arrow_2);
-            animate_pulse(arrow_3);
-            animate_pulse(arrow_4);
+            Animate_pulse(arrow_1);
+            Animate_pulse(arrow_2);
+            Animate_pulse(arrow_3);
+            Animate_pulse(arrow_4);
             animate_button(bigRed);
         }
-        void animate_pulse(Label obj)
+        void Animate_pulse(Label obj)
         {
             var Objname = obj.ClassId;
             var a = new Animation {
@@ -48,13 +50,72 @@ namespace Gra
             };
             a.Commit(this, Objname, 16, 2750, Easing.CubicIn, (v, c) => obj.Opacity = 1, () => true);
         }
-      private async void OnButtonClicked(object sender, EventArgs e)
+        //Przechodzenie do ustawień
+        private async void GoToSettings(object sender, EventArgs e)
         {
-            Console.WriteLine("True!");
-            await Navigation.PushAsync(new Page1());
+            await Navigation.PushAsync(new SettingsPage()); 
         }
-        
+        void ToBlack(Label obj)
+        {
+            obj.ColorTo(Color.Black);
+            obj.TextColor=Color.White;
+        }
+        void ToWhite(Label obj)
+        {
+            obj.ColorTo(Color.White);
+            obj.TextColor = Color.Black;
+        }
+        void ChangeLight(object sender, EventArgs e)
+        {
+            var title = (Label)FindByName("Tit");
+            var footer=(Label)FindByName("Footer");
 
-       
+            var ButtonDalej = (Button)FindByName("ForwardButton");
+            var MainGrid = (Grid)FindByName("MainGrid");
+            var bulbButton = (ImageButton)FindByName("BulbButton");
+
+            var arrow_1 = (Label)FindByName("arrow_1");
+            var arrow_2 = (Label)FindByName("arrow_2");
+            var arrow_3 = (Label)FindByName("arrow_3");
+            var arrow_4 = (Label)FindByName("arrow_4");
+            var bigRed = (Button)FindByName("bigRed");
+            var smolRed = (Button)FindByName("bigDarkRed");
+
+            if (bulbButton.ClassId == "0")
+            {
+                ToBlack(title);
+                ToBlack(footer);
+                footer.Text = "";
+                title.Text = "";
+                ButtonDalej.BorderWidth = 3;
+                ButtonDalej.BorderColor = Color.White;
+                ButtonDalej.TextColor = Color.White;
+                MainGrid.BackgroundColor = Color.Black;
+                bulbButton.ClassId = "1";
+                ButtonDalej.IsVisible = true;
+                arrow_1.IsVisible = false;
+                arrow_2.IsVisible = false;
+                arrow_3.IsVisible = false;
+                arrow_4.IsVisible = false;
+                bigRed.IsVisible = false;
+                smolRed.IsVisible = false;
+            }
+            else if (bulbButton.ClassId == "1")
+            {
+                ToWhite(title);
+                ToWhite(footer);
+                footer.Text = "Stopka";
+                title.Text = "Tytuł";
+                MainGrid.BackgroundColor = Color.Gray;
+                ButtonDalej.IsVisible = false;
+                arrow_1.IsVisible = true;
+                arrow_2.IsVisible = true;
+                arrow_3.IsVisible = true;
+                arrow_4.IsVisible = true;
+                bigRed.IsVisible = true;
+                smolRed.IsVisible = true;  
+                bulbButton.ClassId = "0";
+            }
+        }
     }
 }

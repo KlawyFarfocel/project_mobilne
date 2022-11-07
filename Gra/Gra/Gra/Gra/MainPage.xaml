@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Gra.MainPage"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
-    <Grid BackgroundColor="Gray">
+    <Grid BackgroundColor="Gray" x:Name="MainGrid">
         <!-- Header -->
         <!--Definicja grida-->
         <Grid.RowDefinitions>
@@ -12,12 +12,13 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="0.375*"/>
         </Grid.RowDefinitions>
         <!--<xct:MediaElement x:Name="soundtrack" Source="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" HeightRequest="1" IsLooping="True" ></xct:MediaElement>-->
         <!--Koniec definicji-->
-        <Label Grid.Row="0" Grid.Column="0" Text="Tytuł" Grid.ColumnSpan="4" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="White" x:Name="title"/>
-        <Label Grid.Row="5" Grid.Column="0"  Text="Stopka - nie pamietam co tu mialo byc" Grid.ColumnSpan="4" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="White" />
+        <Label Grid.Row="0" Grid.Column="0" x:Name="Tit" Text="Tytuł" Grid.ColumnSpan="4" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="White"/>
+        <Label Grid.Row="6" Grid.Column="0" x:Name="Footer" Text="Stopka - nie pamietam co tu mialo byc" Grid.ColumnSpan="4" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="White" />
         <!-- Koniec headera -->
    
         <!-- Strzałki-->
@@ -28,14 +29,15 @@
         <!-- Koniec strzałek-->
 
         <Grid Grid.Row="1" Grid.Column="0">
-            <Button Grid.Row="0" Grid.Column="0" Text="&#x2699;" Padding="0,0,2,2" FontAttributes="Bold"  FontSize="24" Clicked="OnButtonClicked"></Button>
+            <Button Grid.Row="0" Grid.Column="0" Text="&#x2699;" Padding="0,0,2,2" FontAttributes="Bold"  FontSize="24" Clicked="GoToSettings"></Button>
             <Label Grid.Column="0" Grid.Row="1"></Label>
             <Label Grid.Column="1" Grid.Row="1"></Label>
             <Label Grid.Row="2"></Label>
         </Grid>
         <!-- Przycisk do przechodzenia dalej-->
         <Grid Grid.Row="1" Grid.Column="1">
-            <ImageButton Grid.Column="0" Grid.Row="0" Source="https://cdn-icons-png.flaticon.com/512/74/74072.png" Aspect="AspectFit" IsVisible="true" >
+            <!--Zarowka-->
+            <ImageButton Grid.Column="0" Grid.Row="0" x:Name="BulbButton" Clicked="ChangeLight" ClassId="0" Source="https://cdn-icons-png.flaticon.com/512/74/74072.png" Aspect="AspectFit" IsVisible="true" >
                 <VisualStateManager.VisualStateGroups>
                     <VisualStateGroup x:Name="CommonStates">
                         <VisualState x:Name="Normal">
@@ -51,6 +53,7 @@
                     </VisualStateGroup>
                 </VisualStateManager.VisualStateGroups>
             </ImageButton>
+            <!--End of Zarowka-->
         <!-- Reszta gridu zeby wszystko poukladac -->
             <Label Grid.Column="0" Grid.Row="1"></Label>
             <Label Grid.Column="0" Grid.Row="2"></Label>
@@ -64,5 +67,9 @@
         <Button x:Name="bigDarkRed" ClassId="bigDarkRed" Text="Wciśnij mnie!" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" WidthRequest="200" HeightRequest="200" CornerRadius="100" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="#9E2727"/>
         <Button x:Name="bigRed" ClassId="bigRed" Text="Wciśnij mnie!" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" WidthRequest="200" HeightRequest="200" CornerRadius="100" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="#FE2D2D"/>
         <!-- Koniec przycisku glownego-->
+        <Grid Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2">
+            <Button BackgroundColor="Gray" x:Name="ForwardButton" TextColor="Gray" Margin="0" Text="Przejdź dalej" FontSize="15"></Button>
+        </Grid>
+        
     </Grid>
 </ContentPage>
