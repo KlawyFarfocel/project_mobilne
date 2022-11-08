@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Gra.MainPage"
+             x:Name="ContentPage"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
     <Grid BackgroundColor="Gray" x:Name="MainGrid">
         <!-- Header -->
@@ -29,7 +30,7 @@
         <!-- Koniec strzałek-->
 
         <Grid Grid.Row="1" Grid.Column="0">
-            <Button Grid.Row="0" Grid.Column="0" Text="&#x2699;" Padding="0,0,2,2" FontAttributes="Bold"  FontSize="24" Clicked="GoToSettings"></Button>
+            <Button Grid.Row="0" Grid.Column="0" Text="&#x2699;" x:Name="SettingsButton" Padding="0,0,2,2" FontAttributes="Bold"  FontSize="24" Clicked="GoToSettings"></Button>
             <Label Grid.Column="0" Grid.Row="1"></Label>
             <Label Grid.Column="1" Grid.Row="1"></Label>
             <Label Grid.Row="2"></Label>
@@ -65,7 +66,8 @@
 
         <!--  Przycisk glowny - wyjscie -->
         <Button x:Name="bigDarkRed" ClassId="bigDarkRed" Text="Wciśnij mnie!" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" WidthRequest="200" HeightRequest="200" CornerRadius="100" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="#9E2727"/>
-        <Button x:Name="bigRed" ClassId="bigRed" Text="Wciśnij mnie!" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" WidthRequest="200" HeightRequest="200" CornerRadius="100" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="#FE2D2D"/>
+        <Button x:Name="bigRed" ClassId="bigRed" Text="Wciśnij mnie!" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" WidthRequest="200" HeightRequest="200" CornerRadius="100" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="#FE2D2D" Clicked="WrongButtonClicked"/>
+        <Image Source="dead" x:Name="deadAnimation" IsVisible="false" IsAnimationPlaying="False" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" WidthRequest="350" HeightRequest="350" VerticalOptions="Center" HorizontalOptions="Center"/>
         <!-- Koniec przycisku glownego-->
         <Grid Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2">
             <Button BackgroundColor="Gray" x:Name="ForwardButton" TextColor="Gray" Margin="0" Text="Przejdź dalej" Clicked="Bluetooth" FontSize="15"></Button>

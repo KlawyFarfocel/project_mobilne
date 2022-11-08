@@ -9,7 +9,7 @@
                 HorizontalOptions="CenterAndExpand"
                  x:Name="text"  
                    />
-
+            <Image Source="dead" WidthRequest="200" IsAnimationPlaying="True"/>
 
             <Button  Text="zatwierdz" FontAttributes="Bold"  FontSize="24"  ></Button>
         </StackLayout>

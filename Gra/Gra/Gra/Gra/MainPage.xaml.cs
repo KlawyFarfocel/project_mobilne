@@ -121,5 +121,20 @@ namespace Gra
                 bulbButton.ClassId = "0";
             }
         }
+        async void WrongButtonClicked(object sender, EventArgs e)
+        {
+            ChangeLight(sender,e);
+            var ButtonDalej = (Button)FindByName("ForwardButton");
+            var bulbButton = (ImageButton)FindByName("BulbButton");
+            var settingsButton= (Button)FindByName("SettingsButton");
+            var deadAnimation = (Image)FindByName("deadAnimation");
+            ButtonDalej.IsVisible = false;
+            bulbButton.IsVisible = false;
+            settingsButton.IsVisible = false;
+            deadAnimation.IsVisible = true;
+            deadAnimation.IsAnimationPlaying = true;
+            await Task.Delay(3500);
+            System.Environment.Exit(0);
+        }
     }
 }

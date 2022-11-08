@@ -1,8 +1,4 @@
-﻿using Android.Bluetooth;
-using Android.Bluetooth.LE;
-using Java.Sql;
-using Javax.Xml.Xpath;
-using Plugin.BLE;
+﻿using Plugin.BLE;
 using Plugin.BLE.Abstractions.Contracts;
 //using Plugin.BluetoothLE;
 using System;
@@ -13,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
+using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
 namespace Gra
 {
@@ -32,11 +29,11 @@ namespace Gra
             var adapter = CrossBluetoothLE.Current.Adapter;
             var devicelist = new ObservableCollection<IDevice>();
            DisplayAlert("Notice", ble.State.ToString(), "OK");
+
+            adapter.StartScanningForDevicesAsync();
             adapter.DeviceDiscovered += (s, a) => devicelist.Add(a.Device);
-             adapter.StartScanningForDevicesAsync();
             //  text.Text = state.ToString();
-            
-            DisplayAlert("Notice", devicelist.Count().ToString(), "OK");
+
             //   DisplayAlert("Notice", devicelist.ToString(), "OK"); 
 
         }
@@ -46,7 +43,7 @@ namespace Gra
                
             DisplayAlert("Notice", ble.State.ToString(), "OK");
         }
-*/
+*/          
     }
 
 
