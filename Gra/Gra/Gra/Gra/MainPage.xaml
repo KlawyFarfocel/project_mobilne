@@ -23,7 +23,7 @@
    
         <!-- Strzałki-->
         <Label TextColor="White" x:Name="arrow_1" ClassId="arrow_1" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2" Text="&#x2B0B;" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="170"></Label>
-        <Label TextColor="White" x:Name="arrow_2" ClassId="arrow_2" Grid.Row="3" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2" Text="&#x2B09;" HorizontalTextAlignment="Center" FontSize="180"></Label>
+        <Labe,,,l TextColor="White" x:Name="arrow_2" ClassId="arrow_2" Grid.Row="3" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2" Text="&#x2B09;" HorizontalTextAlignment="Center" FontSize="180"></Labe>
         <Label TextColor="White" x:Name="arrow_3" ClassId="arrow_3" Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Text="&#x2B0A;" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="170" ></Label>
         <Label TextColor="White" x:Name="arrow_4" ClassId="arrow_4" Grid.Row="3" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Text="&#x2B08;" HorizontalTextAlignment="Center" FontSize="180"></Label>
         <!-- Koniec strzałek-->
