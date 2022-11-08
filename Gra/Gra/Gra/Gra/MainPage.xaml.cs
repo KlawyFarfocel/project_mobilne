@@ -55,6 +55,10 @@ namespace Gra
         {
             await Navigation.PushAsync(new SettingsPage()); 
         }
+        private async void Bluetooth(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Page1());
+        }
         void ToBlack(Label obj)
         {
             obj.ColorTo(Color.Black);
