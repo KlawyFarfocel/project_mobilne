@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Gra.LabirynthPage.xaml", "LabirynthPage.xaml", typeof(global::Gra.Page1))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Gra.LabirynthPage.xaml", "LabirynthPage.xaml", typeof(global::Gra.LabirynthPage))]
 
 namespace Gra {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("LabirynthPage.xaml")]
-    public partial class Page1 : global::Xamarin.Forms.ContentPage {
+    public partial class LabirynthPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(Page1));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(LabirynthPage));
         }
     }
 }
