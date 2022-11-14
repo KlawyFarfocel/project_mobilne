@@ -114,3 +114,5 @@ MediaManager.Forms.dll
 SQLitePCLRaw.lib.e_sqlite3.android.dll
 Xamarin.CommunityToolkit.dll
 Xamarin.Forms.PancakeView.dll
+Plugin.BLE.dll
+Plugin.BluetoothLE.dll

@@ -57,9 +57,9 @@ namespace Gra
         {
             await Navigation.PushAsync(new SettingsPage()); 
         }
-        private async void Bluetooth(object sender, EventArgs e)
+        private async void FirstTask(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Page1());
+            await Navigation.PushAsync(new LabirynthPage());
         }
         void ToBlack(Label obj)
         {

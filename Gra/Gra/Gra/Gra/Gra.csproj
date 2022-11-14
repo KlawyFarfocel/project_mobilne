@@ -11,6 +11,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Nowy folder1\**" />
+    <Compile Remove="Nowy folder\**" />
+    <EmbeddedResource Remove="Nowy folder1\**" />
+    <EmbeddedResource Remove="Nowy folder\**" />
+    <None Remove="Nowy folder1\**" />
+    <None Remove="Nowy folder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Plugin.BLE" Version="2.1.3" />
     <PackageReference Include="Plugin.BluetoothLE" Version="6.3.0.19" />
@@ -23,11 +32,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Nowy folder1\" />
-    <Folder Include="Nowy folder\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="Mono.Android">
       <HintPath>D:\bj bj bj\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v12.0\Mono.Android.dll</HintPath>
     </Reference>
@@ -36,6 +40,9 @@
   <ItemGroup>
     <Compile Update="bluetooth.xaml.cs">
       <DependentUpon>bluetooth.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="LabirynthPage.xaml.cs">
+      <DependentUpon>LabirynthPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
@@ -53,6 +60,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="bluetooth.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="LabirynthPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="SettingsPage.xaml">

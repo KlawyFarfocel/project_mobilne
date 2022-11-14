@@ -70,7 +70,7 @@
         <Image Source="dead" x:Name="deadAnimation" IsVisible="false" IsAnimationPlaying="False" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" WidthRequest="350" HeightRequest="350" VerticalOptions="Center" HorizontalOptions="Center"/>
         <!-- Koniec przycisku glownego-->
         <Grid Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2">
-            <Button BackgroundColor="Gray" x:Name="ForwardButton" TextColor="Gray" Margin="0" Text="Przejdź dalej" Clicked="Bluetooth" FontSize="15"></Button>
+            <Button BackgroundColor="Gray" x:Name="ForwardButton" TextColor="Gray" Margin="0" Text="Przejdź dalej" Clicked="FirstTask" FontSize="15"></Button>
         </Grid>
         
     </Grid>

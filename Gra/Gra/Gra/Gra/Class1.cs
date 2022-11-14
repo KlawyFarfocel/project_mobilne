@@ -7,7 +7,7 @@ namespace Gra
 {
     public class Class1
     {
-        [PrimaryKey,AutoIncrement]
+        [PrimaryKey, AutoIncrement]
         public int Vol { get; set; }
     }
 }
