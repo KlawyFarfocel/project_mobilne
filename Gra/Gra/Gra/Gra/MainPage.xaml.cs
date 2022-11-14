@@ -14,9 +14,11 @@ namespace Gra
 { 
     public partial class MainPage : ContentPage
     {    
-        public MainPage()
+        public MainPage(double dalej)
         {
             InitializeComponent();
+            DisplayAlert("Notice", dalej.ToString(), "OK");
+
         }
         protected override void OnAppearing()
         {

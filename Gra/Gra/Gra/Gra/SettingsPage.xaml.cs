@@ -27,14 +27,20 @@ namespace Gra
             sliderval.Text = valtext.ToString();
             dalej = value;
         }
-       /* async void OnButtonClicked(object sender, EventArgs e)
-        {
-            await App.database.SavePersonAsync(new Class1
-                 {
 
-                Vol = int.Parse(sliderval.Text)
-            });
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+          // double dalej = 12;
+            await Navigation.PushAsync(new MainPage(dalej));
         }
-       */
+        /* async void OnButtonClicked(object sender, EventArgs e)
+{
+    await App.database.SavePersonAsync(new Class1
+         {
+
+        Vol = int.Parse(sliderval.Text)
+    });
+}
+*/
     }
 }

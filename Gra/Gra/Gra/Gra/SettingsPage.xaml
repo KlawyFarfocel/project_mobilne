@@ -20,7 +20,7 @@
                 HorizontalOptions="CenterAndExpand" 
                 x:Name="sliderval"
                  />
-            <Button  Text="zatwierdz" FontAttributes="Bold"  FontSize="24" ></Button>
+            <Button  Text="zatwierdz" FontAttributes="Bold"  FontSize="24" Clicked="Button_Clicked"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -24,8 +24,8 @@ namespace Gra
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new MainPage());
+            double dalej=0;
+            MainPage = new NavigationPage(new MainPage(dalej));
         }
 
         protected override void OnStart()
