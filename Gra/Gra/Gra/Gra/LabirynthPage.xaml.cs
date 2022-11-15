@@ -14,22 +14,20 @@ namespace Gra
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LabirynthPage : ContentPage
     {
+        public int counter = 0;
         public LabirynthPage()
         {
             InitializeComponent();
         }
-        protected override void OnAppearing()
+        private void GoRight(object sender, EventArgs e)
         {
-            base.OnAppearing();
-            for(int i = 0; i < 30; i++)
-            {
-                var blockName = "Kwadrat" + i;
-            }
-            for (var i = 0; i < 30; i++)
-            {
-              //  LabirynthBox name= new LabirynthBox(true, true, true, true, name);
-
-            }
+            var blockName = "Kwadrat" + counter;
+            var a = (Label)FindByName(blockName);
+            a.IsVisible = false;
+            counter += 6;
+            blockName = "Kwadrat" + counter;
+            a = (Label)FindByName(blockName);
+            a.IsVisible = true;
         }
     }
 }
