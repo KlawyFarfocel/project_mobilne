@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+ 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Gra.LabirynthPage">
@@ -10,42 +11,217 @@
 
             <Frame BorderColor="White" BackgroundColor="Black" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="7" Grid.RowSpan="8">
                 <Grid>
-                    <Frame BorderColor="White" Grid.Column="0" Grid.Row="0" Padding="1">
-                        <Grid Margin="0,15,20,15">
+                    <Frame BorderColor="White" x:Name="Blok0" Grid.Column="0" Grid.Row="0" Padding="1">
+                        <Grid Padding="0,15,20,15">
                             <Label Grid.Row="0" Grid.Column="1"></Label>
                             <Label Grid.Row="4" Grid.Column="7"></Label>
-                            <Rectangle Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                            <Rectangle IsVisible="true" x:Name="Kwadrat0" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
                         </Grid>
                     </Frame>
-                    <Frame BorderColor="White" Grid.Column="0" Grid.Row="1"></Frame>
-                        <Frame BorderColor="White" Grid.Column="0" Grid.Row="2"></Frame>
-                        <Frame BorderColor="White" Grid.Column="0" Grid.Row="3"></Frame>
-                        <Frame BorderColor="White" Grid.Column="0" Grid.Row="4"></Frame>
-                        <Frame BorderColor="White" Grid.Column="0" Grid.Row="5"></Frame>
-                    <Frame BorderColor="White" Grid.Column="1" Grid.Row="0"></Frame>
-                        <Frame BorderColor="White" Grid.Column="1" Grid.Row="1"></Frame>
-                        <Frame BorderColor="White" Grid.Column="1" Grid.Row="2"></Frame>
-                        <Frame BorderColor="White" Grid.Column="1" Grid.Row="3"></Frame>
-                        <Frame BorderColor="White" Grid.Column="1" Grid.Row="4"></Frame>
-                        <Frame BorderColor="White" Grid.Column="1" Grid.Row="5"></Frame>
-                    <Frame BorderColor="White" Grid.Column="2" Grid.Row="0"></Frame>
-                        <Frame BorderColor="White" Grid.Column="2" Grid.Row="1"></Frame>
-                        <Frame BorderColor="White" Grid.Column="2" Grid.Row="2"></Frame>
-                        <Frame BorderColor="White" Grid.Column="2" Grid.Row="3"></Frame>
-                        <Frame BorderColor="White" Grid.Column="2" Grid.Row="4"></Frame>
-                        <Frame BorderColor="White" Grid.Column="2" Grid.Row="5"></Frame>
-                    <Frame BorderColor="White" Grid.Column="3" Grid.Row="0"></Frame>
-                        <Frame BorderColor="White" Grid.Column="3" Grid.Row="1"></Frame>
-                        <Frame BorderColor="White" Grid.Column="3" Grid.Row="2"></Frame>
-                        <Frame BorderColor="White" Grid.Column="3" Grid.Row="3"></Frame>
-                        <Frame BorderColor="White" Grid.Column="3" Grid.Row="4"></Frame>
-                        <Frame BorderColor="White" Grid.Column="3" Grid.Row="5"></Frame>
-                    <Frame BorderColor="White" Grid.Column="4" Grid.Row="0"></Frame>
-                        <Frame BorderColor="White" Grid.Column="4" Grid.Row="1"></Frame>
-                        <Frame BorderColor="White" Grid.Column="4" Grid.Row="2"></Frame>
-                        <Frame BorderColor="White" Grid.Column="4" Grid.Row="3"></Frame>
-                        <Frame BorderColor="White" Grid.Column="4" Grid.Row="4"></Frame>
-                        <Frame BorderColor="White" Grid.Column="4" Grid.Row="5"></Frame>
+
+                    <Frame BorderColor="White" x:Name="Blok1" Grid.Column="0" Grid.Row="1" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat1" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok2" Grid.Column="0" Grid.Row="2" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat2" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok3" Grid.Column="0" Grid.Row="3" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat3" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok4" Grid.Column="0" Grid.Row="4" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat4" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok5" Grid.Column="0" Grid.Row="5" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat5" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok6" Grid.Column="1" Grid.Row="0" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat6" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok7" Grid.Column="1" Grid.Row="1" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat7" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok8" Grid.Column="1" Grid.Row="2" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat8" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok9" Grid.Column="1" Grid.Row="3" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat9" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok10" Grid.Column="1" Grid.Row="4" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat10" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok11" Grid.Column="1" Grid.Row="5" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat11" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok12" Grid.Column="2" Grid.Row="0" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat12" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok13" Grid.Column="2" Grid.Row="1" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat13" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok14" Grid.Column="2" Grid.Row="2" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat14" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok15" Grid.Column="2" Grid.Row="3" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat15" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok16" Grid.Column="2" Grid.Row="4" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat16" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok17" Grid.Column="2" Grid.Row="5" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat17" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok18" Grid.Column="3" Grid.Row="0" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat18" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok19" Grid.Column="3" Grid.Row="1" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat19" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok20" Grid.Column="3" Grid.Row="2" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat20" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok21" Grid.Column="3" Grid.Row="3" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat21" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok22" Grid.Column="3" Grid.Row="4" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat22" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok23" Grid.Column="3" Grid.Row="5" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat23" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok24" Grid.Column="4" Grid.Row="0" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat24" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok25" Grid.Column="4" Grid.Row="1" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat25" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok26" Grid.Column="4" Grid.Row="2" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat26" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok27" Grid.Column="4" Grid.Row="3" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat27" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok28" Grid.Column="4" Grid.Row="4" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat28" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
+                    <Frame BorderColor="White" x:Name="Blok29" Grid.Column="4" Grid.Row="5" Padding="1">
+                        <Grid Padding="0,15,20,15">
+                            <Label Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Grid.Row="4" Grid.Column="7"></Label>
+                            <Rectangle IsVisible="false" x:Name="Kwadrat29" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Rectangle>
+                        </Grid>
+                    </Frame>
                 </Grid>
             </Frame>
 
