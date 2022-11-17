@@ -7,7 +7,7 @@
         <Grid>
             <Grid.RowDefinitions>
             </Grid.RowDefinitions>
-            <Button Text='&#x25C0;' FontSize="25" Grid.Column="0" Grid.Row="4"></Button>
+            <Button Text='&#x25C0;' FontSize="25" Grid.Column="0" Grid.Row="4" Clicked="GoLeft"></Button>
 
             <Frame BorderColor="White" BackgroundColor="Black" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="7" Grid.RowSpan="8">
                 <Grid>
@@ -15,7 +15,7 @@
                         <Grid Padding="0,15,20,15">
                             <Label Grid.Row="0" Grid.Column="1"></Label>
                             <Label Grid.Row="4" Grid.Column="7"></Label>
-                            <Label  IsVisible="true" x:Name="Kwadrat0" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Label >
+                            <Label  IsVisible="false" x:Name="Kwadrat0" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="3" BackgroundColor="Bisque"></Label >
                         </Grid>
                     </Frame>
 
@@ -225,9 +225,9 @@
                 </Grid>
             </Frame>
 
-            <Button Text='&#x25B2;' FontSize="25" Grid.Column="4" Grid.Row="0"></Button>
-            <Button Text='&#x25BC;' FontSize="25" Grid.Column="4" Grid.Row="9" Clicked="GoRight"></Button>
-            <Button Text='&#x25B6;' FontSize="25" Grid.Column="8" Grid.Row="4"></Button>
+            <Button Text='&#x25B2;' FontSize="25" Grid.Column="4" Grid.Row="0" Clicked="GoUp"></Button>
+            <Button Text='&#x25BC;' FontSize="25" Grid.Column="4" Grid.Row="9" Clicked="GoDown"></Button>
+            <Button Text='&#x25B6;' FontSize="25" Grid.Column="8" Grid.Row="4" Clicked="GoRight"></Button>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
