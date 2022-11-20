@@ -8,9 +8,8 @@
     <ContentPage.Content>
         
         <Grid>
-            <Grid.RowDefinitions>
-            </Grid.RowDefinitions>
-            <Button Text='&#x25C0;' FontSize="25" Grid.Column="0" Grid.Row="4" Clicked="GoLeft"></Button>
+            <xct:MediaElement x:Name="soundtrack" Source="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" Opacity="0" IsLooping="True" ></xct:MediaElement>
+            <Button FontSize="25" Grid.Column="0" Grid.Row="4" Clicked="GoLeft"></Button>
             
             <Frame BorderColor="White" BackgroundColor="Black" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="7" Grid.RowSpan="8">
                 <Grid>
@@ -231,7 +230,7 @@
             <Button Text='&#x25B2;' FontSize="25" Grid.Column="4" Grid.Row="0" Clicked="GoUp"></Button>
             <Button Text='&#x25BC;' FontSize="25" Grid.Column="4" Grid.Row="9" Clicked="GoDown"></Button>
             <Button Text='&#x25B6;' FontSize="25" Grid.Column="8" Grid.Row="4" Clicked="GoRight"></Button>
-            <xct:MediaElement x:Name="soundtrack" Source="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" HeightRequest="1" IsLooping="True" ></xct:MediaElement>
+            
         </Grid>
         
     </ContentPage.Content>
