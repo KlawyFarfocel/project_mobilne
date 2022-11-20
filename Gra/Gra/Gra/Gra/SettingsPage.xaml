@@ -14,6 +14,7 @@
              Maximum="100"
              ValueChanged="Slider_ValueChanged"
              Value="100"
+             x:Name="slid"
                 />
 
             <Label Text="100"

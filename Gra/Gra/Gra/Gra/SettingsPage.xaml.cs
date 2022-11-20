@@ -13,14 +13,18 @@ namespace Gra
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SettingsPage : ContentPage
     {
-        public SettingsPage()
+        public SettingsPage(double dalej1)
         {
             InitializeComponent();
+            soundtrack.Volume = dalej1;
+            slid.Value = dalej1*100;
+
         }
         double dalej = 0;
+
         private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-
+            
             double value = e.NewValue / 100;
             double valtext = e.NewValue;
             soundtrack.Volume = value;
@@ -30,7 +34,8 @@ namespace Gra
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-          // double dalej = 12;
+            // double dalej = 12;
+            soundtrack.Stop();
             await Navigation.PushAsync(new MainPage(dalej));
         }
         /* async void OnButtonClicked(object sender, EventArgs e)

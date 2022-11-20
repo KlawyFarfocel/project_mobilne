@@ -16,7 +16,7 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="0.375*"/>
         </Grid.RowDefinitions>
-        <!--<xct:MediaElement x:Name="soundtrack" Source="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" HeightRequest="1" IsLooping="True" ></xct:MediaElement>-->
+        <xct:MediaElement x:Name="soundtrack" Source="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" HeightRequest="1" IsLooping="True" ></xct:MediaElement>
         <!--Koniec definicji-->
         <Label Grid.Row="0" Grid.Column="0" x:Name="Tit" Text="Tytuł" Grid.ColumnSpan="4" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="White"/>
         <Label Grid.Row="6" Grid.Column="0" x:Name="Footer" Text="Stopka - nie pamietam co tu mialo byc" Grid.ColumnSpan="4" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="White" />

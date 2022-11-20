@@ -20,9 +20,14 @@ namespace Gra
         public int whereX = 0;
         public int whereY = 0;
         public string LabirynthChoice = "lab1";
-        public LabirynthPage()
+        public LabirynthPage(double dalej1)
         {
+           // soundtrack.Volume = dalej1;
             InitializeComponent();
+            DisplayAlert("Notice", dalej1.ToString(), "OK");
+
+            soundtrack.Volume = dalej1;
+            soundtrack.Play();
         }
         readonly bool[,] lab1 = {//gora,lewo,dol,prawo
             {V,V,T,T},

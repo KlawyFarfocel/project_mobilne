@@ -17,8 +17,9 @@ namespace Gra
         public MainPage(double dalej)
         {
             InitializeComponent();
-            DisplayAlert("Notice", dalej.ToString(), "OK");
-
+            if (dalej == 0)
+                dalej = 1;
+            soundtrack.Volume = dalej;
         }
         protected override void OnAppearing()
         {
@@ -55,11 +56,16 @@ namespace Gra
         //Przechodzenie do ustawień
         private async void GoToSettings(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SettingsPage()); 
+            soundtrack.Stop();
+            double dalej1 = soundtrack.Volume;
+             await Navigation.PushAsync(new SettingsPage(dalej1));
+
         }
         private async void FirstTask(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new LabirynthPage());
+            soundtrack.Stop();
+            double dalej1 = soundtrack.Volume;
+            await Navigation.PushAsync(new LabirynthPage(dalej1));
         }
         void ToBlack(Label obj)
         {
