@@ -19,7 +19,18 @@ namespace Gra
         public int counter = 0;
         public int whereX = 0;
         public int whereY = 0;
-        public string LabirynthChoice = "lab1";
+        static Random RandomLabirynthNumber = new Random();
+        public string LabirynthChoice = "";
+        public readonly int LabirynthNumberChoice = RandomLabirynthNumber.Next(101);
+        void GenerateLabirynthNumber()
+        {
+            if (LabirynthNumberChoice > 0 && LabirynthNumberChoice <= 50)
+            {
+                LabirynthChoice = "Lab1";
+            }
+            else LabirynthChoice = "Lab2";
+        }
+        
         public LabirynthPage(double dalej1)
         {
            // soundtrack.Volume = dalej1;
@@ -29,8 +40,9 @@ namespace Gra
             soundtrack.Volume = dalej1;
             soundtrack.Play();
         }
+        
         readonly bool[,] lab1 = {//gora,lewo,dol,prawo
-            {V,V,T,T},
+            {V,V,V,V},
             {V,V,V,V},
             {V,V,V,V},
             {V,V,V,V},
@@ -69,12 +81,64 @@ namespace Gra
         readonly int Lab1WinY = 4;
         readonly int Lab1StartingX = 1;
         readonly int Lab1StartingY = 0;
+        
+        readonly bool[,] lab2 = {//gora,lewo,dol,prawo
+            {V,V,V,V},
+            {V,V,V,V},
+            {V,V,V,V},
+            {V,V,V,V},
+            {V,V,V,V},
+            {V,V,V,V},
+
+            {V,V,V,V},
+            {V,V,T,T},
+            {T,V,T,V},
+            {T,V,T,V},
+            {T,V,T,T},
+            {T,V,V,V},
+
+            {V,V,V,V},
+            {V,T,V,T},
+            {V,V,V,V},
+            {V,V,V,T},
+            {V,T,V,V},
+            {V,V,V,V},
+
+            {V,V,V,V},
+            {V,T,V,T},
+            {V,V,V,V},
+            {V,T,T,T},
+            {T,V,V,V},
+            {V,V,V,V},
+
+            {V,V,V,V},
+            {V,T,T,V},
+            {T,V,T,V},
+            {T,T,T,V},
+            {T,V,T,V},
+            {T,V,T,V},
+        };
+        readonly int Lab2WinX = 4;
+        readonly int Lab2WinY = 1;
+        readonly int Lab2StartingX = 2;
+        readonly int Lab2StartingY = 4;
 
         void AmIWinning()
         {
-            if (whereX == Lab1WinX)
+            int LabWinX=0, LabWinY=0;  
+            if (LabirynthChoice == "Lab1")
             {
-                if(whereY== Lab1WinY)
+                LabWinX = Lab1WinX;
+                LabWinY = Lab1WinY;
+            }
+            if(LabirynthChoice == "Lab2")
+            {
+                LabWinX = Lab2WinX;
+                LabWinY = Lab2WinY;
+            }
+            if (whereX == LabWinX)
+            {
+                if(whereY == LabWinY)
                 {
                     DisplayAlert("Notice", "Win", "Ok");
                     return;
@@ -90,15 +154,24 @@ namespace Gra
             counter += HowMuch;
             blockName = "Kwadrat" + counter;
             a = (Label)FindByName(blockName);
-            a.IsVisible = true;
+            a.IsVisible = T;
             AmIWinning();
         }
         private void GoRight(object sender, EventArgs e)
         {
+            bool[,] LabTable= { };
+            if(LabirynthChoice == "Lab1")
+            {
+                LabTable = lab1;
+            }
+            else if(LabirynthChoice == "Lab2")
+            {
+                LabTable= lab2;
+            }
             if (whereX==4){
                 return;
             }
-            if (lab1[counter, 3] == false)
+            if (LabTable[counter, 3] == false)
             {
                 DisplayAlert("Notice", "Ściana", "Ok");
             }
@@ -110,11 +183,20 @@ namespace Gra
         }
         private void GoLeft(object sender, EventArgs e)
         {
+            bool[,] LabTable = { };
+            if (LabirynthChoice == "Lab1")
+            {
+                LabTable = lab1;
+            }
+            else if (LabirynthChoice == "Lab2")
+            {
+                LabTable = lab2;
+            }
             if (whereX == 0)
             {
                 return;
             }
-            if (lab1[counter, 1] == false)
+            if (LabTable[counter, 1] == false)
             {
                 DisplayAlert("Notice", "Ściana", "Ok");
             }
@@ -126,12 +208,21 @@ namespace Gra
         }
         private void GoUp(object sender, EventArgs e)
         {
+            bool[,] LabTable = { };
+            if (LabirynthChoice == "Lab1")
+            {
+                LabTable = lab1;
+            }
+            else if (LabirynthChoice == "Lab2")
+            {
+                LabTable = lab2;
+            }
             if (whereY == 0)
             {
                 return;
             }
 
-            if (lab1[counter, 0] == false)
+            if (LabTable[counter, 0] == false)
             {
                 DisplayAlert("Notice", "Ściana", "Ok");
             }
@@ -143,13 +234,22 @@ namespace Gra
         }
         private void GoDown(object sender, EventArgs e)
         {
+            bool[,] LabTable = { };
+            if (LabirynthChoice == "Lab1")
+            {
+                LabTable = lab1;
+            }
+            else if (LabirynthChoice == "Lab2")
+            {
+                LabTable = lab2;
+            }
             if (whereY == 5)
             {
                 DisplayAlert("Notice", "Za duzo", "Ok");
                 return;
             }
 
-            if (lab1[counter, 2] == false)
+            if (LabTable[counter, 2] == false)
             {
                 DisplayAlert("Notice", "GoDown", "Ok");
             }
@@ -161,11 +261,22 @@ namespace Gra
         }
         protected override void OnAppearing()
         {
+            GenerateLabirynthNumber();
+            if (LabirynthChoice == "Lab1")
+            {
+                counter = (Lab1StartingX * 6) + Lab1StartingY;
+                whereX = Lab1StartingX;
+                whereY = Lab1StartingY;
+                DisplayAlert("Hejka", "Jestem", "Ok");
+            }
+            else if (LabirynthChoice == "Lab2")
+            {
+                counter = (Lab2StartingX * 6) + Lab2StartingY;
+                whereX = Lab2StartingX;
+                whereY = Lab2StartingY;
+            }
             DisplayAlert("Notice", LabirynthChoice, "Ok");
-            counter = (Lab1StartingX * 6) + Lab1StartingY;
             var StartName = "Kwadrat" + counter;
-            whereX = Lab1StartingX;
-            whereY = Lab1StartingY;
             var StartBlock=(Label)FindByName(StartName);
             StartBlock.IsVisible= true;
         }

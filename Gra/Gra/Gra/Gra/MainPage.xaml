@@ -73,7 +73,7 @@
             <Button BackgroundColor="Gray" x:Name="ForwardButton" TextColor="Gray" Margin="0" Text="Przejdź dalej" Clicked="FirstTask" FontSize="15"></Button>
         </Grid>
         <Grid Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2">
-            <Button BackgroundColor="Gray" x:Name="TextModeButton" TextColor="Gray" Margin="0" Text="Przejdź dalej" Clicked="GoToTextMode" FontSize="15"></Button>
+            <Button BackgroundColor="Gray" x:Name="TextModeButton" TextColor="Gray" Margin="0" Text="Przejdź dalej" FontSize="15"></Button>
         </Grid>
 
     </Grid>
