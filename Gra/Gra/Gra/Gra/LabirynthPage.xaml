@@ -9,7 +9,7 @@
         
         <Grid>
             <xct:MediaElement x:Name="soundtrack" Source="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" Opacity="0" IsLooping="True" ></xct:MediaElement>
-            <Button FontSize="25" Grid.Column="0" Grid.Row="4" Clicked="GoLeft"></Button>
+            <Button FontSize="25" Grid.Column="0" Text="&#x25C0;" Grid.Row="4" Clicked="GoLeft"></Button>
             
             <Frame BorderColor="White" BackgroundColor="Black" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="7" Grid.RowSpan="8">
                 <Grid>

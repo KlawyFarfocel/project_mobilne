@@ -9,7 +9,7 @@
                 HorizontalOptions="CenterAndExpand" 
                  />
 
-            <xct:MediaElement x:Name="soundtrack" Source="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" HeightRequest="1" IsLooping="True" ></xct:MediaElement>
+            <xct:MediaElement x:Name="soundtrack" Opacity="0" Source="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" HeightRequest="1" IsLooping="True" ></xct:MediaElement>
             <Slider 
              Maximum="100"
              ValueChanged="Slider_ValueChanged"
