@@ -123,7 +123,7 @@ namespace Gra
         readonly int Lab2StartingX = 2;
         readonly int Lab2StartingY = 4;
 
-        void AmIWinning()
+        async void AmIWinning()
         {
             int LabWinX=0, LabWinY=0;  
             if (LabirynthChoice == "Lab1")
@@ -140,8 +140,8 @@ namespace Gra
             {
                 if(whereY == LabWinY)
                 {
-                    DisplayAlert("Notice", "Win", "Ok");
-                    return;
+                    await DisplayAlert("Notice", "Win", "Ok");
+                    await Navigation.PushAsync(new ScrabblePage());
                 }
                 return;
             }
@@ -267,7 +267,6 @@ namespace Gra
                 counter = (Lab1StartingX * 6) + Lab1StartingY;
                 whereX = Lab1StartingX;
                 whereY = Lab1StartingY;
-                DisplayAlert("Hejka", "Jestem", "Ok");
             }
             else if (LabirynthChoice == "Lab2")
             {
@@ -275,7 +274,6 @@ namespace Gra
                 whereX = Lab2StartingX;
                 whereY = Lab2StartingY;
             }
-            DisplayAlert("Notice", LabirynthChoice, "Ok");
             var StartName = "Kwadrat" + counter;
             var StartBlock=(Label)FindByName(StartName);
             StartBlock.IsVisible= true;
