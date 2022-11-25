@@ -144,5 +144,12 @@ namespace Gra
             await Task.Delay(3500);
             System.Environment.Exit(0);
         }
+
+        private async void TextModeButton_Clicked(object sender, EventArgs e)
+        {
+            soundtrack.Stop();
+            double dalej1 = soundtrack.Volume;
+            await Navigation.PushAsync(new Page1(dalej1));
+        }
     }
 }

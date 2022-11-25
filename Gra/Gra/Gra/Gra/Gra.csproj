@@ -38,9 +38,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="bluetooth.xaml.cs">
-      <DependentUpon>bluetooth.xaml</DependentUpon>
-    </Compile>
     <Compile Update="LabirynthPage.xaml.cs">
       <DependentUpon>LabirynthPage.xaml</DependentUpon>
     </Compile>
@@ -59,10 +56,13 @@
     <EmbeddedResource Update="FlyoutPage1Flyout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="bluetooth.xaml">
+    <EmbeddedResource Update="LabirynthPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="LabirynthPage.xaml">
+    <EmbeddedResource Update="Page1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Page2.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="ScrabblePage.xaml">

@@ -35,7 +35,7 @@ namespace Gra
         {
            // soundtrack.Volume = dalej1;
             InitializeComponent();
-            DisplayAlert("Notice", dalej1.ToString(), "OK");
+            DisplayAlert("Notice", "kod to 2077", "OK");
 
             soundtrack.Volume = dalej1;
             soundtrack.Play();
