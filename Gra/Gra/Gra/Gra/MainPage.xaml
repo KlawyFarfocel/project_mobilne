@@ -69,11 +69,14 @@
         <Button x:Name="bigRed" ClassId="bigRed" Text="Wciśnij mnie!" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" WidthRequest="200" HeightRequest="200" CornerRadius="100" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="#FE2D2D" Clicked="WrongButtonClicked"/>
         <Image Source="dead" x:Name="deadAnimation" IsVisible="false" IsAnimationPlaying="False" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" WidthRequest="350" HeightRequest="350" VerticalOptions="Center" HorizontalOptions="Center"/>
         <!-- Koniec przycisku glownego-->
+        <Grid Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Grid.RowSpan="1">
+            <Button BackgroundColor="Gray" x:Name="FlashlightButton" TextColor="Gray"  Margin="0" Text="Labirynt Fauna" Clicked="FirstTask" FontSize="15"></Button>
+        </Grid>
         <Grid Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2">
-            <Button BackgroundColor="Gray" x:Name="ForwardButton" TextColor="Gray" Margin="0" Text="Przejdź dalej" Clicked="FirstTask" FontSize="15"></Button>
+            <Button BackgroundColor="Gray" x:Name="LabirynthButton" TextColor="Gray"  Margin="0" Text="Mod Korse'a" Clicked="GoToFlashlight" FontSize="15"></Button>
         </Grid>
         <Grid Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2">
-            <Button BackgroundColor="Gray" x:Name="TextModeButton" TextColor="Gray" Margin="0" Text="Przejdź dalej" Clicked="TextModeButton_Clicked" FontSize="15"></Button>
+            <Button BackgroundColor="Gray" x:Name="TextModeButton" TextColor="Gray"  Margin="0" Text="Tryb tekstowy" Clicked="TextModeButton_Clicked" FontSize="15"></Button>
         </Grid>
 
     </Grid>

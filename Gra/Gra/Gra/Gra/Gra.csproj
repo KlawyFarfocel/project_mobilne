@@ -38,6 +38,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="FlashlightPage.xaml.cs">
+      <DependentUpon>FlashlightPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="LabirynthPage.xaml.cs">
       <DependentUpon>LabirynthPage.xaml</DependentUpon>
     </Compile>
@@ -47,6 +50,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="FlashlightPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="FlyoutPage1.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

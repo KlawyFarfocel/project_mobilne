@@ -7,8 +7,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using Xamarin.CommunityToolkit.Extensions;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static Xamarin.Essentials.Permissions;
 
 namespace Gra
 { 
@@ -21,7 +23,7 @@ namespace Gra
                 dalej = 1;
             soundtrack.Volume = dalej;
         }
-        protected override void OnAppearing()
+        async protected override void OnAppearing()
         {
             base.OnAppearing();
             arrow_1 = (Label)FindByName("arrow_1");
@@ -29,11 +31,18 @@ namespace Gra
             arrow_3 = (Label)FindByName("arrow_3");
             arrow_4 = (Label)FindByName("arrow_4");
             bigRed = (Button)FindByName("bigRed");
+            BulbButton = (ImageButton)FindByName("BulbButton");
+            BulbButton.ClassId = "1";
             Animate_pulse(arrow_1);
             Animate_pulse(arrow_2);
             Animate_pulse(arrow_3);
             Animate_pulse(arrow_4);
             animate_button(bigRed);
+            var status= await Permissions.CheckStatusAsync<Permissions.Camera>();
+            if (status==PermissionStatus.Unknown || status == PermissionStatus.Denied)
+            {
+                await Permissions.RequestAsync<Permissions.Camera>();
+            }
         }
         void Animate_pulse(Label obj)
         {
@@ -61,6 +70,14 @@ namespace Gra
              await Navigation.PushAsync(new SettingsPage(dalej1));
 
         }
+        private async void GoToFlashlight(object sender, EventArgs e)
+        {
+            soundtrack.Stop();
+            double dalej1 = soundtrack.Volume;
+            await Navigation.PushAsync(new FlashlightPage());
+
+        }
+
         private async void FirstTask(object sender, EventArgs e)
         {
             soundtrack.Stop();
@@ -82,7 +99,9 @@ namespace Gra
             var title = (Label)FindByName("Tit");
             var footer=(Label)FindByName("Footer");
 
-            var ButtonDalej = (Button)FindByName("ForwardButton");
+            var ButtonDalej = (Button)FindByName("LabirynthButton");
+            var ButtonLatarka = (Button)FindByName("FlashlightButton");
+            var ButtonTekstowy = (Button)FindByName("TextModeButton");
             var MainGrid = (Grid)FindByName("MainGrid");
             var bulbButton = (ImageButton)FindByName("BulbButton");
 
@@ -99,12 +118,24 @@ namespace Gra
                 ToBlack(footer);
                 footer.Text = "";
                 title.Text = "";
+
                 ButtonDalej.BorderWidth = 3;
                 ButtonDalej.BorderColor = Color.White;
                 ButtonDalej.TextColor = Color.White;
+
+                ButtonLatarka.BorderWidth = 3;
+                ButtonLatarka.BorderColor = Color.White;
+                ButtonLatarka.TextColor = Color.White;
+
+                ButtonTekstowy.BorderWidth = 3;
+                ButtonTekstowy.BorderColor = Color.White;
+                ButtonTekstowy.TextColor = Color.White;
+
                 MainGrid.BackgroundColor = Color.Black;
                 bulbButton.ClassId = "1";
                 ButtonDalej.IsVisible = true;
+                ButtonTekstowy.IsVisible= true;
+                ButtonLatarka.IsVisible = true;
                 arrow_1.IsVisible = false;
                 arrow_2.IsVisible = false;
                 arrow_3.IsVisible = false;
@@ -120,6 +151,8 @@ namespace Gra
                 title.Text = "Tytuł";
                 MainGrid.BackgroundColor = Color.Gray;
                 ButtonDalej.IsVisible = false;
+                ButtonTekstowy.IsVisible= false;
+                ButtonLatarka.IsVisible = false;
                 arrow_1.IsVisible = true;
                 arrow_2.IsVisible = true;
                 arrow_3.IsVisible = true;
@@ -132,11 +165,15 @@ namespace Gra
         async void WrongButtonClicked(object sender, EventArgs e)
         {
             ChangeLight(sender,e);
-            var ButtonDalej = (Button)FindByName("ForwardButton");
+            var ButtonDalej = (Button)FindByName("LabirynthButton");
             var bulbButton = (ImageButton)FindByName("BulbButton");
             var settingsButton= (Button)FindByName("SettingsButton");
             var deadAnimation = (Image)FindByName("deadAnimation");
+            var ButtonLatarka = (Button)FindByName("FlashlightButton");
+            var ButtonTekstowy = (Button)FindByName("TextModeButton");
             ButtonDalej.IsVisible = false;
+            ButtonTekstowy.IsVisible = false;
+            ButtonLatarka.IsVisible = false;
             bulbButton.IsVisible = false;
             settingsButton.IsVisible = false;
             deadAnimation.IsVisible = true;
