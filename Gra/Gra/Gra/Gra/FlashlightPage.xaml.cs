@@ -18,7 +18,6 @@ namespace Gra
         private const int Long = 6000;
         int[] BlockCounters = { 0, 0, 0, 0 };
         Random RandomCharCount = new Random();
-        public bool a=false;
         readonly int[,] MorseTable =
         {
             {Short,Short,Short,Short},
@@ -124,9 +123,7 @@ namespace Gra
                 }
                 else BlockCounters[blockNumber]++;
             }
-         //   DisplayAlert("Ok", "Numer w kolumnie: " + BlockCounters[blockNumber]+" w rzedzie"+ blockNumber, "Ok");
-            block.Text = MorseWordTable[BlockCounters[blockNumber],blockNumber].ToString();
-
+            block.Text = MorseWordTable[BlockCounters[blockNumber], blockNumber].ToString();
         }
         void MoveUp(object sender, EventArgs e)
         {
