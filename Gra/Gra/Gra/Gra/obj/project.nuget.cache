@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZGNVSpzOjLsSjFows1CBSfDAHre/o4EkTPQJVl5poJAU5+Z24yujXHI425yUXHTcxbWjLOnP8s8Ee2vS+lmhrg==",
+  "dgSpecHash": "qAeQ2aFofkD7dOTFvf0PCbjxA2cmuo8ZwbhDm0pgnboupu0TKVkixPrJJhikn3TBHMS9cNH1g7wlXk3uQaCb2Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\misze\\Source\\Repos\\project_mobilne3456\\Gra\\Gra\\Gra\\Gra\\Gra.csproj",
+  "projectFilePath": "C:\\Users\\misze\\Source\\Repos\\project_mobilne435\\Gra\\Gra\\Gra\\Gra\\Gra.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\misze\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\misze\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",

@@ -108,7 +108,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\zagadka1.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gra\Gra.csproj">
       <Project>{4EF7EB51-3B8C-40AB-8D9E-E3D45E06B173}</Project>

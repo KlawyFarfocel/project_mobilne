@@ -10192,6 +10192,7 @@ public final class R {
     public static final int test_custom_background=0x7f0700b8;
     public static final int tooltip_frame_dark=0x7f0700b9;
     public static final int tooltip_frame_light=0x7f0700ba;
+    public static final int zagadka1=0x7f0700bb;
   }
   public static final class id {
     public static final int ALT=0x7f080000;

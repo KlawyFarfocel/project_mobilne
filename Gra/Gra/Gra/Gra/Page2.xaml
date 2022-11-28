@@ -4,9 +4,7 @@
              x:Class="Gra.Page2">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Image Source="zagadka1" x:Name="zagadka"  IsAnimationPlaying="False"  WidthRequest="600" HeightRequest="800" VerticalOptions="Center" HorizontalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

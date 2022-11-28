@@ -4523,11 +4523,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\misze\\Source\\Repos\\project_mobilne3456\\Gra\\Gra\\Gra\\Gra.Android\\Gra.Android.csproj",
+      "projectUniqueName": "C:\\Users\\misze\\Source\\Repos\\project_mobilne435\\Gra\\Gra\\Gra\\Gra.Android\\Gra.Android.csproj",
       "projectName": "Gra.Android",
-      "projectPath": "C:\\Users\\misze\\Source\\Repos\\project_mobilne3456\\Gra\\Gra\\Gra\\Gra.Android\\Gra.Android.csproj",
+      "projectPath": "C:\\Users\\misze\\Source\\Repos\\project_mobilne435\\Gra\\Gra\\Gra\\Gra.Android\\Gra.Android.csproj",
       "packagesPath": "C:\\Users\\misze\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\misze\\Source\\Repos\\project_mobilne3456\\Gra\\Gra\\Gra\\Gra.Android\\obj\\",
+      "outputPath": "C:\\Users\\misze\\Source\\Repos\\project_mobilne435\\Gra\\Gra\\Gra\\Gra.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -4548,8 +4548,8 @@
       "frameworks": {
         "monoandroid12.0": {
           "projectReferences": {
-            "C:\\Users\\misze\\Source\\Repos\\project_mobilne3456\\Gra\\Gra\\Gra\\Gra\\Gra.csproj": {
-              "projectPath": "C:\\Users\\misze\\Source\\Repos\\project_mobilne3456\\Gra\\Gra\\Gra\\Gra\\Gra.csproj"
+            "C:\\Users\\misze\\Source\\Repos\\project_mobilne435\\Gra\\Gra\\Gra\\Gra\\Gra.csproj": {
+              "projectPath": "C:\\Users\\misze\\Source\\Repos\\project_mobilne435\\Gra\\Gra\\Gra\\Gra\\Gra.csproj"
             }
           }
         }
