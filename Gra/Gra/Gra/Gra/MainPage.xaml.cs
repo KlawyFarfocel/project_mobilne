@@ -32,7 +32,6 @@ namespace Gra
             arrow_4 = (Label)FindByName("arrow_4");
             bigRed = (Button)FindByName("bigRed");
             BulbButton = (ImageButton)FindByName("BulbButton");
-            BulbButton.ClassId = "1";
             Animate_pulse(arrow_1);
             Animate_pulse(arrow_2);
             Animate_pulse(arrow_3);
@@ -84,6 +83,14 @@ namespace Gra
             double dalej1 = soundtrack.Volume;
             await Navigation.PushAsync(new LabirynthPage(dalej1));
         }
+
+        private async void MorseTask(object sender, EventArgs e)
+        {
+            soundtrack.Stop();
+            double dalej1 = soundtrack.Volume;
+            await Navigation.PushAsync(new ScrabblePage());
+        }
+
         void ToBlack(Label obj)
         {
             obj.ColorTo(Color.Black);
@@ -101,6 +108,7 @@ namespace Gra
 
             var ButtonDalej = (Button)FindByName("LabirynthButton");
             var ButtonLatarka = (Button)FindByName("FlashlightButton");
+            var ButtonMorse = (Button)FindByName("ButtonMorse");
             var ButtonTekstowy = (Button)FindByName("TextModeButton");
             var MainGrid = (Grid)FindByName("MainGrid");
             var bulbButton = (ImageButton)FindByName("BulbButton");
@@ -131,11 +139,16 @@ namespace Gra
                 ButtonTekstowy.BorderColor = Color.White;
                 ButtonTekstowy.TextColor = Color.White;
 
+                ButtonMorse.BorderWidth = 3;
+                ButtonMorse.BorderColor = Color.White;
+                ButtonMorse.TextColor = Color.White;
+
                 MainGrid.BackgroundColor = Color.Black;
                 bulbButton.ClassId = "1";
                 ButtonDalej.IsVisible = true;
                 ButtonTekstowy.IsVisible= true;
                 ButtonLatarka.IsVisible = true;
+                ButtonMorse.IsVisible = true;
                 arrow_1.IsVisible = false;
                 arrow_2.IsVisible = false;
                 arrow_3.IsVisible = false;
@@ -153,6 +166,7 @@ namespace Gra
                 ButtonDalej.IsVisible = false;
                 ButtonTekstowy.IsVisible= false;
                 ButtonLatarka.IsVisible = false;
+                ButtonMorse.IsVisible = false;
                 arrow_1.IsVisible = true;
                 arrow_2.IsVisible = true;
                 arrow_3.IsVisible = true;
@@ -171,9 +185,11 @@ namespace Gra
             var deadAnimation = (Image)FindByName("deadAnimation");
             var ButtonLatarka = (Button)FindByName("FlashlightButton");
             var ButtonTekstowy = (Button)FindByName("TextModeButton");
+            var ButtonMorse = (Button)FindByName("ButtonMorse");
             ButtonDalej.IsVisible = false;
             ButtonTekstowy.IsVisible = false;
             ButtonLatarka.IsVisible = false;
+            ButtonMorse.IsVisible = false;
             bulbButton.IsVisible = false;
             settingsButton.IsVisible = false;
             deadAnimation.IsVisible = true;

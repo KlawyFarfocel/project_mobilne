@@ -12,6 +12,7 @@ namespace Gra
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ScrabblePage : ContentPage
     {
+        public int HealthCount = 3;
         int[] BlockCounters = { 0, 0, 0, 0 };
         readonly string[] TextTable = { "ARAB", "ALGA", "ALFA", "BAZA", "BETA", "BUDA", "BUNT", "GLON", "GONG", "GRAM", "LAWA", "LIRA", "LUFA", "RATA", "ROPA", "RYSY" };
         public char[,] WordTable =
@@ -129,7 +130,26 @@ namespace Gra
             {
                 DisplayAlert("Wygrałeś", "Wygrałeś", "Wygrałem?");
             }
-            else DisplayAlert("Nie", "Nie", "Nie");
+            else
+            {
+                setHeartStatus();
+                LoverHeartCount();
+            }
+        }
+        void setHeartStatus()
+        {
+            if (HealthCount == 0)
+            {
+                DisplayAlert("Nie", "Przegrales", "Przegralem");
+                return;
+            }
+            var text = "HealthBar" + HealthCount;
+            var bar = (Label)FindByName(text);
+            bar.IsVisible = false;
+        }
+        void LoverHeartCount()
+        {
+            HealthCount--;
         }
         protected override void OnAppearing()
         {

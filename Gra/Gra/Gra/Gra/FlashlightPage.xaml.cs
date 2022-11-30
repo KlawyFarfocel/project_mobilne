@@ -12,10 +12,12 @@ using System.Runtime.InteropServices.WindowsRuntime;
 namespace Gra
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class FlashlightPage : ContentPage
+
+    public partial class FlashlightPage : ContentPage
 	{
-        private const int Short = 2000;
-        private const int Long = 6000;
+        public int HealthCount = 3;
+        private const int Short = 1000;
+        private const int Long = 3000;
         int[] BlockCounters = { 0, 0, 0, 0 };
         Random RandomCharCount = new Random();
         readonly int[,] MorseTable =
@@ -34,6 +36,7 @@ namespace Gra
             {Long,Long,Long,Long}
         };
         readonly string[] MorseTextTable = {"ABBA","KAWA","WODA","AHOJ","ALBO","ALFA","BETA","ARKA","BANK","BIEL","DOBA","FLET"};
+       // private static System.Timers.Timer ClassTimer;
         public char[,] MorseWordTable =
         {
             {'A','A','A','A'},
@@ -104,6 +107,22 @@ namespace Gra
                 await StartLight(MorseTable[ChosenWord, 3]);
             });
         }
+
+        void setHeartStatus()
+        {
+            if (HealthCount == 0)
+            {
+                DisplayAlert("Nie", "Przegrales", "Przegralem");
+                return;
+            }
+            var text = "HealthBar" + HealthCount;
+            var bar=(Label)FindByName(text);
+            bar.IsVisible = false;
+        }
+        void LoverHeartCount()
+        {
+            HealthCount--;
+        }
         void ChangeBlockText(Label block,int blockNumber, string where)
         {
             if(where == "up")
@@ -162,8 +181,13 @@ namespace Gra
             {
                 DisplayAlert("Wygrałeś", "Wygrałeś", "Wygrałem?");
             }
-            else DisplayAlert("Nie", "Nie", "Nie");
+            else
+            {
+                setHeartStatus();
+                LoverHeartCount();
+            }
         }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();

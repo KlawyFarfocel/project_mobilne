@@ -685,6 +685,7 @@ D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\mipmap-xxhdpi
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\mipmap-xxhdpi\launcher_foreground.png
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\mipmap-xxxhdpi\icon.png
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\mipmap-xxxhdpi\launcher_foreground.png
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\drawable\zagadka1.png
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\drawable\dead.gif
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\uploadflags.txt
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\resolvedassemblies.hash

@@ -6874,3 +6874,4 @@ C:\Users\misze\Source\Repos\project_mobilne435\Gra\Gra\Gra\Gra.Android\obj\Debug
 C:\Users\misze\Source\Repos\project_mobilne435\Gra\Gra\Gra\Gra.Android\obj\Debug\120\stamp\_GenerateJavaStubs.stamp
 C:\Users\misze\Source\Repos\project_mobilne435\Gra\Gra\Gra\Gra.Android\obj\Debug\120\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\misze\Source\Repos\project_mobilne435\Gra\Gra\Gra\Gra.Android\obj\Debug\120\stamp\_ResolveLibraryProjectImports.stamp
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\res\drawable\zagadka1.png
