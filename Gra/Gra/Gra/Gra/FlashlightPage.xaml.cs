@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
+using Xamarin.CommunityToolkit;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Xamarin.CommunityToolkit.Extensions;
+using Newtonsoft.Json.Converters;
 
 namespace Gra
 {
@@ -53,6 +56,30 @@ namespace Gra
             {'A','A','A','A'}
         };
         public int ChosenWord;
+        public int TimeLeft = 60;
+        void SetTime()
+        {
+            Label TimeCount = (Label)FindByName("TimerCount");
+            Label TimeBar = (Label)FindByName("Timer");
+            Device.StartTimer(new TimeSpan(0, 0, 1), () =>
+            {
+                TimeLeft--;
+                TimeCount.Text = TimeLeft.ToString();
+                if (TimeLeft < 15)
+                {
+                    TimeCount.TextColor = Color.Red;
+                    if(TimeLeft == 0)
+                    {
+                        DisplayAlert("XD", "Beka z ciebie", "No nie");
+                        TimeCount.Text = "";
+                        TimeBar.Text= TimeCount.Text;
+                        return false;
+                    }
+                }
+                return true;
+            });
+        }
+
         public FlashlightPage()
 		{
 			InitializeComponent();
@@ -194,6 +221,7 @@ namespace Gra
             RandomizeMorseText();
             RandomizeWordTable();
             setColumns();
+            SetTime();
             DisplayAlert("Ok", MorseTextTable[ChosenWord], "ok");
         }
     }

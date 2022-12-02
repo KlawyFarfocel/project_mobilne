@@ -18,7 +18,7 @@
                     <Label Grid.Column="0" TextColor="White"  FontSize="20" VerticalTextAlignment="Center" Margin="0" x:Name="HealthBar2" Text="&#10084;"></Label>
                     <Label Grid.Column="2" TextColor="White"  FontSize="20" VerticalTextAlignment="Center" x:Name="HealthBar3" Text="&#10084;"></Label>
 
-                    <Label Grid.Column="3" Grid.ColumnSpan="3"  TextColor="White" VerticalTextAlignment="Center" x:Name="Timer"></Label>
+                    <Label Grid.Column="3" Grid.ColumnSpan="3" xct:ShadowEffect.Color="Black"  TextColor="White" VerticalTextAlignment="Center" x:Name="Timer"></Label>
                     <Label Grid.Column="6" Grid.ColumnSpan="3"  TextColor="White" VerticalTextAlignment="Center" x:Name="CodeNumber"></Label>
 
                     <Label></Label>
