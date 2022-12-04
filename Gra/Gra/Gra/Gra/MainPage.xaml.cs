@@ -52,6 +52,10 @@ namespace Gra
             };
             a.Commit(this,Objname,16,950,Easing.Linear, (v, c) => obj.Scale = 1,()=> true);
         }
+        void WersjaTestowa(object sender,EventArgs e)
+        {
+            DisplayAlert("Dziala","Ok","Ok");
+        }
         void animate_button (Button obj)
         {
             var Objname = obj.ClassId;
