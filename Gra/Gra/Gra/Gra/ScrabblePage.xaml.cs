@@ -21,18 +21,6 @@ namespace Gra
             {'A','A','A','A'},
             {'A','A','A','A'},
             {'A','A','A','A'},
-            {'A','A','A','A'},
-            {'A','A','A','A'},
-            {'A','A','A','A'},
-            {'A','A','A','A'},
-            {'A','A','A','A'},
-            {'A','A','A','A'},
-            {'A','A','A','A'},
-            {'A','A','A','A'},
-            {'A','A','A','A'},
-            {'A','A','A','A'},
-            {'A','A','A','A'},
-            {'A','A','A','A'},
         };
         public int ChosenWord;
         Random RandomCharCount = new Random();
@@ -56,7 +44,7 @@ namespace Gra
         }
         void RandomizeWordTable()
         {
-            for (int i = 0; i < TextTable.Length; i++)
+            for (int i = 0; i < (WordTable.Length/4); i++)
             {
                 for (int j = 0; j < 4; j++)
                 {
@@ -67,7 +55,7 @@ namespace Gra
             char[] chosenWordChars = TextTable[ChosenWord].ToCharArray();
             for (int i = 0; i < 4; i++)
             {
-                int random = RandomCharCount.Next(1, TextTable.Length - 1);
+                int random = RandomCharCount.Next(1, (TextTable.Length/4) - 1);
                 DisplayAlert("Ok", "Ustawiam: " + chosenWordChars[i] + " w miejscu: " + random + "," + i, "Ok");
                 WordTable[random, i] = Convert.ToChar(chosenWordChars[i]);
             }
