@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gra.Page4">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="text3" x:Name="zagadka"  IsAnimationPlaying="False"  WidthRequest="600" HeightRequest="800" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

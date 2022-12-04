@@ -14,7 +14,7 @@ namespace Gra.Droid
 {
 	
 	
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.1.0.5")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.0.0.73")]
 	public partial class Resource
 	{
 		
@@ -29392,13 +29392,19 @@ namespace Gra.Droid
 			public const int test_custom_background = 2131165368;
 			
 			// aapt resource value: 0x7F0700B9
-			public const int tooltip_frame_dark = 2131165369;
+			public const int text2 = 2131165369;
 			
 			// aapt resource value: 0x7F0700BA
-			public const int tooltip_frame_light = 2131165370;
+			public const int text3 = 2131165370;
 			
 			// aapt resource value: 0x7F0700BB
-			public const int zagadka1 = 2131165371;
+			public const int tooltip_frame_dark = 2131165371;
+			
+			// aapt resource value: 0x7F0700BC
+			public const int tooltip_frame_light = 2131165372;
+			
+			// aapt resource value: 0x7F0700BD
+			public const int zagadka1 = 2131165373;
 			
 			static Drawable()
 			{

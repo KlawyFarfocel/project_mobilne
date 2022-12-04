@@ -35,7 +35,8 @@ namespace Gra
             {
                 var Name = "Block" + i;
                 var Obj = (Label)FindByName(Name);
-                Obj.Text = WordTable[ChosenWord, i].ToString();
+                var Los = RandomCharCount.Next(0, (WordTable.Length / 4) - 1);
+                Obj.Text = WordTable[Los, i].ToString();
             }
         }
         void RandomizeText()
@@ -116,7 +117,7 @@ namespace Gra
             }
             if (WinFlag)
             {
-                DisplayAlert("Wygrałeś", "Wygrałeś", "Wygrałem?");
+                 DisplayAlert("Kod do nastepnej zagadki to: ", "2115", "Ok");
             }
             else
             {

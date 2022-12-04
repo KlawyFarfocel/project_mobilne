@@ -140,7 +140,7 @@ namespace Gra
             {
                 if(whereY == LabWinY)
                 {
-                    await DisplayAlert("Notice", "Win", "Ok");
+                    await DisplayAlert("Kod do nastepnej zagadki to: ", "2137", "Ok");
                     await Navigation.PushAsync(new ScrabblePage());
                 }
                 return;
