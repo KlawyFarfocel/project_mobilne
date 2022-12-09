@@ -57,8 +57,9 @@ namespace Gra
         };
         public int ChosenWord;
         public int TimeLeft = 60;
-        void SetTime()
+        async void SetTime()
         {
+            await DisplayAlert("Rozpocznij zagadkę", "Wciśnij OK, aby rozpocząć", "OK");
             Label TimeCount = (Label)FindByName("TimerCount");
             Label TimeBar = (Label)FindByName("Timer");
             Device.StartTimer(new TimeSpan(0, 0, 1), () =>
@@ -70,7 +71,7 @@ namespace Gra
                     TimeCount.TextColor = Color.Red;
                     if(TimeLeft == 0)
                     {
-                        DisplayAlert("XD", "Beka z ciebie", "No nie");
+                        DisplayAlert("Przegrałeś", "):", "No nie");
                         TimeCount.Text = "";
                         TimeBar.Text= TimeCount.Text;
                         return false;
@@ -112,7 +113,6 @@ namespace Gra
             for(int i = 0; i < 4; i++)
             {
                 int random = RandomCharCount.Next(1, MorseTextTable.Length-1);
-                DisplayAlert("Ok", "Ustawiam: "+ chosenWordChars[i]+" w miejscu: "+random+","+i, "Ok");
                 MorseWordTable[random, i] =Convert.ToChar(chosenWordChars[i]);
             }
         }
@@ -222,7 +222,7 @@ namespace Gra
             RandomizeWordTable();
             setColumns();
             SetTime();
-            DisplayAlert("Ok", MorseTextTable[ChosenWord], "ok");
+            DisplayAlert("Hasło", MorseTextTable[ChosenWord], "Dzieki");
         }
     }
 

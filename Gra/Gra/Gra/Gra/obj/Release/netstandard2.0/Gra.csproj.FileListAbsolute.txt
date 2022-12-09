@@ -33,6 +33,8 @@ D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\LabirynthPage.
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\MainPage.xaml.g.cs
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\Page1.xaml.g.cs
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\Page2.xaml.g.cs
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\Page3.xaml.g.cs
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\Page4.xaml.g.cs
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\ScrabblePage.xaml.g.cs
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\SettingsPage.xaml.g.cs
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\Gra.AssemblyInfoInputs.cache

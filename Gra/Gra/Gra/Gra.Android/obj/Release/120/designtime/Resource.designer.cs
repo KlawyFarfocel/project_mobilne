@@ -29389,16 +29389,25 @@ namespace Gra.Droid
 			public const int preference_list_divider_material = 2131165367;
 			
 			// aapt resource value: 0x7F0700B8
-			public const int test_custom_background = 2131165368;
+			public const int StartButton = 2131165368;
 			
 			// aapt resource value: 0x7F0700B9
-			public const int tooltip_frame_dark = 2131165369;
+			public const int test_custom_background = 2131165369;
 			
 			// aapt resource value: 0x7F0700BA
-			public const int tooltip_frame_light = 2131165370;
+			public const int text2 = 2131165370;
 			
 			// aapt resource value: 0x7F0700BB
-			public const int zagadka1 = 2131165371;
+			public const int text3 = 2131165371;
+			
+			// aapt resource value: 0x7F0700BC
+			public const int tooltip_frame_dark = 2131165372;
+			
+			// aapt resource value: 0x7F0700BD
+			public const int tooltip_frame_light = 2131165373;
+			
+			// aapt resource value: 0x7F0700BE
+			public const int zagadka1 = 2131165374;
 			
 			static Drawable()
 			{

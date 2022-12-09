@@ -9,13 +9,14 @@ using System.Xml;
 using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
 using static Xamarin.Essentials.Permissions;
 
 namespace Gra
 { 
     public partial class MainPage : ContentPage
-    {    
+    {
         public MainPage(double dalej)
         {
             InitializeComponent();
@@ -30,13 +31,13 @@ namespace Gra
             arrow_2 = (Label)FindByName("arrow_2");
             arrow_3 = (Label)FindByName("arrow_3");
             arrow_4 = (Label)FindByName("arrow_4");
-            bigRed = (Button)FindByName("bigRed");
-            BulbButton = (ImageButton)FindByName("BulbButton");
+      //      bigRed = (Button)FindByName("bigRed");
+      //      BulbButton = (ImageButton)FindByName("BulbButton");
             Animate_pulse(arrow_1);
             Animate_pulse(arrow_2);
             Animate_pulse(arrow_3);
             Animate_pulse(arrow_4);
-            animate_button(bigRed);
+           // animate_button(bigRed);
             var status= await Permissions.CheckStatusAsync<Permissions.Camera>();
             if (status==PermissionStatus.Unknown || status == PermissionStatus.Denied)
             {
@@ -56,7 +57,7 @@ namespace Gra
         {
             DisplayAlert("Dziala","Ok","Ok");
         }
-        void animate_button (Button obj)
+     /*  void animate_button (Button obj)
         {
             var Objname = obj.ClassId;
             var a = new Animation {
@@ -64,7 +65,7 @@ namespace Gra
                 {0.5,1, new Animation(v => obj.Opacity = v, 0, 1) }
             };
             a.Commit(this, Objname, 16, 2750, Easing.CubicIn, (v, c) => obj.Opacity = 1, () => true);
-        }
+        } */
         //Przechodzenie do ustawień
         private async void GoToSettings(object sender, EventArgs e)
         {
@@ -116,13 +117,12 @@ namespace Gra
             var ButtonTekstowy = (Button)FindByName("TextModeButton");
             var MainGrid = (Grid)FindByName("MainGrid");
             var bulbButton = (ImageButton)FindByName("BulbButton");
+            var StartButton = (Image)FindByName("StartButton");
 
             var arrow_1 = (Label)FindByName("arrow_1");
             var arrow_2 = (Label)FindByName("arrow_2");
             var arrow_3 = (Label)FindByName("arrow_3");
             var arrow_4 = (Label)FindByName("arrow_4");
-            var bigRed = (Button)FindByName("bigRed");
-            var smolRed = (Button)FindByName("bigDarkRed");
 
             if (bulbButton.ClassId == "0")
             {
@@ -153,12 +153,11 @@ namespace Gra
                 ButtonTekstowy.IsVisible= true;
                 ButtonLatarka.IsVisible = true;
                 ButtonMorse.IsVisible = true;
+                StartButton.IsVisible = false;   
                 arrow_1.IsVisible = false;
                 arrow_2.IsVisible = false;
                 arrow_3.IsVisible = false;
                 arrow_4.IsVisible = false;
-                bigRed.IsVisible = false;
-                smolRed.IsVisible = false;
             }
             else if (bulbButton.ClassId == "1")
             {
@@ -171,22 +170,21 @@ namespace Gra
                 ButtonTekstowy.IsVisible= false;
                 ButtonLatarka.IsVisible = false;
                 ButtonMorse.IsVisible = false;
+                StartButton.IsVisible = true;
                 arrow_1.IsVisible = true;
                 arrow_2.IsVisible = true;
                 arrow_3.IsVisible = true;
                 arrow_4.IsVisible = true;
-                bigRed.IsVisible = true;
-                smolRed.IsVisible = true;  
                 bulbButton.ClassId = "0";
+                bulbButton.IsVisible = true;
             }
         }
         async void WrongButtonClicked(object sender, EventArgs e)
         {
             ChangeLight(sender,e);
             var ButtonDalej = (Button)FindByName("LabirynthButton");
-            var bulbButton = (ImageButton)FindByName("BulbButton");
             var settingsButton= (Button)FindByName("SettingsButton");
-            var deadAnimation = (Image)FindByName("deadAnimation");
+            var BulbButton = (ImageButton)FindByName("BulbButton");
             var ButtonLatarka = (Button)FindByName("FlashlightButton");
             var ButtonTekstowy = (Button)FindByName("TextModeButton");
             var ButtonMorse = (Button)FindByName("ButtonMorse");
@@ -194,8 +192,9 @@ namespace Gra
             ButtonTekstowy.IsVisible = false;
             ButtonLatarka.IsVisible = false;
             ButtonMorse.IsVisible = false;
-            bulbButton.IsVisible = false;
             settingsButton.IsVisible = false;
+            BulbButton.IsVisible = false;
+            var deadAnimation = (Image)FindByName("deadAnimation");
             deadAnimation.IsVisible = true;
             deadAnimation.IsAnimationPlaying = true;
             await Task.Delay(3500);

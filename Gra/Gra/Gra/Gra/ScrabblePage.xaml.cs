@@ -23,8 +23,32 @@ namespace Gra
             {'A','A','A','A'},
         };
         public int ChosenWord;
+        public int TimeLeft = 60;
         Random RandomCharCount = new Random();
 
+        async void SetTime()
+        {
+            await DisplayAlert("Rozpocznij zagadkę", "Wciśnij OK, aby rozpocząć", "OK");
+            Label TimeCount = (Label)FindByName("TimerCount");
+            Label TimeBar = (Label)FindByName("Timer");
+            Device.StartTimer(new TimeSpan(0, 0, 1), () =>
+            {
+                TimeLeft--;
+                TimeCount.Text = TimeLeft.ToString();
+                if (TimeLeft < 15)
+                {
+                    TimeCount.TextColor = Color.Red;
+                    if (TimeLeft == 0)
+                    {
+                        DisplayAlert("Przegrałeś", "):", "No nie");
+                        TimeCount.Text = "";
+                        TimeBar.Text = TimeCount.Text;
+                        return false;
+                    }
+                }
+                return true;
+            });
+        }
         void MorseText()
         {
             ChosenWord = RandomCharCount.Next(0, TextTable.Length);
@@ -57,7 +81,6 @@ namespace Gra
             for (int i = 0; i < 4; i++)
             {
                 int random = RandomCharCount.Next(1, (TextTable.Length/4) - 1);
-                DisplayAlert("Ok", "Ustawiam: " + chosenWordChars[i] + " w miejscu: " + random + "," + i, "Ok");
                 WordTable[random, i] = Convert.ToChar(chosenWordChars[i]);
             }
         }
@@ -98,7 +121,7 @@ namespace Gra
             int ClassId = Convert.ToInt32(Button.ClassId);
             ChangeBlockText(whichBlock, ClassId, "down");
         }
-        void CheckIfWin(object sender, EventArgs e)
+        async void CheckIfWin(object sender, EventArgs e)
         {
             var userGuess = "";
             var WinFlag = false;
@@ -118,6 +141,7 @@ namespace Gra
             if (WinFlag)
             {
                  DisplayAlert("Kod do nastepnej zagadki to: ", "2115", "Ok");
+                 await Navigation.PushAsync(new FlashlightPage());
             }
             else
             {
@@ -146,6 +170,8 @@ namespace Gra
             RandomizeText();
             RandomizeWordTable();
             setColumns();
+            SetTime();
+            DisplayAlert("Hasło", TextTable[ChosenWord], "Dzieki");
         }
         public ScrabblePage()
         {

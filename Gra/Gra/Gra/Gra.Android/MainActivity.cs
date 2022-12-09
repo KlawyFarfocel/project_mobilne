@@ -5,7 +5,6 @@ using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
 using MediaManager;
-
 namespace Gra.Droid
 {
     [Activity(Label = "Gra", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]

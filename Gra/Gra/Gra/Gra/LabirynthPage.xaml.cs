@@ -19,6 +19,7 @@ namespace Gra
         public int counter = 0;
         public int whereX = 0;
         public int whereY = 0;
+        public int HealthCount = 3;
         static Random RandomLabirynthNumber = new Random();
         public string LabirynthChoice = "";
         public readonly int LabirynthNumberChoice = RandomLabirynthNumber.Next(101);
@@ -173,7 +174,14 @@ namespace Gra
             }
             if (LabTable[counter, 3] == false)
             {
-                DisplayAlert("Notice", "Ściana", "Ok");
+                var text = "";
+                for (int i = 0; i < HealthCount; i++)
+                {
+                   text+= '\u2764';
+                }
+                var HealthBar=(Label)FindByName("HealthBar");
+                HealthBar.Text = text;
+                HealthCount--;
             }
             else
             {

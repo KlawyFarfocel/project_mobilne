@@ -618,6 +618,7 @@ C:\Users\misze\Source\Repos\project_mobilne987\Gra\Gra\Gra\Gra.Android\obj\Relea
 C:\Users\misze\Source\Repos\project_mobilne987\Gra\Gra\Gra\Gra.Android\obj\Release\120\stamp\_GenerateJavaStubs.stamp
 C:\Users\misze\Source\Repos\project_mobilne987\Gra\Gra\Gra\Gra.Android\obj\Release\120\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\misze\Source\Repos\project_mobilne987\Gra\Gra\Gra\Gra.Android\obj\Release\120\stamp\_ResolveLibraryProjectImports.stamp
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\com\google\android\material\R.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\bin\Release\Gra.Android.dll
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\bin\Release\Gra.Android.pdb
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\bin\Release\com.companyname.gra.apk
@@ -687,6 +688,9 @@ D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\mipmap-xxxhdp
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\mipmap-xxxhdpi\launcher_foreground.png
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\drawable\zagadka1.png
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\drawable\dead.gif
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\drawable\text2.png
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\drawable\text3.png
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\drawable\startbutton.gif
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\uploadflags.txt
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\resolvedassemblies.hash
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\link.flag
@@ -858,7 +862,6 @@ D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\andro
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\androidx\viewpager2\R.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\com\google\android\exoplayer2\ext\mediasession\R.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\com\google\android\exoplayer2\ui\R.java
-D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\com\google\android\material\R.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\crc64087678da79fdfe22\BluetoothStatusBroadcastReceiver.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\crc64087678da79fdfe22\BondStatusBroadcastReceiver.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\crc640d7c6d57b8a5f296\Adapter_Api18BleScanCallback.java

@@ -13,7 +13,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="0.375*"/>
         </Grid.RowDefinitions>
         <xct:MediaElement x:Name="soundtrack" Source="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" HeightRequest="1" IsLooping="True" ></xct:MediaElement>
@@ -23,10 +23,10 @@
         <!-- Koniec headera -->
    
         <!-- Strzałki-->
-        <Label TextColor="White" x:Name="arrow_1" ClassId="arrow_1" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2" Text="&#x2B0B;" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="170"></Label>
-        <Label TextColor="White" x:Name="arrow_2" ClassId="arrow_2" Grid.Row="3" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2" Text="&#x2B09;" HorizontalTextAlignment="Center" FontSize="180"></Label>
-        <Label TextColor="White" x:Name="arrow_3" ClassId="arrow_3" Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Text="&#x2B0A;" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="170" ></Label>
-        <Label TextColor="White" x:Name="arrow_4" ClassId="arrow_4" Grid.Row="3" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Text="&#x2B08;" HorizontalTextAlignment="Center" FontSize="180"></Label>
+        <Label TextColor="White" x:Name="arrow_1" ClassId="arrow_1" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2" Text="&#x2B0B;" HorizontalOptions="Center" VerticalOptions="Center" FontSize="120"></Label>
+        <Label TextColor="White" x:Name="arrow_2" ClassId="arrow_2" Grid.Row="3" Margin="20" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2" Text="&#x2B09;" HorizontalOptions="Center" VerticalOptions="Fill"  FontSize="130"></Label>
+        <Label TextColor="White" x:Name="arrow_3" ClassId="arrow_3" Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Text="&#x2B0A;" HorizontalOptions="Center" VerticalOptions="Center" FontSize="120" ></Label>
+        <Label TextColor="White" x:Name="arrow_4" ClassId="arrow_4" Grid.Row="3" Margin="20" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Text="&#x2B08;" HorizontalTextAlignment="Center" FontSize="120"></Label>
         <!-- Koniec strzałek-->
 
         <Grid Grid.Row="1" Grid.Column="0">
@@ -65,8 +65,17 @@
         <!-- Koniec przycisku do przechodzenia dalej-->
 
         <!--  Przycisk glowny - wyjscie -->
-        <Button x:Name="bigDarkRed" ClassId="bigDarkRed" Text="Wciśnij mnie!" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" WidthRequest="200" HeightRequest="200" CornerRadius="100" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="#9E2727"/>
+        <Image x:Name="StartButton" Source="StartButton" IsAnimationPlaying = "true" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="Center" >
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer
+                Tapped="WrongButtonClicked"
+                NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+    <!--   <Button x:Name="bigDarkRed" ClassId="bigDarkRed" Text="Wciśnij mnie!" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" WidthRequest="200" HeightRequest="200" CornerRadius="100" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="#9E2727"/>
         <Button x:Name="bigRed" ClassId="bigRed" Text="Wciśnij mnie!" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" WidthRequest="200" HeightRequest="200" CornerRadius="100" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="#FE2D2D" Clicked="WrongButtonClicked"/>
+        
+        -->
         <Image Source="dead" x:Name="deadAnimation" IsVisible="false" IsAnimationPlaying="False" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" WidthRequest="350" HeightRequest="350" VerticalOptions="Center" HorizontalOptions="Center"/>
         <!-- Koniec przycisku glownego-->
         <Grid Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2">
@@ -81,6 +90,5 @@
         <Grid Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2"  Grid.RowSpan="1">
             <Button BackgroundColor="Gray" x:Name="TextModeButton" IsVisible="false" TextColor="Gray"  Margin="0" Text="Tryb tekstowy" Clicked="TextModeButton_Clicked" FontSize="15"></Button>
         </Grid>
-
     </Grid>
 </ContentPage>
