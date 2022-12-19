@@ -93,7 +93,7 @@ namespace Gra
         {
             soundtrack.Stop();
             double dalej1 = soundtrack.Volume;
-            await Navigation.PushAsync(new ScrabblePage());
+            await Navigation.PushAsync(new Page5());
         }
 
         void ToBlack(Label obj)
