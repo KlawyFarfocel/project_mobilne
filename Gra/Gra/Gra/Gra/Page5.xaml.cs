@@ -20,15 +20,16 @@ namespace Gra
             Random RandomCharCount = new Random();
             long ktory=RandomCharCount.Next(0,4);
             
-            int[] table = new int[5];
-           losowanie(ktory);
-            int[] table = (int[])table.Append(0);
+            
+           losowanie(ktory,1);
+            
         }
-
         
 
-
-        void losowanie(long ktory)
+        int[] table = new int[5];
+        int licznik = 0;
+        
+        void losowanie(long ktory,long swit)
         {
             var timer = 2;
             switch (ktory)
@@ -41,8 +42,13 @@ namespace Gra
                         if (timer == 0)
                         {
                             butt1.BackgroundColor = Color.Pink;
+                            if (swit == 1)
+                            {
+                                table[licznik] = 1;
+                                licznik++;
+                            }
+                            
                             return false;
-                            table = table.Append("Yellow").ToArray();
 
                         }
                         return true;
@@ -57,6 +63,12 @@ namespace Gra
                         if (timer == 0)
                         {
                             butt2.BackgroundColor = Color.Yellow;
+
+                            if (swit == 1)
+                            {
+                                table[licznik] = 2;
+                                licznik++;
+                            }
                             return false;
                         }
                         return true;
@@ -72,6 +84,11 @@ namespace Gra
                         if (timer == 0)
                         {
                             butt3.BackgroundColor = Color.Blue;
+                            if (swit == 1)
+                            {
+                                table[licznik] = 3;
+                                licznik++;
+                            }
                             return false;
                         }
                         return true;
@@ -86,6 +103,11 @@ namespace Gra
                         if (timer == 0)
                         {
                             butt4.BackgroundColor = Color.Green;
+                            if (swit == 1)
+                            {
+                                table[licznik] = 4;
+                                licznik++;
+                            }
                             return false;
                         }
                         return true;
