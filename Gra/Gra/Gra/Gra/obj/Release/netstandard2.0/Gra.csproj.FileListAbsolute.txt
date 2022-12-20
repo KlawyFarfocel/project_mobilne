@@ -101,3 +101,4 @@ C:\Users\misze\Source\Repos\project_mobilne2222\Gra\Gra\Gra\Gra\obj\Release\nets
 C:\Users\misze\Source\Repos\project_mobilne2222\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\refint\Gra.dll
 C:\Users\misze\Source\Repos\project_mobilne2222\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\Gra.pdb
 C:\Users\misze\Source\Repos\project_mobilne2222\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\ref\Gra.dll
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\Page5.xaml.g.cs

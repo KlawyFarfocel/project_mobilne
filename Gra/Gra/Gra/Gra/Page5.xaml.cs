@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using static Android.Content.ClipData;
+// using static Android.Content.ClipData;
 
 namespace Gra
 {

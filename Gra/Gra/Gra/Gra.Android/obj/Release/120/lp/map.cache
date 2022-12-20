@@ -6,7 +6,6 @@ ExoPlayer.Hls.dll
 ExoPlayer.SmoothStreaming.dll
 ExoPlayer.UI.dll
 FormsViewGroup.dll
-Gra.dll
 MediaManager.dll
 MediaManager.Forms.dll
 Plugin.BLE.dll

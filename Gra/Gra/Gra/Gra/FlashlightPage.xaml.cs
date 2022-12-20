@@ -187,7 +187,7 @@ namespace Gra
             int ClassId = Convert.ToInt32(Button.ClassId);
             ChangeBlockText(whichBlock, ClassId, "down");
         }
-        void CheckIfWin(object sender, EventArgs e)
+        async void CheckIfWin(object sender, EventArgs e)
         {
             var userGuess = "";
             var WinFlag = false;
@@ -207,6 +207,7 @@ namespace Gra
             if (WinFlag)
             {
                 DisplayAlert("Wygrałeś", "Wygrałeś", "Wygrałem?");
+                await Navigation.PushAsync(new Page5());
             }
             else
             {
