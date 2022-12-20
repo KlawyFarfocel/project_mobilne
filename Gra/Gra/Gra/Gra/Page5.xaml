@@ -4,10 +4,16 @@
              x:Class="Gra.Page5">
     <ContentPage.Content>
         <StackLayout>
-            <Button BackgroundColor="Pink" x:Name="butt1" ></Button>
-            <Button BackgroundColor="Yellow" x:Name="butt2" ></Button>
-            <Button BackgroundColor="Blue" x:Name="butt3" ></Button>
-            <Button BackgroundColor="Green" x:Name="butt4" ></Button>
+            <Button BackgroundColor="red" x:Name="butt1" Clicked="butt1_Clicked"></Button>
+            <Button BackgroundColor="Yellow" x:Name="butt2" Clicked="butt2_Clicked" ></Button>
+            <Button BackgroundColor="Blue" x:Name="butt3"  Clicked="butt3_Clicked"></Button>
+            <Button BackgroundColor="Green" x:Name="butt4" Clicked="butt4_Clicked" ></Button>
+            <Button BackgroundColor="PaleGoldenrod" x:Name="butt5" Clicked="butt5_Clicked" ></Button>
+            <Label x:Name="esa"></Label>
+            <Label x:Name="esa1"></Label>
+            <Label x:Name="esa2"></Label>
+            <Label x:Name="esa3"></Label>
+            <Label x:Name="esa4"></Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
