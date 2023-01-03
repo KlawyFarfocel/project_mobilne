@@ -85,8 +85,8 @@ namespace Gra
         private async void FirstTask(object sender, EventArgs e)
         {
             soundtrack.Stop();
-            double dalej1 = soundtrack.Volume;
-            await Navigation.PushAsync(new LabirynthPage(dalej1));
+           // double dalej1 = soundtrack.Volume;
+            await Navigation.PushAsync(new Page6());
         }
 
         private async void MorseTask(object sender, EventArgs e)
