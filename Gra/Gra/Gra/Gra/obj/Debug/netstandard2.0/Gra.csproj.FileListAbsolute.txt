@@ -213,3 +213,5 @@ C:\Users\misze\Source\Repos\project_mobilne123\Gra\Gra\Gra\Gra\obj\Debug\netstan
 C:\Users\misze\Source\Repos\project_mobilne123\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\Page4.xaml.g.cs
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\Page3.xaml.g.cs
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\Page4.xaml.g.cs
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\Page5.xaml.g.cs
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\Page6.xaml.g.cs

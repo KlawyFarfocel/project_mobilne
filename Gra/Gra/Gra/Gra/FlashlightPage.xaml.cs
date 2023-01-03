@@ -14,13 +14,14 @@ using Newtonsoft.Json.Converters;
 
 namespace Gra
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 
     public partial class FlashlightPage : ContentPage
-	{
+    {
         public int HealthCount = 3;
         private const int Short = 1000;
         private const int Long = 3000;
+        private bool TimeFlag = true;
         int[] BlockCounters = { 0, 0, 0, 0 };
         Random RandomCharCount = new Random();
         readonly int[,] MorseTable =
@@ -38,8 +39,8 @@ namespace Gra
             {Long,Long,Long,Short},
             {Long,Long,Long,Long}
         };
-        readonly string[] MorseTextTable = {"ABBA","KAWA","WODA","AHOJ","ALBO","ALFA","BETA","ARKA","BANK","BIEL","DOBA","FLET"};
-       // private static System.Timers.Timer ClassTimer;
+        readonly string[] MorseTextTable = { "ABBA", "KAWA", "WODA", "AHOJ", "ALBO", "ALFA", "BETA", "ARKA", "BANK", "BIEL", "DOBA", "FLET" };
+        // private static System.Timers.Timer ClassTimer;
         public char[,] MorseWordTable =
         {
             {'A','A','A','A'},
@@ -64,16 +65,20 @@ namespace Gra
             Label TimeBar = (Label)FindByName("Timer");
             Device.StartTimer(new TimeSpan(0, 0, 1), () =>
             {
+                if (TimeFlag == false)
+                {
+                    return false;
+                }
                 TimeLeft--;
                 TimeCount.Text = TimeLeft.ToString();
                 if (TimeLeft < 15)
                 {
                     TimeCount.TextColor = Color.Red;
-                    if(TimeLeft == 0)
+                    if (TimeLeft == 0)
                     {
                         DisplayAlert("Przegrałeś", "):", "No nie");
                         TimeCount.Text = "";
-                        TimeBar.Text= TimeCount.Text;
+                        TimeBar.Text = TimeCount.Text;
                         return false;
                     }
                 }
@@ -82,38 +87,38 @@ namespace Gra
         }
 
         public FlashlightPage()
-		{
-			InitializeComponent();
+        {
+            InitializeComponent();
 
         }
         void RandomizeMorseText()
         {
-            ChosenWord=RandomCharCount.Next(0, MorseTextTable.Length);
+            ChosenWord = RandomCharCount.Next(0, MorseTextTable.Length);
         }
         void setColumns()
         {
-            for(int i = 0; i < 4; i++)
+            for (int i = 0; i < 4; i++)
             {
                 var Name = "Block" + i;
                 var Obj = (Label)FindByName(Name);
-                Obj.Text = MorseWordTable[ChosenWord,i].ToString();
+                Obj.Text = MorseWordTable[ChosenWord, i].ToString();
             }
         }
         void RandomizeWordTable()
         {
-            for(int i=0;i<MorseTextTable.Length;i++)
+            for (int i = 0; i < MorseTextTable.Length; i++)
             {
-                for(int j = 0; j < 4; j++)
+                for (int j = 0; j < 4; j++)
                 {
-                    var nextChar=RandomCharCount.Next(65, 90);
-                    MorseWordTable[i,j]=Convert.ToChar(nextChar);
+                    var nextChar = RandomCharCount.Next(65, 90);
+                    MorseWordTable[i, j] = Convert.ToChar(nextChar);
                 }
             }
             char[] chosenWordChars = MorseTextTable[ChosenWord].ToCharArray();
-            for(int i = 0; i < 4; i++)
+            for (int i = 0; i < 4; i++)
             {
-                int random = RandomCharCount.Next(1, MorseTextTable.Length-1);
-                MorseWordTable[random, i] =Convert.ToChar(chosenWordChars[i]);
+                int random = RandomCharCount.Next(1, MorseTextTable.Length - 1);
+                MorseWordTable[random, i] = Convert.ToChar(chosenWordChars[i]);
             }
         }
         async private Task StartLight(int howLong)
@@ -143,25 +148,25 @@ namespace Gra
                 return;
             }
             var text = "HealthBar" + HealthCount;
-            var bar=(Label)FindByName(text);
+            var bar = (Label)FindByName(text);
             bar.IsVisible = false;
         }
         void LoverHeartCount()
         {
             HealthCount--;
         }
-        void ChangeBlockText(Label block,int blockNumber, string where)
+        void ChangeBlockText(Label block, int blockNumber, string where)
         {
-            if(where == "up")
+            if (where == "up")
             {
                 if (BlockCounters[blockNumber] == 0)
                 {
-                    BlockCounters[blockNumber] = (MorseWordTable.Length/4)-1;
+                    BlockCounters[blockNumber] = (MorseWordTable.Length / 4) - 1;
                 }
                 else BlockCounters[blockNumber]--;
 
             }
-            else if(where == "down")
+            else if (where == "down")
             {
                 if (BlockCounters[blockNumber] == (MorseWordTable.Length / 4) - 1)
                 {
@@ -176,8 +181,8 @@ namespace Gra
             var Button = (Button)sender;
             var Name = "Block" + Button.ClassId.ToString();
             var whichBlock = (Label)FindByName(Name);
-            int ClassId= Convert.ToInt32(Button.ClassId);
-           ChangeBlockText(whichBlock,ClassId, "up");
+            int ClassId = Convert.ToInt32(Button.ClassId);
+            ChangeBlockText(whichBlock, ClassId, "up");
         }
         void MoveDown(object sender, EventArgs e)
         {
@@ -191,15 +196,15 @@ namespace Gra
         {
             var userGuess = "";
             var WinFlag = false;
-            for(int i=0;i<4;i++)
+            for (int i = 0; i < 4; i++)
             {
                 var Name = "Block" + i;
                 var Block = (Label)FindByName(Name);
                 userGuess += Block.Text;
             }
-            for(int i = 0; i < MorseTextTable.Length; i++)
+            for (int i = 0; i < MorseTextTable.Length; i++)
             {
-                if (MorseTextTable[i]==userGuess)
+                if (MorseTextTable[i] == userGuess)
                 {
                     WinFlag = true;
                 }
@@ -207,6 +212,7 @@ namespace Gra
             if (WinFlag)
             {
                 DisplayAlert("Wygrałeś", "Wygrałeś", "Wygrałem?");
+                TimeFlag = false;
                 await Navigation.PushAsync(new Page5());
             }
             else

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 using Xamarin.Forms.Xaml;
 // using static Android.Content.ClipData;
 
@@ -13,36 +14,78 @@ namespace Gra
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page5 : ContentPage
     {
-        
-        
+        private bool TimeFlag = true;
+        int checkCounter = 1;
         int[] table = new int[6];
         int licznik = 0;
         int main = 0;
+        public int TimeLeft = 180;
         Random RandomCharCount = new Random();
-       
+
+        async void SetTime()
+        {
+            await DisplayAlert("Rozpocznij zagadkę", "Wciśnij OK, aby rozpocząć", "OK");
+            Label TimeCount = (Label)FindByName("TimerCount");
+            Label TimeBar = (Label)FindByName("Timer");
+            Device.StartTimer(new TimeSpan(0, 0, 1), () =>
+            {
+                if (TimeFlag == false)
+                {
+                    return false;
+                }
+                TimeLeft--;
+                TimeCount.Text = TimeLeft.ToString();
+                if (TimeLeft < 15)
+                {
+                    TimeCount.TextColor = Color.Red;
+                    if (TimeLeft == 0)
+                    {
+                        DisplayAlert("Przegrałeś", "):", "No nie");
+                        TimeCount.Text = "";
+                        TimeBar.Text = TimeCount.Text;
+                        return false;
+                    }
+                }
+                return true;
+            });
+        }
         public Page5()
         {
             InitializeComponent();
 
-            
-            
-            long ktory = RandomCharCount.Next(1, 4); 
-           losowanie(ktory,1);
-           
-        }
-        
 
-        
-        
-        void losowanie(long ktory,long swit)
+            SetTime();
+            long ktory = RandomCharCount.Next(1, 4);
+            losowanie(ktory, 1);
+
+        }
+        /*        void resetCheckMarks()
+                {
+                    string name;
+                    Label checkBox;
+                    for(int i = 1; i <= 4; i++)
+                    {
+                        name = "check" + i;
+                        checkBox = (Label)FindByName(name);
+                        checkBox.Text ="";
+                    }
+                }*/
+
+
+
+        void losowanie(long ktory, long swit)
         {
             var timer = 3;
-         switch (ktory)
+            switch (ktory)
             {
-                 case 1:
-                  butt1.BackgroundColor = Color.Pink;
+                case 1:
+                    butt1.BackgroundColor = Color.Pink;
                     Device.StartTimer(new TimeSpan(0, 0, 1), () =>
                     {
+                        if (TimeFlag == false)
+                        {
+                            return false;
+                        }
                         timer--;
                         if (timer == 0)
                         {
@@ -53,18 +96,21 @@ namespace Gra
                                 licznik++;
                                 main = 0;
                             }
-                            
+
                             return false;
 
                         }
                         return true;
                     });
-
                     break;
                 case 2:
                     butt2.BackgroundColor = Color.LightYellow;
                     Device.StartTimer(new TimeSpan(0, 0, 1), () =>
                     {
+                        if (TimeFlag == false)
+                        {
+                            return false;
+                        }
                         timer--;
                         if (timer == 0)
                         {
@@ -87,6 +133,10 @@ namespace Gra
                     butt3.BackgroundColor = Color.LightBlue;
                     Device.StartTimer(new TimeSpan(0, 0, 1), () =>
                     {
+                        if (TimeFlag == false)
+                        {
+                            return false;
+                        }
                         timer--;
                         if (timer == 0)
                         {
@@ -107,6 +157,10 @@ namespace Gra
                     butt4.BackgroundColor = Color.LightGreen;
                     Device.StartTimer(new TimeSpan(0, 0, 1), () =>
                     {
+                        if (TimeFlag == false)
+                        {
+                            return false;
+                        }
                         timer--;
                         if (timer == 0)
                         {
@@ -125,21 +179,26 @@ namespace Gra
             }
         }
 
-       async private void butt1_Clicked(object sender, EventArgs e)
+        async private void butt1_Clicked(object sender, EventArgs e)
         {
-
             if (table[main] == 4)
             {
                 main++;
-                if (table[main]==0)
+                if (table[main] == 0)
                 {
+                    string name = "check" + checkCounter;
+                    checkCounter++;
+                    var checkMarkBlock = (Label)FindByName(name);
+                    checkMarkBlock.Text = "\u2714";
                     if (licznik == 5)
                     {
-                        await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
 
+                        await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
+                        TimeFlag = false;
                     }
                     else
                     {
+                        /*resetCheckMarks();*/
                         for (int i = 0; i < licznik; i++)
                         {
                             await Task.Delay(5000);
@@ -161,26 +220,28 @@ namespace Gra
 
         async private void butt2_Clicked(object sender, EventArgs e)
         {
-
             if (table[main] == 1)
             {
                 main++;
                 if (table[main] == 0)
                 {
-
+                    string name = "check" + checkCounter;
+                    checkCounter++;
+                    var checkMarkBlock = (Label)FindByName(name);
+                    checkMarkBlock.Text = "\u2714";
                     if (licznik == 5)
                     {
-                        await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
 
+                        await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
                     }
                     else
                     {
+                        /* resetCheckMarks();*/
                         for (int i = 0; i < licznik; i++)
                         {
                             await Task.Delay(5000);
                             losowanie(table[i], 0);
                         }
-
                         long ktor = RandomCharCount.Next(1, 4);
 
                         await Task.Delay(5000);
@@ -196,55 +257,22 @@ namespace Gra
 
         async private void butt3_Clicked(object sender, EventArgs e)
         {
-
             if (table[main] == 2)
             {
                 main++;
                 if (table[main] == 0)
                 {
-
+                    string name = "check" + checkCounter;
+                    checkCounter++;
+                    var checkMarkBlock = (Label)FindByName(name);
+                    checkMarkBlock.Text = "\u2714";
                     if (licznik == 5)
                     {
                         await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
-
                     }
                     else
                     {
-                        for (int i = 0; i < licznik; i++)
-                        {
-                            await Task.Delay(5000);
-                            losowanie(table[i], 0);
-                        }
-
-                        long ktor = RandomCharCount.Next(1, 4);
-
-                        await Task.Delay(5000);
-                        losowanie(ktor, 1);
-                    }
-                }
-            }
-            else
-            {
-               await DisplayAlert("HAHAHAHHAHAHAH", "przegrales", "przepraszam rodzine");
-            }
-        }
-
-        async private void butt4_Clicked(object sender, EventArgs e)
-        {
-
-            if (table[main] == 3)
-            {
-                main++;
-                if (table[main] == 0)
-                {
-
-                    if (licznik == 5)
-                    {
-                        await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
-
-                    }
-                    else
-                    {
+                        /*resetCheckMarks();*/
                         for (int i = 0; i < licznik; i++)
                         {
                             await Task.Delay(5000);
@@ -264,18 +292,41 @@ namespace Gra
             }
         }
 
-        private void butt5_Clicked(object sender, EventArgs e)
+        async private void butt4_Clicked(object sender, EventArgs e)
         {
+            if (table[main] == 3)
+            {
+                main++;
+                if (table[main] == 0)
+                {
+                    string name = "check" + checkCounter;
+                    checkCounter++;
+                    var checkMarkBlock = (Label)FindByName(name);
+                    checkMarkBlock.Text = "\u2714";
+                    if (licznik == 5)
+                    {
+                        await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
+                    }
+                    else
+                    {
+                        /* resetCheckMarks();*/
+                        for (int i = 0; i < licznik; i++)
+                        {
+                            await Task.Delay(5000);
+                            losowanie(table[i], 0);
+                        }
 
-           
-                esa.Text = table[0].ToString();
-            esa1.Text = table[1].ToString();
-            esa2.Text = table[2].ToString();
-            esa3.Text = table[3].ToString();
-            esa4.Text = table[4].ToString();
+                        long ktor = RandomCharCount.Next(1, 4);
 
-
+                        await Task.Delay(5000);
+                        losowanie(ktor, 1);
+                    }
+                }
+            }
+            else
+            {
+                await DisplayAlert("HAHAHAHHAHAHAH", "przegrales", "przepraszam rodzine");
+            }
         }
-
     }
 }

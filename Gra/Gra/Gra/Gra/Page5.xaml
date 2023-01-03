@@ -1,8 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="Gra.Page5">
     <ContentPage.Content>
+        <!--
         <StackLayout>
             <Button BackgroundColor="red" x:Name="butt1" Clicked="butt1_Clicked"></Button>
             <Button BackgroundColor="Yellow" x:Name="butt2" Clicked="butt2_Clicked" ></Button>
@@ -15,5 +17,60 @@
             <Label x:Name="esa3"></Label>
             <Label x:Name="esa4"></Label>
         </StackLayout>
+        !-->
+        <Grid>
+            <Label Grid.Row="0" Grid.Column="0"></Label>
+            <!--HUD-->
+            <Frame Grid.Row="0" Grid.ColumnSpan="8" Grid.RowSpan="2" BackgroundColor="Gray">
+                <Grid>
+                    <Label Grid.Column="0"></Label>
+
+                    <Label Grid.Column="0" TextColor="White"  FontSize="30" VerticalTextAlignment="Center" x:Name="HealthBar1" Text="&#10084;"></Label>
+                    <Label Grid.Column="1" TextColor="White"  FontSize="30" VerticalTextAlignment="Center" x:Name="HealthBar2" Text="&#10084;"></Label>
+                    <Label Grid.Column="2" TextColor="White"  FontSize="30" VerticalTextAlignment="Center" x:Name="HealthBar3" Text="&#10084;"></Label>
+
+                    <Label x:Name="Timer" Margin="0,0,0,15"  Grid.Column="3" Grid.ColumnSpan="1" TextColor="White" VerticalTextAlignment="Center" xct:ShadowEffect.Color="Black" xct:ShadowEffect.Opacity="0.7" xct:ShadowEffect.OffsetX="5" xct:ShadowEffect.Radius="5" FontSize="25" FontAttributes="Bold"></Label>
+                    <Label x:Name="TimerCount" Grid.ColumnSpan="2" xct:ShadowEffect.Color="Black" xct:ShadowEffect.Opacity="0.7" xct:ShadowEffect.OffsetX="5" xct:ShadowEffect.Radius="5" Margin="0" TextColor="White" Grid.Column="4" VerticalOptions="Center" FontSize="25"></Label>
+                    <Label Grid.Column="5" Grid.ColumnSpan="3"  TextColor="White" VerticalTextAlignment="Center" x:Name="CodeNumber"></Label>
+
+                    <Label Grid.Column="1"></Label>
+                </Grid>
+            </Frame>
+            <!--kONIEC HUD-->
+            <Grid HorizontalOptions="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="5">
+                <Frame Padding="0" BackgroundColor="Black" Grid.Column="1"  Grid.Row="4" CornerRadius="5">
+                    <Frame Margin="2" Padding="15">
+                        <Label VerticalTextAlignment="Center" x:Name="check1" HorizontalTextAlignment="Center" TextColor="DarkGreen"></Label>
+                    </Frame>
+                </Frame>
+                <Frame Padding="0" BackgroundColor="Black" Grid.Column="2"  Grid.Row="4" CornerRadius="5">
+                    <Frame Margin="2" Padding="15">
+                        <Label VerticalTextAlignment="Center" x:Name="check2" HorizontalTextAlignment="Center" TextColor="DarkGreen"></Label>
+                    </Frame>
+                </Frame>
+                <Frame Padding="0" BackgroundColor="Black" Grid.Column="3"  Grid.Row="4" CornerRadius="5">
+                    <Frame Margin="2" Padding="15">
+                        <Label VerticalTextAlignment="Center" x:Name="check3" HorizontalTextAlignment="Center" TextColor="DarkGreen"></Label>
+                    </Frame>
+                </Frame>
+                <Frame Padding="0" BackgroundColor="Black" Grid.Column="4"  Grid.Row="4" CornerRadius="5">
+                    <Frame Margin="2" Padding="15">
+                        <Label VerticalTextAlignment="Center" x:Name="check4" HorizontalTextAlignment="Center" TextColor="DarkGreen"></Label>
+                    </Frame>
+                </Frame>
+                <Frame Padding="0" BackgroundColor="Black" Grid.Column="5"  Grid.Row="4" CornerRadius="5">
+                    <Frame Margin="2" Padding="15">
+                        <Label VerticalTextAlignment="Center" x:Name="check5" HorizontalTextAlignment="Center" TextColor="DarkGreen"></Label>
+                    </Frame>
+                </Frame>
+            </Grid>
+
+            <Button BackgroundColor="red" x:Name="butt1" Clicked="butt1_Clicked" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="3" Grid.RowSpan="2"></Button>
+            <Button BackgroundColor="Yellow" x:Name="butt2" Clicked="butt2_Clicked" Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="3" Grid.RowSpan="2" ></Button>
+            <Button BackgroundColor="Blue" x:Name="butt3"  Clicked="butt3_Clicked" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="3" Grid.RowSpan="2"></Button>
+            <Button BackgroundColor="Green" x:Name="butt4" Clicked="butt4_Clicked" Grid.Column="4" Grid.Row="10" Grid.ColumnSpan="3" Grid.RowSpan="2"></Button>
+            <Label Grid.Row="12" Grid.Column="7"></Label>
+        </Grid>
+
     </ContentPage.Content>
 </ContentPage>
