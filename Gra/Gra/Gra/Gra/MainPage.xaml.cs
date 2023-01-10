@@ -78,7 +78,7 @@ namespace Gra
         {
             soundtrack.Stop();
             double dalej1 = soundtrack.Volume;
-            await Navigation.PushAsync(new FlashlightPage());
+            await Navigation.PushAsync(new FlashlightPage(dalej1,1));
 
         }
 
@@ -93,7 +93,7 @@ namespace Gra
         {
             soundtrack.Stop();
             double dalej1 = soundtrack.Volume;
-            await Navigation.PushAsync(new Page5());
+            await Navigation.PushAsync(new Page5(dalej1,1)) ;
         }
 
         void ToBlack(Label obj)

@@ -20,6 +20,7 @@ namespace Gra
         int licznik = 0;
         int main = 0;
         public int TimeLeft = 180;
+        public double wynik1;
         Random RandomCharCount = new Random();
 
         async void SetTime()
@@ -49,11 +50,12 @@ namespace Gra
                 return true;
             });
         }
-        public Page5()
+        public Page5(double dalej1,double wynik)
         {
+            wynik1 = wynik;
             InitializeComponent();
-
-
+            DisplayAlert("Przegrałeś",wynik.ToString(), "No nie");
+            double f = dalej1;
             SetTime();
             long ktory = RandomCharCount.Next(1, 4);
             losowanie(ktory, 1);
@@ -195,7 +197,9 @@ namespace Gra
 
              //           await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
                         TimeFlag = false;
-                        await Navigation.PushAsync(new Page6());
+                        wynik1 += TimeLeft;
+                       double dalej1 = 14;
+                        await Navigation.PushAsync(new Page6(dalej1,wynik1));
                     }
                     else
                     {
@@ -232,8 +236,10 @@ namespace Gra
                     checkMarkBlock.Text = "\u2714";
                     if (licznik == 5)
                     {
-                        await Navigation.PushAsync(new Page6());
-                       // await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
+                        wynik1 += TimeLeft;
+                        double dalej1 = 14;
+                        await Navigation.PushAsync(new Page6(dalej1, wynik1));
+                        // await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
                     }
                     else
                     {
@@ -269,8 +275,10 @@ namespace Gra
                     checkMarkBlock.Text = "\u2714";
                     if (licznik == 5)
                     {
-                        await Navigation.PushAsync(new Page6());
-                      //  await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
+                        wynik1 += TimeLeft;
+                        double dalej1 = 14;
+                        await Navigation.PushAsync(new Page6(dalej1, wynik1));
+                        //  await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
                     }
                     else
                     {
@@ -307,8 +315,10 @@ namespace Gra
                     checkMarkBlock.Text = "\u2714";
                     if (licznik == 5)
                     {
-                        await Navigation.PushAsync(new Page6());
-                       // await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
+                        wynik1 += TimeLeft;
+                        double dalej1 = 14;
+                        await Navigation.PushAsync(new Page6(dalej1, wynik1));
+                        // await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
                     }
                     else
                     {

@@ -18,6 +18,7 @@ namespace Gra
 
     public partial class FlashlightPage : ContentPage
     {
+        public double wynik;
         public int HealthCount = 3;
         private const int Short = 1000;
         private const int Long = 3000;
@@ -86,8 +87,9 @@ namespace Gra
             });
         }
 
-        public FlashlightPage()
+        public FlashlightPage(double dalej1,double wynik1)
         {
+            wynik = wynik1;
             InitializeComponent();
 
         }
@@ -213,7 +215,9 @@ namespace Gra
             {
                 DisplayAlert("Wygrałeś", "Wygrałeś", "Wygrałem?");
                 TimeFlag = false;
-                await Navigation.PushAsync(new Page5());
+                wynik += TimeLeft;
+                double dalej1 = 12;
+                await Navigation.PushAsync(new Page5(dalej1,wynik));
             }
             else
             {

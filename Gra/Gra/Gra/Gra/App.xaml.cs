@@ -2,23 +2,31 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.IO;
+using static Gra.Page7;
+
 namespace Gra
 {
     public partial class App : Application
     {
-        private static databese Database;
 
-        public static databese database
+        private static Database database;
+        public static Database Database
         {
             get
             {
-                if (Database == null)
+
+                if (database == null)
                 {
-                    Database = new databese(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "settings.db3"));
-                    }
+
+                    database = new Database(Path.Combine(Environment.GetFolderPath(
+
+                    Environment.SpecialFolder.LocalApplicationData), "people.db3"));
+                }
+
                 return database;
+
             }
-             
+
         }
 
         public App()

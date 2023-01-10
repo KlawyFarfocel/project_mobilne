@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Java.Security;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace Gra
             {'A','A','A','A'},
         };
         public int ChosenWord;
+        public double wynik1=12;
         public int TimeLeft = 60;
         private bool TimeFlag = true;
         Random RandomCharCount = new Random();
@@ -146,7 +148,10 @@ namespace Gra
             if (WinFlag)
             {
                  DisplayAlert("Kod do nastepnej zagadki to: ", "2115", "Ok");
-                 await Navigation.PushAsync(new FlashlightPage());
+
+                wynik1 += TimeLeft;
+                double dalej1 = 13;
+                 await Navigation.PushAsync(new FlashlightPage( dalej1, wynik1));
                 TimeFlag= false;
             }
             else
@@ -179,8 +184,9 @@ namespace Gra
             SetTime();
             DisplayAlert("Hasło", TextTable[ChosenWord], "Dzieki");
         }
-        public ScrabblePage()
+        public ScrabblePage(double dalej,double wynik)
         {
+            wynik1 = wynik;
             InitializeComponent();
         }
     }

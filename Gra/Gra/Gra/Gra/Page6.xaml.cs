@@ -18,6 +18,7 @@ namespace Gra
         public string timeL = "";
         public int jeden = 0;
         public string timeR = "";
+        public double wynik;
         Random RandomCharCount = new Random();
         async void SetTime()
         {
@@ -55,7 +56,10 @@ namespace Gra
                 {
                     DisplayAlert("kozacko2", "):", "dales rade");
                     Timebutt = 10;
-                    
+                    wynik += TimeLeft;
+                    double dalej1 = 14;
+                     Navigation.PushAsync(new Page7(dalej1, wynik));
+
                 }
                 else
                 {
@@ -130,9 +134,11 @@ namespace Gra
 
                         }
         }
-            public Page6()
+        public Page6(double dalej1,double wynik1)
         {
-            SetTime();                 
+            SetTime();
+            wynik = wynik1;
+            double f = dalej1;
             InitializeComponent();
             long ktory = RandomCharCount.Next(1, 4);
             losowanie(ktory);

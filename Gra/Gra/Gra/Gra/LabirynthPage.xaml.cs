@@ -173,7 +173,9 @@ namespace Gra
                 {
                     await DisplayAlert("Kod do nastepnej zagadki to: ", "2137", "Ok");
                     TimeFlag = false;
-                    await Navigation.PushAsync(new ScrabblePage());
+                    double wynik = TimeLeft;
+                    double dalej1 = 14;
+                    await Navigation.PushAsync(new ScrabblePage(dalej1,wynik)) ;
                 }
                 return;
             }
