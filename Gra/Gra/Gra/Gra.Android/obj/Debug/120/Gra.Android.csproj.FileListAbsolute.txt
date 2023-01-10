@@ -4543,11 +4543,6 @@ D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\android\assets\Xama
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\android\assets\Xamarin.CommunityToolkit.dll
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\bin\Debug\Gra.Android.dll
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\bin\Debug\Gra.Android.pdb
-D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\bin\Debug\com.companyname.gra.apk
-D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\bin\Debug\com.companyname.gra.aab
-D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\bin\Debug\com.companyname.gra-Signed.aab
-D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\bin\Debug\com.companyname.gra-Signed.apk
-D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\bin\Debug\com.companyname.gra-Signed.apk.idsig
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\bin\Debug\Gra.dll
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\bin\Debug\Gra.pdb
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\MonoAndroid,Version=v12.0.AssemblyAttributes.cs
@@ -4590,10 +4585,7 @@ D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\Gra.Android.csproj.
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\Gra.Android.csproj.CopyComplete
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\Gra.Android.dll
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\Gra.Android.pdb
-D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\android\bin\com.companyname.gra.apk
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\android\bin\base.zip
-D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\android\bin\com.companyname.gra.aab
-D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\android\bin\com.companyname.gra.apks
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\res\values\styles.xml
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\res\values\colors.xml
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\res\mipmap-anydpi-v26\icon.xml
@@ -7668,3 +7660,13 @@ D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\res\drawable\yellow
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\res\drawable\green_button.png
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\res\drawable\blue_button.png
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\res\drawable\pink_button.png
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\bin\Debug\Operatsiya_Kooperatsiya.apk.apk
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\bin\Debug\Operatsiya_Kooperatsiya.apk.aab
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\bin\Debug\Operatsiya_Kooperatsiya.apk-Signed.aab
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\bin\Debug\Operatsiya_Kooperatsiya.apk-Signed.apk
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\bin\Debug\Operatsiya_Kooperatsiya.apk-Signed.apk.idsig
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\android\bin\Operatsiya_Kooperatsiya.apk.apk
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\android\bin\Operatsiya_Kooperatsiya.apk.aab
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\android\bin\Operatsiya_Kooperatsiya.apk.apks
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\res\drawable\logo.png
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\android\src\operatsiya_kooperatsiya\apk\R.java

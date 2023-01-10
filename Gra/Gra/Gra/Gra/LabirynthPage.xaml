@@ -12,7 +12,12 @@
             <Button FontSize="25" Grid.Column="0" Text="&#x25C0;" Grid.Row="5" Clicked="GoLeft"></Button>
             <Frame Grid.Row="0" Grid.ColumnSpan="9" BackgroundColor="Gainsboro">
                 <Grid>
-                    <Label Grid.Column="0" TextColor="White"  FontSize="18" VerticalTextAlignment="Center" x:Name="HealthBar" Text="&#10084;&#10084;&#10084;"></Label>
+                    <Label Grid.Column="0" Grid.ColumnSpan="3" TextColor="White"  FontSize="18" VerticalTextAlignment="Center" x:Name="HealthBar" Text="&#10084;&#10084;&#10084;"></Label>
+                    <Label x:Name="Timer" Margin="0,0,0,15"   Grid.Column="3" Grid.ColumnSpan="3"  TextColor="White" VerticalTextAlignment="Center" xct:ShadowEffect.Color="Black" xct:ShadowEffect.Opacity="0.7" xct:ShadowEffect.OffsetX="5" xct:ShadowEffect.Radius="5" FontSize="25" FontAttributes="Bold"></Label>
+                    <Label x:Name="TimerCount" xct:ShadowEffect.Color="Black" xct:ShadowEffect.Opacity="0.7" xct:ShadowEffect.OffsetX="5" xct:ShadowEffect.Radius="5" TextColor="White" Grid.Column="3" VerticalOptions="Center" FontSize="24"></Label>
+                    <Label Grid.Column="5" Grid.ColumnSpan="3"  TextColor="White" VerticalTextAlignment="Center" x:Name="CodeNumber"></Label>
+
+                    <Label Grid.Column="1"></Label>
                 </Grid>
             </Frame>
             <Frame BorderColor="White" BackgroundColor="Black" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="7" Grid.RowSpan="8">

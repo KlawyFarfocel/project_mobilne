@@ -16,6 +16,7 @@ namespace Gra
     {
         private const bool V = false;
         private const bool T = true;
+        private bool TimeFlag = true;
         public int counter = 0;
         public int whereX = 0;
         public int whereY = 0;
@@ -23,6 +24,35 @@ namespace Gra
         static Random RandomLabirynthNumber = new Random();
         public string LabirynthChoice = "";
         public readonly int LabirynthNumberChoice = RandomLabirynthNumber.Next(101);
+        public int TimeLeft = 60;
+
+        async void SetTime()
+        {
+            await DisplayAlert("Rozpocznij zagadkę", "Wciśnij OK, aby rozpocząć", "OK");
+            Label TimeCount = (Label)FindByName("TimerCount");
+            Label TimeBar = (Label)FindByName("Timer");
+            Device.StartTimer(new TimeSpan(0, 0, 1), () =>
+            {
+                if (TimeFlag == false)
+                {
+                    return false;
+                }
+                TimeLeft--;
+                TimeCount.Text = TimeLeft.ToString();
+                if (TimeLeft < 15)
+                {
+                    TimeCount.TextColor = Color.Red;
+                    if (TimeLeft == 0)
+                    {
+                        DisplayAlert("Przegrałeś", "):", "No nie");
+                        TimeCount.Text = "";
+                        TimeBar.Text = TimeCount.Text;
+                        return false;
+                    }
+                }
+                return true;
+            });
+        }
         void GenerateLabirynthNumber()
         {
             if (LabirynthNumberChoice > 0 && LabirynthNumberChoice <= 50)
@@ -142,6 +172,7 @@ namespace Gra
                 if(whereY == LabWinY)
                 {
                     await DisplayAlert("Kod do nastepnej zagadki to: ", "2137", "Ok");
+                    TimeFlag = false;
                     await Navigation.PushAsync(new ScrabblePage());
                 }
                 return;
@@ -206,7 +237,14 @@ namespace Gra
             }
             if (LabTable[counter, 1] == false)
             {
-                DisplayAlert("Notice", "Ściana", "Ok");
+                var text = "";
+                for (int i = 0; i < HealthCount; i++)
+                {
+                    text += '\u2764';
+                }
+                var HealthBar = (Label)FindByName("HealthBar");
+                HealthBar.Text = text;
+                HealthCount--;
             }
             else
             {
@@ -232,7 +270,14 @@ namespace Gra
 
             if (LabTable[counter, 0] == false)
             {
-                DisplayAlert("Notice", "Ściana", "Ok");
+                var text = "";
+                for (int i = 0; i < HealthCount; i++)
+                {
+                    text += '\u2764';
+                }
+                var HealthBar = (Label)FindByName("HealthBar");
+                HealthBar.Text = text;
+                HealthCount--;
             }
             else
             {
@@ -253,13 +298,27 @@ namespace Gra
             }
             if (whereY == 5)
             {
-                DisplayAlert("Notice", "Za duzo", "Ok");
+                var text = "";
+                for (int i = 0; i < HealthCount; i++)
+                {
+                    text += '\u2764';
+                }
+                var HealthBar = (Label)FindByName("HealthBar");
+                HealthBar.Text = text;
+                HealthCount--;
                 return;
             }
 
             if (LabTable[counter, 2] == false)
             {
-                DisplayAlert("Notice", "GoDown", "Ok");
+                var text = "";
+                for (int i = 0; i < HealthCount; i++)
+                {
+                    text += '\u2764';
+                }
+                var HealthBar = (Label)FindByName("HealthBar");
+                HealthBar.Text = text;
+                HealthCount--;
             }
             else
             {
@@ -270,6 +329,7 @@ namespace Gra
         protected override void OnAppearing()
         {
             GenerateLabirynthNumber();
+            SetTime();
             if (LabirynthChoice == "Lab1")
             {
                 counter = (Lab1StartingX * 6) + Lab1StartingY;
