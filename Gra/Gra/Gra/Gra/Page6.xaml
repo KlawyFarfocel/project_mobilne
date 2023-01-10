@@ -4,7 +4,8 @@
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="Gra.Page6">
     <ContentPage.Content>
-        <StackLayout>
+        <Grid>
+            <Label Grid.Row="0" Grid.Column="0"></Label>
             <Frame Grid.Row="0" Grid.ColumnSpan="20" Grid.RowSpan="2" BackgroundColor="Gray">
                 <Grid>
                     <Label Grid.Column="0"></Label>
@@ -13,17 +14,17 @@
                     <Label Grid.Column="1" TextColor="White"  FontSize="30" VerticalTextAlignment="Center" x:Name="HealthBar2" Text="&#10084;"></Label>
                     <Label Grid.Column="2" TextColor="White"  FontSize="30" VerticalTextAlignment="Center" x:Name="HealthBar3" Text="&#10084;"></Label>
 
-                    <Label x:Name="Timer" Margin="0,0,0,15"  Grid.Column="3" Grid.ColumnSpan="3"  TextColor="White" VerticalTextAlignment="Center" xct:ShadowEffect.Color="Black" xct:ShadowEffect.Opacity="0.7" xct:ShadowEffect.OffsetX="5" xct:ShadowEffect.Radius="5" FontSize="25" FontAttributes="Bold"></Label>
-                    <Label x:Name="TimerCount" xct:ShadowEffect.Color="Black" xct:ShadowEffect.Opacity="0.7" xct:ShadowEffect.OffsetX="5" xct:ShadowEffect.Radius="5" Margin="0" TextColor="White" Grid.Column="5" VerticalOptions="Center" FontSize="25"></Label>
+                    <Label x:Name="Timer" Margin="0,0,0,15"  Grid.Column="5" Grid.ColumnSpan="3"  TextColor="White" VerticalTextAlignment="Center" xct:ShadowEffect.Color="Black" xct:ShadowEffect.Opacity="0.7" xct:ShadowEffect.OffsetX="5" xct:ShadowEffect.Radius="5" FontSize="25" FontAttributes="Bold"></Label>
+                    <Label x:Name="TimerCount" xct:ShadowEffect.Color="Black" xct:ShadowEffect.Opacity="0.7" xct:ShadowEffect.OffsetX="5" xct:ShadowEffect.Radius="5" Margin="0" TextColor="White" Grid.Column="4" VerticalOptions="Center" FontSize="25"></Label>
                     <Label Grid.Column="5" Grid.ColumnSpan="3"  TextColor="White" VerticalTextAlignment="Center" x:Name="CodeNumber"></Label>
 
                     <Label Grid.Column="1"></Label>
                 </Grid>
-             
             </Frame>
-            <Button BackgroundColor="Gray" x:Name="click"  TextColor="White" Text="HOLD" Pressed="click_Clicked_1" Clicked="click_Pressed" Released="click_Clicked" FontSize="15"></Button>
+            <ImageButton Grid.Row="5" Grid.RowSpan="8" Grid.Column="0" Grid.ColumnSpan="20" BackgroundColor="Transparent" Source="blue_button" x:Name="click" Pressed="click_Clicked_1" Clicked="click_Pressed" Released="click_Clicked"></ImageButton>
+
             <Label x:Name="text" Text="" IsVisible="false"></Label>
-    
-        </StackLayout>
+            <Label Grid.Row="15" Grid.Column="19"></Label>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

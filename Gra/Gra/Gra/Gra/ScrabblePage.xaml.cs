@@ -24,6 +24,7 @@ namespace Gra
         };
         public int ChosenWord;
         public int TimeLeft = 60;
+        private bool TimeFlag = true;
         Random RandomCharCount = new Random();
 
         async void SetTime()
@@ -33,6 +34,10 @@ namespace Gra
             Label TimeBar = (Label)FindByName("Timer");
             Device.StartTimer(new TimeSpan(0, 0, 1), () =>
             {
+                if (TimeFlag == false)
+                {
+                    return false;
+                }
                 TimeLeft--;
                 TimeCount.Text = TimeLeft.ToString();
                 if (TimeLeft < 15)
@@ -142,6 +147,7 @@ namespace Gra
             {
                  DisplayAlert("Kod do nastepnej zagadki to: ", "2115", "Ok");
                  await Navigation.PushAsync(new FlashlightPage());
+                TimeFlag= false;
             }
             else
             {

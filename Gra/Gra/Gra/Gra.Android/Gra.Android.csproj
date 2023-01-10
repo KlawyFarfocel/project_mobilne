@@ -47,6 +47,11 @@
     <EnableLLVM>false</EnableLLVM>
     <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
     <BundleAssemblies>false</BundleAssemblies>
+    <AndroidKeyStore>false</AndroidKeyStore>
+    <AndroidSigningKeyStore>C:\Users\Nevermore\AppData\Local\Xamarin\Mono for Android\Keystore\TrzyDebile\TrzyDebile.keystore</AndroidSigningKeyStore>
+    <AndroidSigningStorePass>zaq1@WSX</AndroidSigningStorePass>
+    <AndroidSigningKeyPass>
+    </AndroidSigningKeyPass>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
@@ -130,16 +135,19 @@
     <AndroidResource Include="Resources\drawable\StartButton.gif" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\yellow-button.png" />
+    <AndroidResource Include="Resources\drawable\yellow_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\green-button.png" />
+    <AndroidResource Include="Resources\drawable\green_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\blue-button.png" />
+    <AndroidResource Include="Resources\drawable\blue_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\pink-button.png" />
+    <AndroidResource Include="Resources\drawable\pink_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

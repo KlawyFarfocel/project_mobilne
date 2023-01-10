@@ -7664,3 +7664,7 @@ C:\Users\misze\Source\Repos\project_mobilne123\Gra\Gra\Gra\Gra.Android\obj\Debug
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\res\drawable\text2.png
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\res\drawable\text3.png
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\res\drawable\startbutton.gif
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\res\drawable\yellow_button.png
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\res\drawable\green_button.png
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\res\drawable\blue_button.png
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\res\drawable\pink_button.png

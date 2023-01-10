@@ -193,8 +193,9 @@ namespace Gra
                     if (licznik == 5)
                     {
 
-                        await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
+             //           await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
                         TimeFlag = false;
+                        await Navigation.PushAsync(new Page6());
                     }
                     else
                     {
@@ -231,8 +232,8 @@ namespace Gra
                     checkMarkBlock.Text = "\u2714";
                     if (licznik == 5)
                     {
-
-                        await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
+                        await Navigation.PushAsync(new Page6());
+                       // await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
                     }
                     else
                     {
@@ -268,7 +269,8 @@ namespace Gra
                     checkMarkBlock.Text = "\u2714";
                     if (licznik == 5)
                     {
-                        await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
+                        await Navigation.PushAsync(new Page6());
+                      //  await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
                     }
                     else
                     {
@@ -305,7 +307,8 @@ namespace Gra
                     checkMarkBlock.Text = "\u2714";
                     if (licznik == 5)
                     {
-                        await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
+                        await Navigation.PushAsync(new Page6());
+                       // await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
                     }
                     else
                     {

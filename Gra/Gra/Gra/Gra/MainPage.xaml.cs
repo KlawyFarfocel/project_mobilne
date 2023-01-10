@@ -85,8 +85,8 @@ namespace Gra
         private async void FirstTask(object sender, EventArgs e)
         {
             soundtrack.Stop();
-           // double dalej1 = soundtrack.Volume;
-            await Navigation.PushAsync(new Page6());
+            double dalej1 = soundtrack.Volume;
+            await Navigation.PushAsync(new LabirynthPage(dalej1));
         }
 
         private async void MorseTask(object sender, EventArgs e)
@@ -111,9 +111,9 @@ namespace Gra
             var title = (Label)FindByName("Tit");
             var footer=(Label)FindByName("Footer");
 
-            var ButtonDalej = (Button)FindByName("LabirynthButton");
+       //     var ButtonDalej = (Button)FindByName("LabirynthButton");
             var ButtonLatarka = (Button)FindByName("FlashlightButton");
-            var ButtonMorse = (Button)FindByName("ButtonMorse");
+     //       var ButtonMorse = (Button)FindByName("ButtonMorse");
             var ButtonTekstowy = (Button)FindByName("TextModeButton");
             var MainGrid = (Grid)FindByName("MainGrid");
             var bulbButton = (ImageButton)FindByName("BulbButton");
@@ -131,9 +131,9 @@ namespace Gra
                 footer.Text = "";
                 title.Text = "";
 
-                ButtonDalej.BorderWidth = 3;
-                ButtonDalej.BorderColor = Color.White;
-                ButtonDalej.TextColor = Color.White;
+     //           ButtonDalej.BorderWidth = 3;
+      //          ButtonDalej.BorderColor = Color.White;
+      //          ButtonDalej.TextColor = Color.White;
 
                 ButtonLatarka.BorderWidth = 3;
                 ButtonLatarka.BorderColor = Color.White;
@@ -143,16 +143,16 @@ namespace Gra
                 ButtonTekstowy.BorderColor = Color.White;
                 ButtonTekstowy.TextColor = Color.White;
 
-                ButtonMorse.BorderWidth = 3;
-                ButtonMorse.BorderColor = Color.White;
-                ButtonMorse.TextColor = Color.White;
+     //           ButtonMorse.BorderWidth = 3;
+     //           ButtonMorse.BorderColor = Color.White;
+      //          ButtonMorse.TextColor = Color.White;
 
                 MainGrid.BackgroundColor = Color.Black;
                 bulbButton.ClassId = "1";
-                ButtonDalej.IsVisible = true;
+    //            ButtonDalej.IsVisible = true;
                 ButtonTekstowy.IsVisible= true;
                 ButtonLatarka.IsVisible = true;
-                ButtonMorse.IsVisible = true;
+   //             ButtonMorse.IsVisible = true;
                 StartButton.IsVisible = false;   
                 arrow_1.IsVisible = false;
                 arrow_2.IsVisible = false;
@@ -166,10 +166,10 @@ namespace Gra
                 footer.Text = "Stopka";
                 title.Text = "Tytuł";
                 MainGrid.BackgroundColor = Color.Gray;
-                ButtonDalej.IsVisible = false;
+    //            ButtonDalej.IsVisible = false;
                 ButtonTekstowy.IsVisible= false;
                 ButtonLatarka.IsVisible = false;
-                ButtonMorse.IsVisible = false;
+   //             ButtonMorse.IsVisible = false;
                 StartButton.IsVisible = true;
                 arrow_1.IsVisible = true;
                 arrow_2.IsVisible = true;
@@ -182,13 +182,13 @@ namespace Gra
         async void WrongButtonClicked(object sender, EventArgs e)
         {
             ChangeLight(sender,e);
-            var ButtonDalej = (Button)FindByName("LabirynthButton");
+   //         var ButtonDalej = (Button)FindByName("LabirynthButton");
             var settingsButton= (Button)FindByName("SettingsButton");
             var BulbButton = (ImageButton)FindByName("BulbButton");
             var ButtonLatarka = (Button)FindByName("FlashlightButton");
             var ButtonTekstowy = (Button)FindByName("TextModeButton");
-            var ButtonMorse = (Button)FindByName("ButtonMorse");
-            ButtonDalej.IsVisible = false;
+ //           var ButtonMorse = (Button)FindByName("ButtonMorse");
+ //           ButtonDalej.IsVisible = false;
             ButtonTekstowy.IsVisible = false;
             ButtonLatarka.IsVisible = false;
             ButtonMorse.IsVisible = false;

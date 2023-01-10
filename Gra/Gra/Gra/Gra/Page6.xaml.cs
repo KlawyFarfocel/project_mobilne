@@ -105,27 +105,27 @@ namespace Gra
                         {
 
                             case 1:
-                                click.BackgroundColor = Color.Pink;
+                                click.Source = "pink_button";
                                 jeden = 5;
-                    timeR = "1";
+                                timeR = "1";
                                 break;
-                                case 2:
-                                click.BackgroundColor = Color.Blue;
+                            case 2:
+                                click.Source = "blue_button";
                                 jeden = 3;
-                    timeR = "3";
-                    break;
+                                timeR = "3";
+                                break;
                     
                             case 3:
-                                click.BackgroundColor = Color.Yellow;
+                                click.Source = "yellow_button";
                                 jeden = 4;
-                    timeR = "2";
-                    break;
+                                timeR = "2";
+                                break;
 
                             case 4:
-                                click.BackgroundColor = Color.Green;
+                                click.Source = "green_button";
                                 jeden = 2;
-                    timeR = "4";
-                    break;
+                                timeR = "4";
+                                break;
 
 
                         }
