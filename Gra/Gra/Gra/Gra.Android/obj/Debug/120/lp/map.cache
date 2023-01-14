@@ -6,6 +6,7 @@ ExoPlayer.Hls.dll
 ExoPlayer.SmoothStreaming.dll
 ExoPlayer.UI.dll
 FormsViewGroup.dll
+Gra.dll
 MediaManager.dll
 MediaManager.Forms.dll
 Plugin.BLE.dll
@@ -116,4 +117,3 @@ androidx.asynclayoutinflater.asynclayoutinflater.aar
 androidx.legacy.legacy-support-core-ui.aar
 androidx.legacy.legacy-support-v4.aar
 androidx.browser.browser.aar
-Gra.dll

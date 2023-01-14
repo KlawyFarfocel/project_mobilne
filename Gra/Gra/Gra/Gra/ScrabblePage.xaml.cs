@@ -1,5 +1,4 @@
-﻿using Java.Security;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -151,7 +150,7 @@ namespace Gra
 
                 wynik1 += TimeLeft;
                 double dalej1 = 13;
-                 await Navigation.PushAsync(new FlashlightPage( dalej1, wynik1));
+                 await Navigation.PushModalAsync(new FlashlightPage( dalej1, wynik1));
                 TimeFlag= false;
             }
             else

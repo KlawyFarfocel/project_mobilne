@@ -199,7 +199,7 @@ namespace Gra
                         TimeFlag = false;
                         wynik1 += TimeLeft;
                        double dalej1 = 14;
-                        await Navigation.PushAsync(new Page6(dalej1,wynik1));
+                        await Navigation.PushModalAsync(new Page6(dalej1,wynik1));
                     }
                     else
                     {
@@ -238,7 +238,7 @@ namespace Gra
                     {
                         wynik1 += TimeLeft;
                         double dalej1 = 14;
-                        await Navigation.PushAsync(new Page6(dalej1, wynik1));
+                        await Navigation.PushModalAsync(new Page6(dalej1, wynik1));
                         // await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
                     }
                     else
@@ -277,7 +277,7 @@ namespace Gra
                     {
                         wynik1 += TimeLeft;
                         double dalej1 = 14;
-                        await Navigation.PushAsync(new Page6(dalej1, wynik1));
+                        await Navigation.PushModalAsync(new Page6(dalej1, wynik1));
                         //  await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
                     }
                     else
@@ -317,7 +317,7 @@ namespace Gra
                     {
                         wynik1 += TimeLeft;
                         double dalej1 = 14;
-                        await Navigation.PushAsync(new Page6(dalej1, wynik1));
+                        await Navigation.PushModalAsync(new Page6(dalej1, wynik1));
                         // await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
                     }
                     else

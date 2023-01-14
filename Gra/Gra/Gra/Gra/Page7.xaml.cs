@@ -1,5 +1,4 @@
-﻿using Android.App;
-using SQLite;
+﻿using SQLite;
 
 using System;
 
@@ -12,19 +11,17 @@ using System.Linq;
 using System.Text;
 
 using System.Threading.Tasks; // odpowiedzialny za tworzenie zadań
-
-
+using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.Forms;
 
 using Xamarin.Forms.Xaml;
-using static Java.Util.Concurrent.Flow;
 
 namespace Gra
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page7 : ContentPage
     {
-
+        public double score;
         public class Person
 
         {
@@ -58,7 +55,7 @@ namespace Gra
 
             {
 
-                return _database.Table<Person>().ToListAsync();
+                return _database.Table<Person>().OrderByDescending(x => x.wynik).ToListAsync();
 
             }
 
@@ -76,25 +73,24 @@ namespace Gra
         {
 
             base.OnAppearing(); // wymusza odświeżenie kolekcji
-
+            var userName = await Navigation.ShowPopupAsync(new NamePopup());
+            InsertIntoDatabase(userName.ToString(), score);
             collectionView.ItemsSource = await App.Database.GetPeopleAsync();
 
         }
-
+        void InsertIntoDatabase(string userName,double wynik)
+        {
+            App.Database.SavePersonAsync(new Person
+            {
+                Name = userName,
+                wynik = wynik
+            }) ;
+        }
         public readonly SQLiteAsyncConnection _database; // obiekt odpowiedzialny za połączenie z bazą danych
         public Page7(double dalej1,double wynik)
         {
             InitializeComponent();
-            App.Database.SavePersonAsync(new Person
-
-            {
-                Name = "janusz tracz",
-
-                wynik = wynik
-
-            }) ;
-            
-
+            score = wynik;
         }
     }
 }

@@ -245,3 +245,5 @@ C:\Users\misze\Source\Repos\project_mobilne43\Gra\Gra\Gra\Gra\obj\Debug\netstand
 C:\Users\misze\Source\Repos\project_mobilne43\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\Gra.pdb
 C:\Users\misze\Source\Repos\project_mobilne43\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\ref\Gra.dll
 C:\Users\misze\Source\Repos\project_mobilne43\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\Page7.xaml.g.cs
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\Page7.xaml.g.cs
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\NamePopup.xaml.g.cs

@@ -27,185 +27,93 @@ namespace Gra
         async protected override void OnAppearing()
         {
             base.OnAppearing();
-            arrow_1 = (Label)FindByName("arrow_1");
-            arrow_2 = (Label)FindByName("arrow_2");
-            arrow_3 = (Label)FindByName("arrow_3");
-            arrow_4 = (Label)FindByName("arrow_4");
-      //      bigRed = (Button)FindByName("bigRed");
-      //      BulbButton = (ImageButton)FindByName("BulbButton");
-            Animate_pulse(arrow_1);
-            Animate_pulse(arrow_2);
-            Animate_pulse(arrow_3);
-            Animate_pulse(arrow_4);
-           // animate_button(bigRed);
             var status= await Permissions.CheckStatusAsync<Permissions.Camera>();
             if (status==PermissionStatus.Unknown || status == PermissionStatus.Denied)
             {
                 await Permissions.RequestAsync<Permissions.Camera>();
             }
         }
-        void Animate_pulse(Label obj)
-        {
-            var Objname = obj.ClassId;
-            var a = new Animation {
-                {0,0.5, new Animation(v => obj.Scale = v, 1, 1.2) },
-                {0.5,1, new Animation(v => obj.Scale = v, 1.2, 1) }               
-            };
-            a.Commit(this,Objname,16,950,Easing.Linear, (v, c) => obj.Scale = 1,()=> true);
-        }
-        void WersjaTestowa(object sender,EventArgs e)
-        {
-            DisplayAlert("Dziala","Ok","Ok");
-        }
-     /*  void animate_button (Button obj)
-        {
-            var Objname = obj.ClassId;
-            var a = new Animation {
-                {0,0.5, new Animation(v => obj.Opacity = v, 1, 0) },
-                {0.5,1, new Animation(v => obj.Opacity = v, 0, 1) }
-            };
-            a.Commit(this, Objname, 16, 2750, Easing.CubicIn, (v, c) => obj.Opacity = 1, () => true);
-        } */
-        //Przechodzenie do ustawień
-        private async void GoToSettings(object sender, EventArgs e)
+        async void GoToSettings(object sender, EventArgs e)
         {
             soundtrack.Stop();
             double dalej1 = soundtrack.Volume;
-             await Navigation.PushAsync(new SettingsPage(dalej1));
-
-        }
-        private async void GoToFlashlight(object sender, EventArgs e)
-        {
-            soundtrack.Stop();
-            double dalej1 = soundtrack.Volume;
-            await Navigation.PushAsync(new FlashlightPage(dalej1,1));
-
-        }
-
-        private async void FirstTask(object sender, EventArgs e)
-        {
-            soundtrack.Stop();
-            double dalej1 = soundtrack.Volume;
-            await Navigation.PushAsync(new LabirynthPage(dalej1));
-        }
-
-        private async void MorseTask(object sender, EventArgs e)
-        {
-            soundtrack.Stop();
-            double dalej1 = soundtrack.Volume;
-            await Navigation.PushAsync(new Page5(dalej1,1)) ;
-        }
-
-        void ToBlack(Label obj)
-        {
-            obj.ColorTo(Color.Black);
-            obj.TextColor=Color.White;
-        }
-        void ToWhite(Label obj)
-        {
-            obj.ColorTo(Color.White);
-            obj.TextColor = Color.Black;
+            await Navigation.PushAsync(new SettingsPage(dalej1));
         }
         void ChangeLight(object sender, EventArgs e)
         {
-            var title = (Label)FindByName("Tit");
-            var footer=(Label)FindByName("Footer");
-
-       //     var ButtonDalej = (Button)FindByName("LabirynthButton");
-            var ButtonLatarka = (Button)FindByName("FlashlightButton");
-     //       var ButtonMorse = (Button)FindByName("ButtonMorse");
-            var ButtonTekstowy = (Button)FindByName("TextModeButton");
-            var MainGrid = (Grid)FindByName("MainGrid");
-            var bulbButton = (ImageButton)FindByName("BulbButton");
-            var StartButton = (Image)FindByName("StartButton");
-
-            var arrow_1 = (Label)FindByName("arrow_1");
-            var arrow_2 = (Label)FindByName("arrow_2");
-            var arrow_3 = (Label)FindByName("arrow_3");
-            var arrow_4 = (Label)FindByName("arrow_4");
-
-            if (bulbButton.ClassId == "0")
+            var mainGrid=(Grid)FindByName("MainGrid");
+            var lightBulbIcon = (ImageButton)FindByName("BulbButton");
+            var settingsIcon = (ImageButton)FindByName("SettingsButton");
+            var titleImage = (Image)FindByName("Title");
+            var arrow_up = (Image)FindByName("arrow_up");
+            var arrow_down = (Image)FindByName("arrow_down");
+            var wrongButton = (Image)FindByName("StartButton");
+            var TextModeButton = (Button)FindByName("TextModeButton");
+            var GameModeButton = (Button)FindByName("GameModeButton");
+            
+            if (lightBulbIcon.ClassId == "0")
             {
-                ToBlack(title);
-                ToBlack(footer);
-                footer.Text = "";
-                title.Text = "";
+                lightBulbIcon.Source = "lightbulb_light";
+                settingsIcon.Source = "cogwheel_light";
+                mainGrid.BackgroundColor=Color.Black;
+                titleImage.BackgroundColor=Color.Black;
+                arrow_down.IsVisible = false;
+                arrow_up.IsVisible = false;
+                wrongButton.IsVisible = false;
 
-     //           ButtonDalej.BorderWidth = 3;
-      //          ButtonDalej.BorderColor = Color.White;
-      //          ButtonDalej.TextColor = Color.White;
-
-                ButtonLatarka.BorderWidth = 3;
-                ButtonLatarka.BorderColor = Color.White;
-                ButtonLatarka.TextColor = Color.White;
-
-                ButtonTekstowy.BorderWidth = 3;
-                ButtonTekstowy.BorderColor = Color.White;
-                ButtonTekstowy.TextColor = Color.White;
-
-     //           ButtonMorse.BorderWidth = 3;
-     //           ButtonMorse.BorderColor = Color.White;
-      //          ButtonMorse.TextColor = Color.White;
-
-                MainGrid.BackgroundColor = Color.Black;
-                bulbButton.ClassId = "1";
-    //            ButtonDalej.IsVisible = true;
-                ButtonTekstowy.IsVisible= true;
-                ButtonLatarka.IsVisible = true;
-   //             ButtonMorse.IsVisible = true;
-                StartButton.IsVisible = false;   
-                arrow_1.IsVisible = false;
-                arrow_2.IsVisible = false;
-                arrow_3.IsVisible = false;
-                arrow_4.IsVisible = false;
+                TextModeButton.IsVisible = true;
+                GameModeButton.IsVisible = true;
+                TextModeButton.BorderColor = GameModeButton.BorderColor=Color.White;
+                TextModeButton.TextColor = GameModeButton.TextColor = Color.White;
+                TextModeButton.BorderWidth=GameModeButton.BorderWidth=2;
+                lightBulbIcon.ClassId= "1";
             }
-            else if (bulbButton.ClassId == "1")
+            else
             {
-                ToWhite(title);
-                ToWhite(footer);
-                footer.Text = "Stopka";
-                title.Text = "Tytuł";
-                MainGrid.BackgroundColor = Color.Gray;
-    //            ButtonDalej.IsVisible = false;
-                ButtonTekstowy.IsVisible= false;
-                ButtonLatarka.IsVisible = false;
-   //             ButtonMorse.IsVisible = false;
-                StartButton.IsVisible = true;
-                arrow_1.IsVisible = true;
-                arrow_2.IsVisible = true;
-                arrow_3.IsVisible = true;
-                arrow_4.IsVisible = true;
-                bulbButton.ClassId = "0";
-                bulbButton.IsVisible = true;
+                mainGrid.BackgroundColor = Color.Gray;
+                titleImage.BackgroundColor= Color.Gray; 
+                lightBulbIcon.Source = "lightbulb";
+                settingsIcon.Source = "cogwheel";
+                lightBulbIcon.ClassId = "0";
+                arrow_up.IsVisible = true;
+                arrow_down.IsVisible = true;
+                wrongButton.IsVisible = true;
+                GameModeButton.IsVisible = false;
+                TextModeButton.IsVisible = false;
             }
         }
         async void WrongButtonClicked(object sender, EventArgs e)
         {
+            soundtrack.Stop();
+            var deadAnimation = (Image)FindByName("dead");
+            var mainGrid = (Grid)FindByName("MainGrid");
+            var lightBulbIcon = (ImageButton)FindByName("BulbButton");
+            var settingsIcon = (ImageButton)FindByName("SettingsButton");
+            var TextModeButton = (Button)FindByName("TextModeButton");
+            var GameModeButton = (Button)FindByName("GameModeButton");
+            mainGrid.BackgroundColor = Color.Black;
+            lightBulbIcon.ClassId = "0";
             ChangeLight(sender,e);
-   //         var ButtonDalej = (Button)FindByName("LabirynthButton");
-            var settingsButton= (Button)FindByName("SettingsButton");
-            var BulbButton = (ImageButton)FindByName("BulbButton");
-            var ButtonLatarka = (Button)FindByName("FlashlightButton");
-            var ButtonTekstowy = (Button)FindByName("TextModeButton");
- //           var ButtonMorse = (Button)FindByName("ButtonMorse");
- //           ButtonDalej.IsVisible = false;
-            ButtonTekstowy.IsVisible = false;
-            ButtonLatarka.IsVisible = false;
-            ButtonMorse.IsVisible = false;
-            settingsButton.IsVisible = false;
-            BulbButton.IsVisible = false;
-            var deadAnimation = (Image)FindByName("deadAnimation");
+            lightBulbIcon.IsVisible = false;
+            settingsIcon.IsVisible = false;
+            TextModeButton.IsVisible = false;
+            GameModeButton.IsVisible = false;
+            deadAnimation.IsAnimationPlaying= true;
             deadAnimation.IsVisible = true;
-            deadAnimation.IsAnimationPlaying = true;
             await Task.Delay(3500);
             System.Environment.Exit(0);
         }
-
-        private async void TextModeButton_Clicked(object sender, EventArgs e)
+        async void GoToTextMode(object sender, EventArgs e)
         {
             soundtrack.Stop();
-            double dalej1 = soundtrack.Volume;
-            await Navigation.PushAsync(new Page1(dalej1));
+            var dalej1=soundtrack.Volume;
+            await Navigation.PushModalAsync(new Page1(dalej1));
+        }
+        async void GoToGameMode(object sender, EventArgs e)
+        {
+            soundtrack.Stop();
+            var dalej1 = soundtrack.Volume;
+            await Navigation.PushModalAsync(new LabirynthPage(dalej1));
         }
     }
 }

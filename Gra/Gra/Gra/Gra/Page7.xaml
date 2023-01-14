@@ -1,28 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="Gra.Page7">
+    <ContentPage.Resources>
+        <Style x:Key="baseStyle" TargetType="StackLayout">
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+            <Setter Property="Padding" Value="0,20,0,0"></Setter>
+        </Style>
+        <Style x:Key="labelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="FontSize" Value="Medium"/>
+        </Style>
+        <Style x:Key="HeaderStyle" TargetType="Label">
+            <Setter Property="Grid.Row" Value="0"/>
+            <Setter Property="Text" Value="Tabela wyników"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="FontSize" Value="35"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <CollectionView x:Name="collectionView">
-
-            <CollectionView.ItemTemplate>
-
-                <DataTemplate>
-
-                    <StackLayout>
-
-                        <Label Text="{Binding Name}" FontSize="Medium" />
-
-                        <Label Text="{Binding wynik}" TextColor="Silver"
-
-FontSize="Small" />
-
-                    </StackLayout>
-
-                </DataTemplate>
-
-            </CollectionView.ItemTemplate>
-
-        </CollectionView>
+        <StackLayout Style="{StaticResource baseStyle}"  BackgroundColor="LightGray">
+            <Grid>
+                <Label Style="{StaticResource HeaderStyle}"></Label>
+                <CollectionView Grid.Row="0" Margin="0,50,0,0" x:Name="collectionView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Margin="30,0" BackgroundColor="Transparent">
+                                <Frame Padding="10,30" Margin="0" xct:ShadowEffect.Radius="5" xct:ShadowEffect.OffsetY="5" xct:ShadowEffect.OffsetX="-5" xct:ShadowEffect.Color="Black" >
+                                    <Grid>
+                                        <Label  HorizontalTextAlignment="End" Grid.Column="0" Grid.Row="0" Style="{StaticResource labelStyle}" Text="{Binding Name, StringFormat='{0}:'}"/>
+                                        <Label  HorizontalTextAlignment="Start" Grid.Column="1" Grid.Row="0" Style="{StaticResource labelStyle}" Text="{Binding wynik}"/>
+                                    </Grid>
+                                </Frame>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

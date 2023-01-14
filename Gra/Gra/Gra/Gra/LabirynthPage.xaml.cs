@@ -175,7 +175,7 @@ namespace Gra
                     TimeFlag = false;
                     double wynik = TimeLeft;
                     double dalej1 = 14;
-                    await Navigation.PushAsync(new ScrabblePage(dalej1,wynik)) ;
+                    await Navigation.PushModalAsync(new ScrabblePage(dalej1,wynik)) ;
                 }
                 return;
             }

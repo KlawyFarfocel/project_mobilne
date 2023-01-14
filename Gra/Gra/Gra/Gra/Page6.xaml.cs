@@ -58,7 +58,7 @@ namespace Gra
                     Timebutt = 10;
                     wynik += TimeLeft;
                     double dalej1 = 14;
-                     Navigation.PushAsync(new Page7(dalej1, wynik));
+                     Navigation.PushModalAsync(new Page7(dalej1, wynik));
 
                 }
                 else

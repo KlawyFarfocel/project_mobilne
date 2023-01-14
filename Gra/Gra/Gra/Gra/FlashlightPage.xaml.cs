@@ -217,7 +217,7 @@ namespace Gra
                 TimeFlag = false;
                 wynik += TimeLeft;
                 double dalej1 = 12;
-                await Navigation.PushAsync(new Page5(dalej1,wynik));
+                await Navigation.PushModalAsync(new Page5(dalej1,wynik));
             }
             else
             {
