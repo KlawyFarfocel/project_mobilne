@@ -22,7 +22,7 @@ namespace Gra
         public int HealthCount = 3;
         private const int Short = 1000;
         private const int Long = 3000;
-        private bool TimeFlag = true;
+        public bool TimeFlag = true;
         int[] BlockCounters = { 0, 0, 0, 0 };
         Random RandomCharCount = new Random();
         readonly int[,] MorseTable =
@@ -77,7 +77,9 @@ namespace Gra
                     TimeCount.TextColor = Color.Red;
                     if (TimeLeft == 0)
                     {
-                        DisplayAlert("Przegrałeś", "):", "No nie");
+                        TimeFlag = false;
+                        double dalej1 = 1;
+                        Navigation.PushModalAsync(new deadPage(dalej1));
                         TimeCount.Text = "";
                         TimeBar.Text = TimeCount.Text;
                         return false;
@@ -144,11 +146,6 @@ namespace Gra
 
         void setHeartStatus()
         {
-            if (HealthCount == 0)
-            {
-                DisplayAlert("Nie", "Przegrales", "Przegralem");
-                return;
-            }
             var text = "HealthBar" + HealthCount;
             var bar = (Label)FindByName(text);
             bar.IsVisible = false;
@@ -156,6 +153,12 @@ namespace Gra
         void LoverHeartCount()
         {
             HealthCount--;
+            if(HealthCount <= 0)
+            {
+                TimeFlag = false;
+                double dalej1 = 1;
+                Navigation.PushModalAsync(new deadPage(dalej1));
+            }
         }
         void ChangeBlockText(Label block, int blockNumber, string where)
         {
@@ -213,7 +216,7 @@ namespace Gra
             }
             if (WinFlag)
             {
-                DisplayAlert("Wygrałeś", "Wygrałeś", "Wygrałem?");
+               
                 TimeFlag = false;
                 wynik += TimeLeft;
                 double dalej1 = 12;

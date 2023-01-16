@@ -18,7 +18,7 @@ namespace Gra
     {
         private const bool V = false;
         private const bool T = true;
-        private bool TimeFlag = true;
+        public bool TimeFlag = true;
         public int counter = 0;
         public int whereX = 0;
         public int whereY = 0;
@@ -28,6 +28,12 @@ namespace Gra
         public readonly int LabirynthNumberChoice = RandomLabirynthNumber.Next(101);
         public int TimeLeft = 60;
 
+        public void end()
+        {
+            TimeFlag = false;
+            double dalej1 = soundtrack.Volume;
+                      Navigation.PushModalAsync(new deadPage(dalej1));
+        }
         async void SetTime()
         {
             await Navigation.ShowPopupAsync(new GamePopup("Labirynt"));
@@ -46,7 +52,8 @@ namespace Gra
                     TimeCount.TextColor = Color.Red;
                     if (TimeLeft == 0)
                     {
-                        DisplayAlert("Przegrałeś", "):", "No nie");
+                        TimeFlag=false;
+                        end();
                         TimeCount.Text = "";
                         TimeBar.Text = TimeCount.Text;
                         return false;
@@ -155,6 +162,7 @@ namespace Gra
         readonly int Lab2StartingX = 2;
         readonly int Lab2StartingY = 4;
 
+      
         async void AmIWinning()
         {
             int LabWinX=0, LabWinY=0;  
@@ -175,7 +183,6 @@ namespace Gra
                     TimeFlag = false;
                     double wynik = TimeLeft;
                     double dalej1 = soundtrack.Volume;
-                 
                     await Navigation.PushModalAsync(new ScrabblePage(dalej1,wynik)) ;
                 }
                 return;
@@ -208,14 +215,18 @@ namespace Gra
             }
             if (LabTable[counter, 3] == false)
             {
+                HealthCount--;
                 var text = "";
                 for (int i = 0; i < HealthCount; i++)
                 {
                    text+= '\u2764';
                 }
                 var HealthBar=(Label)FindByName("HealthBar");
-                HealthBar.Text = text;
-                HealthCount--;
+                HealthBar.Text = text;           
+                if(HealthCount <= 0)
+                {
+                    end();
+                }
             }
             else
             {
@@ -240,14 +251,18 @@ namespace Gra
             }
             if (LabTable[counter, 1] == false)
             {
+                HealthCount--;
                 var text = "";
                 for (int i = 0; i < HealthCount; i++)
                 {
                     text += '\u2764';
                 }
                 var HealthBar = (Label)FindByName("HealthBar");
-                HealthBar.Text = text;
-                HealthCount--;
+                HealthBar.Text = text;              
+                if (HealthCount <= 0)
+                {
+                    end();
+                }
             }
             else
             {
@@ -268,11 +283,7 @@ namespace Gra
             }
             if (whereY == 0)
             {
-                return;
-            }
-
-            if (LabTable[counter, 0] == false)
-            {
+                HealthCount--;
                 var text = "";
                 for (int i = 0; i < HealthCount; i++)
                 {
@@ -280,7 +291,27 @@ namespace Gra
                 }
                 var HealthBar = (Label)FindByName("HealthBar");
                 HealthBar.Text = text;
+                if (HealthCount <= 0)
+                {
+                    end();
+                }
+                return;
+            }
+
+            if (LabTable[counter, 0] == false)
+            {
                 HealthCount--;
+                var text = "";
+                for (int i = 0; i < HealthCount; i++)
+                {
+                    text += '\u2764';
+                }
+                var HealthBar = (Label)FindByName("HealthBar");
+                HealthBar.Text = text;           
+                if (HealthCount <= 0)
+                {
+                    end();
+                }
             }
             else
             {
@@ -300,7 +331,8 @@ namespace Gra
                 LabTable = lab2;
             }
             if (whereY == 5)
-            {
+            {   
+                HealthCount--;
                 var text = "";
                 for (int i = 0; i < HealthCount; i++)
                 {
@@ -308,12 +340,17 @@ namespace Gra
                 }
                 var HealthBar = (Label)FindByName("HealthBar");
                 HealthBar.Text = text;
-                HealthCount--;
+               
+                if (HealthCount <= 0)
+                {
+                    end();
+                }
                 return;
             }
 
             if (LabTable[counter, 2] == false)
-            {
+            {   
+                HealthCount--;
                 var text = "";
                 for (int i = 0; i < HealthCount; i++)
                 {
@@ -321,7 +358,10 @@ namespace Gra
                 }
                 var HealthBar = (Label)FindByName("HealthBar");
                 HealthBar.Text = text;
-                HealthCount--;
+                if (HealthCount <= 0)
+                {
+                    end();
+                }
             }
             else
             {

@@ -14,7 +14,9 @@ namespace Gra
     {
         public deadPage(double soundtrackVolume)
         {
+            
             InitializeComponent();
+             soundtrack.Stop();
             Animation(soundtrackVolume);
             
 

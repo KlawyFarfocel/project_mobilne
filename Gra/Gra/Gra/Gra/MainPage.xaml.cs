@@ -117,8 +117,8 @@ namespace Gra
         {
             soundtrack.Stop();
             var dalej1=soundtrack.Volume;
-            // await Navigation.PushModalAsync(new Page1(dalej1));
-            await Navigation.PushModalAsync(new deadPage(dalej1));
+             await Navigation.PushModalAsync(new Page1(dalej1));
+           // await Navigation.PushModalAsync(new deadPage(dalej1));
         }
         async void GoToGameMode(object sender, EventArgs e)
         {

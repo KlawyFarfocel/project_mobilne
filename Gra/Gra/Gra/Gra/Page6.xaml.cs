@@ -19,6 +19,8 @@ namespace Gra
         public int jeden = 0;
         public string timeR = "";
         public double wynik;
+        public int HealthCount = 3;
+        public bool TimeFlag=true;
         Random RandomCharCount = new Random();
         async void SetTime()
         {
@@ -27,6 +29,10 @@ namespace Gra
             Label TimeBar = (Label)FindByName("Timer");
             Device.StartTimer(new TimeSpan(0, 0, 1), () =>
             {
+                if (TimeFlag == false)
+                {
+                    return false;
+                }
                 TimeLeft--;
                 TimeCount.Text = TimeLeft.ToString();
                 if (TimeLeft < 15)
@@ -34,7 +40,9 @@ namespace Gra
                     TimeCount.TextColor = Color.Red;
                     if (TimeLeft == 0)
                     {
-                        DisplayAlert("Przegrałeś", "):", "No nie");
+                        TimeFlag = false;
+                        double dalej1 = 1;
+                        Navigation.PushModalAsync(new deadPage(dalej1));
                         TimeCount.Text = "";
                         TimeBar.Text = TimeCount.Text;
                         return false;
@@ -43,7 +51,25 @@ namespace Gra
                 return true;
             });
         }
-            bool prawda = false;
+        void setHeartStatus()
+        {
+
+            var text = "HealthBar" + HealthCount;
+            var bar = (Label)FindByName(text);
+            bar.IsVisible = false;
+        }
+
+        void LoverHeartCount()
+        {
+            HealthCount--;
+            if (HealthCount <= 0)
+            {
+                TimeFlag = false;
+                double dalej1 = 1;
+                Navigation.PushModalAsync(new deadPage(dalej1));
+            }
+        }
+        bool prawda = false;
             private void click_Clicked(object sender, EventArgs e)
                  {
 
@@ -63,7 +89,8 @@ namespace Gra
                 }
                 else
                 {
-                    DisplayAlert("Przegrałeś1", "):", "No nie");
+                    setHeartStatus();
+                    LoverHeartCount();
                     Timebutt = 10;
                     prawda = false; 
 
@@ -86,7 +113,8 @@ namespace Gra
                                          prawda = true;  
                                 }else
             {
-                DisplayAlert("Przegrałeś2", "):", "No nie");
+                setHeartStatus();
+                LoverHeartCount();
                 prawda = false;
             }
                     }

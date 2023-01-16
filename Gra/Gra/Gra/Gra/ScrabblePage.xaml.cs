@@ -28,7 +28,7 @@ namespace Gra
         public int ChosenWord;
         public double wynik1=12;
         public int TimeLeft = 60;
-        private bool TimeFlag = true;
+        public bool TimeFlag = true;
         Random RandomCharCount = new Random();
 
         async void SetTime()
@@ -49,7 +49,9 @@ namespace Gra
                     TimeCount.TextColor = Color.Red;
                     if (TimeLeft == 0)
                     {
-                        DisplayAlert("Przegrałeś", "):", "No nie");
+                        TimeFlag = false;
+                        double dalej1 = soundtrack.Volume;
+                        Navigation.PushModalAsync(new deadPage(dalej1));
                         TimeCount.Text = "";
                         TimeBar.Text = TimeCount.Text;
                         return false;
@@ -163,11 +165,7 @@ namespace Gra
         }
         void setHeartStatus()
         {
-            if (HealthCount == 0)
-            {
-                DisplayAlert("Nie", "Przegrales", "Przegralem");
-                return;
-            }
+           
             var text = "HealthBar" + HealthCount;
             var bar = (Label)FindByName(text);
             bar.IsVisible = false;
@@ -175,6 +173,12 @@ namespace Gra
         void LoverHeartCount()
         {
             HealthCount--;
+            if(HealthCount <=0 )
+            {
+                TimeFlag = false;
+                double dalej1 = soundtrack.Volume;
+                Navigation.PushModalAsync(new deadPage(dalej1));
+            }
         }
         protected override void OnAppearing()
         {

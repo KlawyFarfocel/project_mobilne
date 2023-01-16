@@ -14,6 +14,7 @@ namespace Gra
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page5 : ContentPage
     {
+
         private bool TimeFlag = true;
         int checkCounter = 1;
         int[] table = new int[6];
@@ -22,7 +23,25 @@ namespace Gra
         public int TimeLeft = 180;
         public double wynik1;
         Random RandomCharCount = new Random();
+        public int HealthCount=3;
+        void setHeartStatus()
+        {
 
+            var text = "HealthBar" + HealthCount;
+            var bar = (Label)FindByName(text);
+            bar.IsVisible = false;
+        }
+
+        void LoverHeartCount()
+        {
+            HealthCount--;
+            if (HealthCount <= 0)
+            {
+                TimeFlag = false;
+                double dalej1 = 1;
+                Navigation.PushModalAsync(new deadPage(dalej1));
+            }
+        }
         async void SetTime()
         {
             await DisplayAlert("Rozpocznij zagadkę", "Wciśnij OK, aby rozpocząć", "OK");
@@ -41,7 +60,9 @@ namespace Gra
                     TimeCount.TextColor = Color.Red;
                     if (TimeLeft == 0)
                     {
-                        DisplayAlert("Przegrałeś", "):", "No nie");
+                        TimeFlag = false;
+                        double dalej1 = 1;
+                        Navigation.PushModalAsync(new deadPage(dalej1));
                         TimeCount.Text = "";
                         TimeBar.Text = TimeCount.Text;
                         return false;
@@ -53,8 +74,7 @@ namespace Gra
         public Page5(double dalej1,double wynik)
         {
             wynik1 = wynik;
-            InitializeComponent();
-            DisplayAlert("Przegrałeś",wynik.ToString(), "No nie");
+            InitializeComponent();          
             double f = dalej1;
             SetTime();
             long ktory = RandomCharCount.Next(1, 4);
@@ -219,7 +239,8 @@ namespace Gra
             }
             else
             {
-                await DisplayAlert("HAHAHAHHAHAHAH", "przegrales", "przepraszam rodzine");
+                setHeartStatus();
+                LoverHeartCount();
             }
         }
 
@@ -258,7 +279,8 @@ namespace Gra
             }
             else
             {
-                await DisplayAlert("HAHAHAHHAHAHAH", "przegrales", "przepraszam rodzine");
+                setHeartStatus();
+                LoverHeartCount();
             }
         }
 
@@ -298,7 +320,8 @@ namespace Gra
             }
             else
             {
-                await DisplayAlert("HAHAHAHHAHAHAH", "przegrales", "przepraszam rodzine");
+                setHeartStatus();
+                LoverHeartCount();
             }
         }
 
@@ -338,7 +361,8 @@ namespace Gra
             }
             else
             {
-                await DisplayAlert("HAHAHAHHAHAHAH", "przegrales", "przepraszam rodzine");
+                setHeartStatus();
+                LoverHeartCount();
             }
         }
     }
