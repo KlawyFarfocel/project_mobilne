@@ -29,10 +29,6 @@ namespace Gra
             Label TimeBar = (Label)FindByName("Timer");
             Device.StartTimer(new TimeSpan(0, 0, 1), () =>
             {
-                if (TimeFlag == false)
-                {
-                    return false;
-                }
                 TimeLeft--;
                 TimeCount.Text = TimeLeft.ToString();
                 if (TimeLeft < 15)
@@ -45,10 +41,10 @@ namespace Gra
                         Navigation.PushModalAsync(new deadPage(dalej1));
                         TimeCount.Text = "";
                         TimeBar.Text = TimeCount.Text;
-                        return false;
+                        return TimeFlag;
                     }
                 }
-                return true;
+                return TimeFlag;
             });
         }
         void setHeartStatus()
@@ -84,7 +80,8 @@ namespace Gra
                     Timebutt = 10;
                     wynik += TimeLeft;
                     double dalej1 = 14;
-                     Navigation.PushModalAsync(new Page7(dalej1, wynik));
+                    TimeFlag= false;
+                    Navigation.PushModalAsync(new Page7(dalej1, wynik));
 
                 }
                 else

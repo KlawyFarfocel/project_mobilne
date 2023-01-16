@@ -10066,3 +10066,6 @@ C:\Users\misze\Source\Repos\project_mobilne22222\Gra\Gra\Gra\Gra.Android\obj\Deb
 C:\Users\misze\Source\Repos\project_mobilne22222\Gra\Gra\Gra\Gra.Android\obj\Debug\120\stamp\_GenerateJavaStubs.stamp
 C:\Users\misze\Source\Repos\project_mobilne22222\Gra\Gra\Gra\Gra.Android\obj\Debug\120\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\misze\Source\Repos\project_mobilne22222\Gra\Gra\Gra\Gra.Android\obj\Debug\120\stamp\_ResolveLibraryProjectImports.stamp
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\res\raw\soundhelix_song_4.mp3
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\res\raw\soundhelix_song_5.mp3
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\res\raw\you_died_sound.mp3

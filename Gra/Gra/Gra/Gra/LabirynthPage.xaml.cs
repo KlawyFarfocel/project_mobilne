@@ -32,7 +32,8 @@ namespace Gra
         {
             TimeFlag = false;
             double dalej1 = soundtrack.Volume;
-                      Navigation.PushModalAsync(new deadPage(dalej1));
+            soundtrack.Stop();
+            Navigation.PushModalAsync(new deadPage(dalej1));
         }
         async void SetTime()
         {
@@ -52,7 +53,7 @@ namespace Gra
                     TimeCount.TextColor = Color.Red;
                     if (TimeLeft == 0)
                     {
-                        TimeFlag=false;
+                        TimeFlag = false;
                         end();
                         TimeCount.Text = "";
                         TimeBar.Text = TimeCount.Text;
@@ -183,7 +184,8 @@ namespace Gra
                     TimeFlag = false;
                     double wynik = TimeLeft;
                     double dalej1 = soundtrack.Volume;
-                    await Navigation.PushModalAsync(new ScrabblePage(dalej1,wynik)) ;
+                    // await Navigation.PushModalAsync(new ScrabblePage(dalej1,wynik)) ;
+                    await Navigation.PushModalAsync(new Page5(dalej1, wynik));
                 }
                 return;
             }
@@ -385,6 +387,7 @@ namespace Gra
         }
         protected override void OnAppearing()
         {
+            Application.Current.Resources.Add("sound", soundtrack);
             GenerateLabirynthNumber();
             SetTime();
             if (LabirynthChoice == "Lab1")

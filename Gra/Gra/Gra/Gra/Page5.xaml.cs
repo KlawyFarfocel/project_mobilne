@@ -49,10 +49,6 @@ namespace Gra
             Label TimeBar = (Label)FindByName("Timer");
             Device.StartTimer(new TimeSpan(0, 0, 1), () =>
             {
-                if (TimeFlag == false)
-                {
-                    return false;
-                }
                 TimeLeft--;
                 TimeCount.Text = TimeLeft.ToString();
                 if (TimeLeft < 15)
@@ -65,10 +61,10 @@ namespace Gra
                         Navigation.PushModalAsync(new deadPage(dalej1));
                         TimeCount.Text = "";
                         TimeBar.Text = TimeCount.Text;
-                        return false;
+                        return TimeFlag;
                     }
                 }
-                return true;
+                return TimeFlag;
             });
         }
         public Page5(double dalej1,double wynik)
@@ -259,6 +255,7 @@ namespace Gra
                     {
                         wynik1 += TimeLeft;
                         double dalej1 = 14;
+                        TimeFlag = false;
                         await Navigation.PushModalAsync(new Page6(dalej1, wynik1));
                         // await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
                     }
@@ -299,6 +296,7 @@ namespace Gra
                     {
                         wynik1 += TimeLeft;
                         double dalej1 = 14;
+                        TimeFlag = false;
                         await Navigation.PushModalAsync(new Page6(dalej1, wynik1));
                         //  await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
                     }
@@ -340,6 +338,7 @@ namespace Gra
                     {
                         wynik1 += TimeLeft;
                         double dalej1 = 14;
+                        TimeFlag = false;
                         await Navigation.PushModalAsync(new Page6(dalej1, wynik1));
                         // await DisplayAlert("wygrałem ?", "WYGRAŁES", "dziekuje rodzinie");
                     }
