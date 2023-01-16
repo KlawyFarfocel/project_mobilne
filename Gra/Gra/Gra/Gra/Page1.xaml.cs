@@ -51,19 +51,26 @@ namespace Gra
             {
                 case "2077":
                     double dalej1 = 12;
-                    Navigation.PushAsync(new Page2(dalej1));
+                    Navigation.PushModalAsync(new Page2(dalej1));
                     break;
                 case "2137":
                     double dalej2 = 12;
-                    Navigation.PushAsync(new Page3(dalej2));
+                    Navigation.PushModalAsync(new Page3(dalej2));
                     break;
 
 
                 case "2115":
-                    double dalej3 = 12;
-                    Navigation.PushAsync(new Page4(dalej3));
+           
+                    Navigation.PushModalAsync(new Page4());
                     break;
+                case "6969":
 
+                    Navigation.PushModalAsync(new tekst4());
+                    break;
+                case "2005":
+
+                    Navigation.PushModalAsync(new Page8());
+                    break;
                 default:
                     DisplayAlert("Notice", "Błędny kod", "OK");
                     break;

@@ -12,7 +12,7 @@ namespace Gra
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page4 : ContentPage
     {
-        public Page4(double dalej3)
+        public Page4()
         {
             InitializeComponent();
         }

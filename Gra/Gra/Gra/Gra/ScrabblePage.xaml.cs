@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.CommunityToolkit.UI.Views;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 using Xamarin.Forms.Xaml;
 
 namespace Gra
@@ -185,6 +187,11 @@ namespace Gra
         }
         public ScrabblePage(double dalej,double wynik)
         {
+            DisplayAlert("Notice", dalej.ToString(), "OK");
+           
+           
+            //  soundtrack.Volume = dalej;
+            //  soundtrack.Play();
             wynik1 = wynik;
             InitializeComponent();
         }
