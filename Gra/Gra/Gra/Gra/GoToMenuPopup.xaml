@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             Size="300,300"
+             IsLightDismissEnabled="False"
+             Color="Transparent"
+             x:Class="Gra.GoToMenuPopup">
+
+    <StackLayout BackgroundColor="White" xct:CornerRadiusEffect.CornerRadius="8">
+        <Label x:Name="PopupHeader"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="10,25,10,0" Text="Czy chcesz wrócić do menu?" FontSize="35" TextColor="Black" FontAttributes="Bold"></Label>
+        <Label x:Name="PopupBody" TextColor="Red" Margin="20,0,5,0"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FontSize="Body" Text="Dotychczasowy postęp zostanie utracony!"></Label>
+        <Button x:Name="LeaveButton" CornerRadius="5" BackgroundColor="Red" TextColor="White" Text="Zabierz mnie stąd" Margin="0,0,0,5" HorizontalOptions="Center" Clicked="GoToMenu" VerticalOptions="EndAndExpand"></Button>
+        <Button x:Name="StayButton" CornerRadius="5" BackgroundColor="Green" TextColor="White" Text="Gram dalej!" Margin="0,0,0,5" HorizontalOptions="Center" Clicked="DismissPopup" VerticalOptions="EndAndExpand"></Button>
+    </StackLayout>
+</xct:Popup>

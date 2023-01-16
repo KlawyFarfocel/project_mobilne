@@ -280,3 +280,9 @@ C:\Users\misze\Source\Repos\project_mobilne3333a\Gra\Gra\Gra\Gra\obj\Debug\netst
 C:\Users\misze\Source\Repos\project_mobilne3333a\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\ref\Gra.dll
 C:\Users\misze\Source\Repos\project_mobilne3333a\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\tekst4.xaml.g.cs
 C:\Users\misze\Source\Repos\project_mobilne3333a\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\Page8.xaml.g.cs
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\Page8.xaml.g.cs
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\tekst4.xaml.g.cs
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\deadPage.xaml.g.cs
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\TryAgainPopup.xaml.g.cs
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\GamePopUp.xaml.g.cs
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Debug\netstandard2.0\GoToMenuPopup.xaml.g.cs

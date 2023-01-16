@@ -8,6 +8,7 @@ using Xamarin.CommunityToolkit.UI.Views;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 using Xamarin.Forms.Xaml;
+using Xamarin.CommunityToolkit.Extensions;
 
 namespace Gra
 {
@@ -32,7 +33,7 @@ namespace Gra
 
         async void SetTime()
         {
-            await DisplayAlert("Rozpocznij zagadkę", "Wciśnij OK, aby rozpocząć", "OK");
+            await Navigation.ShowPopupAsync(new GamePopup("Scrabble"));
             Label TimeCount = (Label)FindByName("TimerCount");
             Label TimeBar = (Label)FindByName("Timer");
             Device.StartTimer(new TimeSpan(0, 0, 1), () =>
@@ -148,7 +149,6 @@ namespace Gra
             }
             if (WinFlag)
             {
-                 DisplayAlert("Kod do nastepnej zagadki to: ", "2115", "Ok");
 
                 wynik1 += TimeLeft;
                 double dalej1 = 13;
@@ -187,7 +187,6 @@ namespace Gra
         }
         public ScrabblePage(double dalej,double wynik)
         {
-            DisplayAlert("Notice", dalej.ToString(), "OK");
            
            
             //  soundtrack.Volume = dalej;

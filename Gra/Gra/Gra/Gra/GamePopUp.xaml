@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             Size="300,300"
+             IsLightDismissEnabled="False"
+             Color="Transparent"
+             x:Class="Gra.GamePopup">
+
+    <StackLayout BackgroundColor="White" xct:CornerRadiusEffect.CornerRadius="8">
+        <Label  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="10,25,10,0" Text="Zanim zaczniesz" FontSize="35" TextColor="Black" FontAttributes="Bold"></Label>
+        <Label x:Name="GameDesc" Margin="20,0,5,0"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FontSize="Body"></Label>
+        <Label x:Name="CodeName" FontSize="Body" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="20,5,0,0" Text="Kod do trybu tekstowego to: "></Label>
+        <Label FontSize="Body" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="20,0,0,5" Text="Zegar włączy się po naciśnięciu przycisku"></Label>
+        <Button CornerRadius="5" BackgroundColor="Green" TextColor="White" Text="Rozpocznij" Margin="0,0,0,50" HorizontalOptions="Center" Clicked="DismissPopup" VerticalOptions="EndAndExpand"></Button>
+    </StackLayout>
+</xct:Popup>

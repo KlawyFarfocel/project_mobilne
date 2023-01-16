@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.CommunityToolkit.UI.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -28,7 +30,7 @@ namespace Gra
 
         async void SetTime()
         {
-            await DisplayAlert("Rozpocznij zagadkę", "Wciśnij OK, aby rozpocząć", "OK");
+            await Navigation.ShowPopupAsync(new GamePopup("Labirynt"));
             Label TimeCount = (Label)FindByName("TimerCount");
             Label TimeBar = (Label)FindByName("Timer");
             Device.StartTimer(new TimeSpan(0, 0, 1), () =>
@@ -66,7 +68,6 @@ namespace Gra
         {
            // soundtrack.Volume = dalej1;
             InitializeComponent();
-            DisplayAlert("Notice", "kod to 2077", "OK");
 
             soundtrack.Volume = dalej1;
             soundtrack.Play();
@@ -171,7 +172,6 @@ namespace Gra
             {
                 if(whereY == LabWinY)
                 {
-                    await DisplayAlert("Kod do nastepnej zagadki to: ", "2137", "Ok");
                     TimeFlag = false;
                     double wynik = TimeLeft;
                     double dalej1 = soundtrack.Volume;
@@ -327,6 +327,20 @@ namespace Gra
             {
                 whereY++;
                 moveBlock(1);
+            }
+        }
+        protected override bool OnBackButtonPressed()
+        {
+            GoToMenu();
+            return true;
+        }
+        async void GoToMenu()
+        {
+            var MenuState=await Navigation.ShowPopupAsync(new GoToMenuPopup());
+            if ((string)MenuState == "false")
+            {
+                soundtrack.Stop();
+                await Navigation.PushModalAsync(new MainPage(soundtrack.Volume));
             }
         }
         protected override void OnAppearing()

@@ -17,12 +17,22 @@ namespace Gra
 { 
     public partial class MainPage : ContentPage
     {
-        public MainPage(double dalej)
+        public MainPage(double dalej,bool hasLost=false)
         {
             InitializeComponent();
             if (dalej == 0)
                 dalej = 1;
             soundtrack.Volume = dalej;
+            CheckIfLost(hasLost);
+        }
+        bool CheckIfLost(bool hasLost)
+        {
+            if(hasLost == true)
+            {
+                Navigation.ShowPopup(new TryAgainPopup());
+                return true;
+            }
+            return true;
         }
         async protected override void OnAppearing()
         {
@@ -107,13 +117,27 @@ namespace Gra
         {
             soundtrack.Stop();
             var dalej1=soundtrack.Volume;
-            await Navigation.PushModalAsync(new Page1(dalej1));
+            // await Navigation.PushModalAsync(new Page1(dalej1));
+            await Navigation.PushModalAsync(new deadPage(dalej1));
         }
         async void GoToGameMode(object sender, EventArgs e)
         {
             soundtrack.Stop();
             var dalej1 = soundtrack.Volume;
             await Navigation.PushModalAsync(new LabirynthPage(dalej1));
+        }
+        protected override bool OnBackButtonPressed()
+        {
+            GoToMenu();
+            return true;
+        }
+        async void GoToMenu()
+        {
+            var MenuState = await Navigation.ShowPopupAsync(new GoToMenuPopup(true));
+            if ((string)MenuState == "exit")
+            {
+                System.Diagnostics.Process.GetCurrentProcess().Kill();
+            }
         }
     }
 }
