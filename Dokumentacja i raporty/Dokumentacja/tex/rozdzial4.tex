@@ -1,0 +1,437 @@
+	\newpage
+\section{Implementacja}		%4
+
+\subsection{Przycisk}
+\hspace{0.60cm}Przyciski to podstawowy i najprostszy element większości aplikacji. Ten element poprzez klikanie w niego wykonuje określoną akcje. Kod przykładowego przycisku w naszej grze można znaleźć na listungu 1:
+
+\begin{lstlisting}[caption=Button]
+	<Button Grid.Row="0" 
+	Grid.Column="0" 
+	Text="&#x2699;" 
+	x:Name="SettingsButton" 
+	Padding="0,0,2,2" 
+	FontAttributes="Bold"  
+	FontSize="24" 
+	Clicked="GoToSettings"></Button>
+\end{lstlisting}
+
+\subsubsection{Użyte atrybuty przycisku (listing 1)}
+\begin{itemize}	
+	\item \textbf{Grid - ustawia element na "siatce"}
+	\begin{itemize}
+	\item \textbf{Grid.Row (linia 1) - odpowiada za oś Y czyli rząd }
+	\item \textbf{Grid.Column (linia 2) - odpowiada za oś X czyli kolumnę}	
+	\end{itemize}
+	\item \textbf{Text (linia 3) - napis wewnątrz przycisku. W tym wypadku kod szesnastkowy (hexcode) zębatki}
+	\item \textbf{Padding (linia 5) - wewnętrzny margines}
+	\item \textbf{FontSize (linia 7) - rozmiar czcionki}
+	\item \textbf{Clicked (linia 8)- przycisk po kliknięciu odwołuje się do metody o tej nazwie}
+	\item \textbf{CornerRadius - zaokrągla rogi przycisku, przy odpowiednio dużej wartości, przicisk może stać się okrągły}
+
+	
+\end{itemize}
+\subsubsection{Inne użyteczne atrybuty}
+\hspace{0.60cm}Można znaleźć na listingu 2. Opisują one polecenie label.
+\begin{itemize}
+	\item \textbf{X:Name (linia 3) - nazwa elementu używana potem w C\#}	
+	\item \textbf{Vertical/HorizontalTextAlignment (linia 6) - ustawia test na osi X/Y w zależności od wybranej opcji}
+	\item \textbf{BackgroundColor (linia 8) -pozwala na zmianę koloru tła }		
+\end{itemize}
+
+\begin{lstlisting}[caption=Label]
+	<Label Grid.Row="0" 
+	Grid.Column="0" 
+	x:Name="Tit" 
+	Text="TytuL" 
+	Grid.ColumnSpan="4" 
+	VerticalTextAlignment="Center" 
+	HorizontalTextAlignment="Center" 
+	BackgroundColor="White"/>
+	
+\end{lstlisting}
+\subsubsection{Przyciski w formie zdjęcia}
+\hspace{0.60cm}Inna forma wstawiania przyciusku, w którym zamiast tekstu znajdziemy wstawione zdjęcie jest pokazana na listingu 3.
+\begin{lstlisting}[caption=ImageButton]
+<ImageButton Grid.Column="0" Grid.Row="0" x:Name="BulbButton" Clicked="ChangeLight" ClassId="0" 
+Source="https://cdn-icons-png.flaticon.com/512/74/74072.png" Aspect="AspectFit" IsVisible="true" >
+	<VisualStateManager.VisualStateGroups>
+		<VisualStateGroup x:Name="CommonStates">
+			<VisualState x:Name="Normal">
+				<VisualState.Setters>
+					<Setter Property="Scale" Value="1" />
+				</VisualState.Setters>
+			</VisualState>
+			<VisualState x:Name="Pressed">
+				<VisualState.Setters>
+					<Setter Property="Scale" Value="0.8" />
+				</VisualState.Setters>
+			</VisualState>
+		</VisualStateGroup>
+	</VisualStateManager.VisualStateGroups>
+</ImageButton>
+\end{lstlisting}
+
+\subsubsection{Użyte atrybuty}
+\begin{itemize}
+	\item \textbf{VisualState  (linie 3-16) - pozwala na zmianę wyglądu w zależności od stanu przycisku. W naszym przypadku state "normal" odnosi się do domyślnego ustawienia. State "Pressed" sprawia, że skala obiektu zmienia się do 0.8 ( zmniejsza się, linia 12) symulując efekt naciśnięcia po czym wraca do state "normal" }
+	\item \textbf{Source (linia 2) - źródło obrazka, w tym wypadku link ale możliwe jest też użycie ścieżki }
+\end{itemize}
+\subsection{MainPage}
+\hspace{0.60cm}Funkcja pokazana na listingu 4 służy do sprawdzenia czy jest ustalona wartość głośności muzyki, a następnie ustawia w linii 6 wartość Volume soundtracku właśnie jako tą wartość.
+
+\begin{lstlisting}[caption=MainPage]
+public MainPage(double dalej)
+{
+	InitializeComponent();
+	if (dalej == 0)
+	dalej = 1;
+	soundtrack.Volume = dalej;
+}
+\end{lstlisting}
+
+\subsection{OnAppearing}
+\hspace{0.60cm}Na listingu 5 nadpisujemy metodę OnAppearing(), która wykonuje się na starcie.
+\\
+Metoda FindByName znajduje elementy o podanych nazwach, na następnie wykonuje dla nich metodę Animate\_Pulse().
+\\
+Do zmiennej status przypisany zostaje stan "Uprawnienia do używania aparatu" przez aplikację (potrzebne do użycia lampy błyskowej).
+\\
+Następnie w linii 16 sprawdzany jest status. Jeżeli status jest nieznany (unknown) lub odmówiono dostępu aplikacja prosi o przyznanie takiego uprawnienia
+
+\begin{lstlisting}[caption=OnAppearing]
+async protected override void OnAppearing()
+{
+	base.OnAppearing();
+	arrow_1 = (Label)FindByName("arrow_1");
+	arrow_2 = (Label)FindByName("arrow_2");
+	arrow_3 = (Label)FindByName("arrow_3");
+	arrow_4 = (Label)FindByName("arrow_4");
+	bigRed = (Button)FindByName("bigRed");
+	BulbButton = (ImageButton)FindByName("BulbButton");
+	Animate_pulse(arrow_1);
+	Animate_pulse(arrow_2);
+	Animate_pulse(arrow_3);
+	Animate_pulse(arrow_4);
+	animate_button(bigRed);
+	var status= await Permissions.CheckStatusAsync<Permissions.Camera>();
+	if (status==PermissionStatus.Unknown || status == PermissionStatus.Denied)
+	{
+		await Permissions.RequestAsync<Permissions.Camera>();
+	}
+}
+\end{lstlisting}
+
+\subsection{Animate\_pulse}
+\hspace{0.60cm}Animate\_pulse zawarte na listingu 6 włącza animacje, w której to skala strzałek zmienia się pomiędzy 1 a 1.2
+\\
+W tym przypadku używane jest ClassId po to, by nazywać animacje różnymi nazwami (te same nazwy nadpisywałby się)
+\\
+W tym przypadku, przez połowę czasu animacji skala rośnie, by przez drugą połowę maleć
+
+\begin{itemize}
+	\item \textbf{  This (linia 9) } – Animacja, która będzie animowana   
+	\item \textbf{  Objname (linia 10) } – nazwa służąca jako uchwyt do animacji  
+	\item \textbf{  16 (linia 11) } – Czas w milisekundach pomiędzy elementami animacji  
+	\item \textbf{  950 (linia 12) } – czas w milisekundach trwania animacji   
+	\item \textbf{  Easing.Linear (linia 13) } – funkcja używana do opisu animacji 
+	\item \textbf{  (v,c) =>>obj.Scale=1 (linia 14) } – co ma zostać wykonane po skończeniu animacji   
+	\item \textbf{  ()=>>true (linia 15) } – czy funkcja ma być zapętlona   
+\end{itemize}
+
+\begin{lstlisting}[caption=Animate\_pulse]
+void Animate_pulse(Label obj)
+{
+	var Objname = obj.ClassId;
+	var a = new Animation {
+		{0,0.5, new Animation(v => obj.Scale = v, 1, 1.2) },
+		{0.5,1, new Animation(v => obj.Scale = v, 1.2, 1) }
+	};
+	a.Commit(
+	this,
+	Objname,
+	16,
+	950,
+	Easing.Linear, 
+	(v, c) => obj.Scale = 1,
+	()=> true);
+}
+\end{lstlisting}
+
+\subsection{FirstTask}
+\hspace{0.60cm}Funkcja zawarta na listingu 7 to funkcja, przyjmująca jako parametry obiekt, który został wciśnięty i argumenty zdarzenia, pozwala na przemieszczanie się pomiędzy stronami aplikacji.
+\\
+Metoda soundtrack.Stop() (linia 3) sprawia, że soundtrack przestaje grać,
+\\
+Do zmiennej dalej (linia 4) przekazywana jest aktualna wartość głośności muzyki granej w tle.
+\\
+Następnie (linia 5) asynchronicznie przechodzimy do nowej strony, przekazując jako parametr głośność soundtracku, by ten mógł grać z taką samą głośnością jaka była ustawiona
+
+\begin{lstlisting}[caption=FirstTask]
+private async void FirstTask(object sender, EventArgs e)
+{
+	soundtrack.Stop();
+	double dalej1 = soundtrack.Volume;
+	await Navigation.PushAsync(new LabirynthPage(dalej1));
+}
+\end{lstlisting}
+
+\subsection{Wciśnięcie złego przycisku}
+\hspace{0.60cm}Funkcja na listingu 8 odpowiada za wciśnięciu złego przycisku. Po wciśnięciu go zmienia się widoczność wszystkich elementów menu, następnie wyświetla się obrazek świadczący o porażce (linia 17), a po odczekaniu 3,5s (linia 19) proces aplikacji kończy się i zwraca wartość 0, co świadczy o poprawnym zamknięciu aplikacji (linia 20).
+
+\begin{lstlisting}[caption=WrongButton]
+async void WrongButtonClicked(object sender, EventArgs e)
+{
+	ChangeLight(sender,e);
+	var ButtonDalej = (Button)FindByName("LabirynthButton");
+	var bulbButton = (ImageButton)FindByName("BulbButton");
+	var settingsButton= (Button)FindByName("SettingsButton");
+	var deadAnimation = (Image)FindByName("deadAnimation");
+	var ButtonLatarka = (Button)FindByName("FlashlightButton");
+	var ButtonTekstowy = (Button)FindByName("TextModeButton");
+	var ButtonMorse = (Button)FindByName("ButtonMorse");
+	ButtonDalej.IsVisible = false;
+	ButtonTekstowy.IsVisible = false;
+	ButtonLatarka.IsVisible = false;
+	ButtonMorse.IsVisible = false;
+	bulbButton.IsVisible = false;
+	settingsButton.IsVisible = false;
+	deadAnimation.IsVisible = true;
+	deadAnimation.IsAnimationPlaying = true;
+	await Task.Delay(3500);
+	System.Environment.Exit(0);
+}
+\end{lstlisting}
+
+\subsection{HUD}
+\hspace{0.60cm}HUD (ang. heads-up display) – Ważna część gier komputerowych. Jest to sekcja zawierająca informacje na temat rozgrywki, pozwalająca graczowi na odnalezienie informacji o niej. Nazwa wywodzi się od tzw. wyświetlacza przeziernego HUD stosowanego np. przez pilotów samolotów bojowych.
+\\
+W linach 5-7 są opisane życia w postaci serc.
+\\
+Linie 8-9 są odpowiedzialne za timer, jego widoczność, przezroczystość i cień jaki rzuca.
+\begin{lstlisting}[caption=HUD]
+            <Frame Grid.Row="0" Grid.ColumnSpan="20" Grid.RowSpan="2" BackgroundColor="Gray">
+<Grid>
+<Label Grid.Column="0"></Label>
+
+<Label Grid.Column="0" TextColor="White"  FontSize="30" VerticalTextAlignment="Center" x:Name="HealthBar1" Text="&#10084;"></Label>
+<Label Grid.Column="1" TextColor="White"  FontSize="30" VerticalTextAlignment="Center" x:Name="HealthBar2" Text="&#10084;"></Label>
+<Label Grid.Column="2" TextColor="White"  FontSize="30" VerticalTextAlignment="Center" x:Name="HealthBar3" Text="&#10084;"></Label>
+
+<Label x:Name="Timer" Margin="0,0,0,15"  Grid.Column="3" Grid.ColumnSpan="3"  TextColor="White" VerticalTextAlignment="Center" xct:ShadowEffect.Color="Black" xct:ShadowEffect.Opacity="0.7" xct:ShadowEffect.OffsetX="5" xct:ShadowEffect.Radius="5" FontSize="25" FontAttributes="Bold"></Label>
+<Label x:Name="TimerCount" xct:ShadowEffect.Color="Black" xct:ShadowEffect.Opacity="0.7" xct:ShadowEffect.OffsetX="5" xct:ShadowEffect.Radius="5" Margin="0" TextColor="White" Grid.Column="5" VerticalOptions="Center" FontSize="25"></Label>
+<Label Grid.Column="5" Grid.ColumnSpan="3"  TextColor="White" VerticalTextAlignment="Center" x:Name="CodeNumber"></Label>
+
+<Label Grid.Column="1"></Label>
+</Grid>
+</Frame>
+\end{lstlisting}
+
+\subsection{Literaki}
+Linia 1 - zmienna zawierająca ilość "żyć" [podejść]
+\\Linia 2 - tablica przechowująca indeks każdego z bloków
+\\Linia 3 - tablica przechowująca słowa mogące wystąpić jako rozwiązanie
+\\Linia 4 - tablica przechowująca wszystkie wartości indeksów każdego z bloków
+\\Linia 11 - zmienna zawierająca indeks wartości z TextTable[], która została wybrana jako rozwiązanie
+\\Linia 12 - zmienna zawierająca pozostały czas na rozwiązanie zagadki
+\\Linia 13 - zmienna zawierająca obiekt klasy Random, służący m.in. do losowania liczby z przedziału
+\begin{lstlisting}[caption=Literaki]
+public int HealthCount = 3;
+int[] BlockCounters = { 0, 0, 0, 0 };
+readonly string[] TextTable = { "ARAB", "ALGA", "ALFA", "BAZA", "BETA", "BUDA", "BUNT", "GLON", "GONG", "GRAM", "LAWA", "LIRA", "LUFA", "RATA", "ROPA", "RYSY" };
+public char[,] WordTable =
+{
+	{'A','A','A','A'},
+	{'A','A','A','A'},
+	{'A','A','A','A'},
+	{'A','A','A','A'},
+};
+public int ChosenWord;
+public int TimeLeft = 60;
+Random RandomCharCount = new Random();
+\end{lstlisting}
+
+\subsection{SetTime}
+\hspace{0.60cm}W Linii 4 wyświetla się okno, które należy zamknąć, zanim ruszy zegar. Później uruchamiana jest metoda StartTimer(TimeSpan). TimeSpan przyjmuje trzy wartości - godziny, minuty i sekundy.
+\\W Liniach 8-9 Odejmowane jest 1 od pozostałego czasu, a następnie uzyskana wartość jest wpisywana jako text do obiektu TimeCount.
+\\W linii 10 widoczny jest warunek, który zmienia kolor tekstu na czerwony jeśli mamy mniej czasu niż 15 sekund, a w wypadku gdy się skończy czas wyświetla odpowiedni komunikat
+\begin{lstlisting}[caption=SetTime]
+async void SetTime()
+{
+	await DisplayAlert("Rozpocznij zagadke", "Wcisnij OK, aby rozpoczac", "OK");
+	Label TimeCount = (Label)FindByName("TimerCount");
+	Label TimeBar = (Label)FindByName("Timer");
+	Device.StartTimer(new TimeSpan(0, 0, 1), () =>
+	{
+		TimeLeft--;
+		TimeCount.Text = TimeLeft.ToString();
+		if (TimeLeft < 15)
+		{
+			TimeCount.TextColor = Color.Red;
+			if (TimeLeft == 0)
+			{
+				DisplayAlert("Przegrales", "):", "No nie");
+				TimeCount.Text = "";
+				TimeBar.Text = TimeCount.Text;
+				return false;
+			}
+		}
+		return true;
+	});
+}
+
+\end{lstlisting}
+
+\subsection{SetColumns}
+\hspace{0.60cm}W każdej iteracji pętli do zmiennej name wpisywana jest nazwa Bloku, po czym w zmiennej Obj umieszczany jest obiekt o tej nazwie.
+\\W Linii 6 Losowany jest liczba stałoprzecinkowa z zakresu 0 do rozmiaru tablicy WordTable.
+\\W linii 7 jako wartość atrybutu text umieszczamy wylosowany znak.
+\\Ta funkcja służy początkowemu ustawieniu tekstu w blokach.
+\begin{lstlisting}[caption=SetColums]
+setColumns()
+{
+	for (int i = 0; i < 4; i++)
+	{
+		var Name = "Block" + i;
+		var Obj = (Label)FindByName(Name);
+		var Los = RandomCharCount.Next(0, (WordTable.Length / 4) - 1);
+		Obj.Text = WordTable[Los, i].ToString();
+	}
+}
+\end{lstlisting}
+
+\subsection{RandomizeWordTable}
+\hspace{0.60cm}W Linii 7 do zmiennej nextChar wpisywana jest losowa liczba z zakresu <65,90), która następnie zostaje przekonwertowana na char [są to znaki z zakresu A-Z] \\i wpisana jako wartość tablicy WordTable - w ten sposób za każdym razem losowana jest cała tablica ze znakami.
+\begin{lstlisting}[caption=RandomizeWordTable]
+RandomizeWordTable()
+{
+	for (int i = 0; i < (WordTable.Length/4); i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			var nextChar = RandomCharCount.Next(65, 90);
+			WordTable[i, j] = Convert.ToChar(nextChar);
+		}
+	}
+	char[] chosenWordChars = TextTable[ChosenWord].ToCharArray();
+	for (int i = 0; i < 4; i++)
+	{
+		int random = RandomCharCount.Next(1, (TextTable.Length/4) - 1);
+		WordTable[random, i] = Convert.ToChar(chosenWordChars[i]);
+	}
+}	
+\end{lstlisting}
+
+\subsection{RandomizeText}
+\hspace{0.60cm}Sprawia, że do zmiennej ChosenWord wpisywana jest losowa liczba z zakresu od zera do długości tablicy ze słowami. Dzięki temu wylosowane zostało jedno słowo, które zostanie potem użyte jako hasło.
+RandomizeWordTable()
+\begin{lstlisting}[caption=RandomizeText]
+	RandomizeWordTable()
+	{
+		for (int i = 0; i < (WordTable.Length/4); i++)
+		{
+			for (int j = 0; j < 4; j++)
+			{
+				var nextChar = RandomCharCount.Next(65, 90);
+				WordTable[i, j] = Convert.ToChar(nextChar);
+			}
+		}
+		char[] chosenWordChars = TextTable[ChosenWord].ToCharArray();
+		for (int i = 0; i < 4; i++)
+		{
+			int random = RandomCharCount.Next(1, (TextTable.Length/4) - 1);
+			WordTable[random, i] = Convert.ToChar(chosenWordChars[i]);
+		}
+	}	
+\end{lstlisting}
+
+\subsection{MoveUp}
+\hspace{0.60cm}Ta funkcja zbiera informacje na temat bloku o danym ClassId <każdy blok ma swój classId 0-3, classId jest takie same dla przycisku i bloku> i wysyła je do funkcji ChangeBlockText() z parametrem up. 
+\begin{lstlisting}[caption=MoveUp]
+	void MoveUp(object sender, EventArgs e)
+	{
+		var Button = (Button)sender;
+		var Name = "Block" + Button.ClassId.ToString();
+		var whichBlock = (Label)FindByName(Name);
+		int ClassId = Convert.ToInt32(Button.ClassId);
+		ChangeBlockText(whichBlock, ClassId, "up");
+	}
+\end{lstlisting}
+
+\subsection{ChangeBlockText}
+\hspace{0.60cm}W zależności od podanego parametru, wartość indeksu BlockCounters[blockNumber] zwiększa się (dla parametru down) lub zmniejsza się (dla parametru up) sprawiając efekt "przewijania się" po liście znaków. 
+\\Jeżeli będziemy chcieli wyjść poza zakres znaków w tablicy, to wartość indeksu zmieni się na pierwszy (dla parametru dow) lub ostatni (dla parametru up)
+\begin{lstlisting}[caption=ChangeBlockText]
+	        void ChangeBlockText(Label block, int blockNumber, string where)
+	{
+		if (where == "up")
+		{
+			if (BlockCounters[blockNumber] == 0)
+			{
+				BlockCounters[blockNumber] = (WordTable.Length / 4) - 1;
+			}
+			else BlockCounters[blockNumber]--;
+			
+		}
+		else if (where == "down")
+		{
+			if (BlockCounters[blockNumber] == (WordTable.Length / 4) - 1)
+			{
+				BlockCounters[blockNumber] = 0;
+			}
+			else BlockCounters[blockNumber]++;
+		}
+		block.Text = WordTable[BlockCounters[blockNumber], blockNumber].ToString();
+	}
+\end{lstlisting}
+
+\subsection{CheckIfWin}
+\hspace{0.60cm}Ta funkcja sprawdza warunek zwycięstwa (ciąg znaków zgadza się z elementem z tablicy WordTable). 
+\\W linii 4 ustawiana jest flaga WinFlag jako false (false oznacza brak zgodności, true zgodność). 
+\\W liniach 5-10 odczytywana jest wartość z elementów Block0 - Block3, po czym jest to sklejane w jeden ciąg, umieszczony w zmiennej userGuess.
+\\W liniach 11-17 iterujemy po wszystkich elementach tablicy WordTable (tam są słowa możliwe do uzyskania). 
+\\W linii 13 umieszczony jest warunek, który sprawdza, czy wybrany przez użytkownika ciąg znaków jest zgodny z elementem z tablicy. Jeśli tak to flaga WinFlag przestawiana jest na "true".
+\\W linii 18 sprawdzamy czy flaga ma wartość True. Jeśli tak, oznacza to wygraną. W przeciwnym razie zmniejszana jest liczba serc o 1.
+
+\begin{lstlisting}[caption=CheckIfWin]
+	 async void CheckIfWin(object sender, EventArgs e)
+	{
+		var userGuess = "";
+		var WinFlag = false;
+		for (int i = 0; i < 4; i++)
+		{
+			var Name = "Block" + i;
+			var Block = (Label)FindByName(Name);
+			userGuess += Block.Text;
+		}
+		for (int i = 0; i < TextTable.Length; i++)
+		{
+			if (TextTable[i] == userGuess)
+			{
+				WinFlag = true;
+			}
+		}
+		if (WinFlag)
+		{
+			DisplayAlert("Kod do nastepnej zagadki to: ", "2115", "Ok");
+			await Navigation.PushAsync(new FlashlightPage());
+		}
+		else
+		{
+			setHeartStatus();
+			LoverHeartCount();
+		}
+	}
+\end{lstlisting}
+
+\subsection{MoveDown}
+Ta funkcja zbiera informacje na temat bloku o danym ClassId (każdy blok ma swój classId 0-3, classId jest takie same dla przycisku i bloku) i wysyła je do funkcji ChangeBlockText() z parametrem down.
+\begin{lstlisting}[caption=MoveDown]
+        void MoveDown(object sender, EventArgs e)
+{
+	var Button = (Button)sender;
+	var Name = "Block" + Button.ClassId.ToString();
+	var whichBlock = (Label)FindByName(Name);
+	int ClassId = Convert.ToInt32(Button.ClassId);
+	ChangeBlockText(whichBlock, ClassId, "down");
+}
+\end{lstlisting}
