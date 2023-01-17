@@ -184,8 +184,8 @@ namespace Gra
                     TimeFlag = false;
                     double wynik = TimeLeft;
                     double dalej1 = soundtrack.Volume;
-                    // await Navigation.PushModalAsync(new ScrabblePage(dalej1,wynik)) ;
-                    await Navigation.PushModalAsync(new Page5(dalej1, wynik));
+                     await Navigation.PushModalAsync(new ScrabblePage(dalej1,wynik)) ;
+                   // await Navigation.PushModalAsync(new Page5(dalej1, wynik));
                 }
                 return;
             }

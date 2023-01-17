@@ -278,6 +278,11 @@ namespace Gra
             {
                 setHeartStatus();
                 LoverHeartCount();
+                for (int i = 0; i < licznik; i++)
+                {
+                    await Task.Delay(5000);
+                    losowanie(table[i], 0);
+                }
             }
         }
 
