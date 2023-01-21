@@ -4,6 +4,7 @@
              x:Class="Gra.Page8">
     <ContentPage.Content>
         <StackLayout>
+            <Button Clicked="GoBack" BackgroundColor="Green" TextColor="White" Text="Przejdź do menu wyboru kodu" CornerRadius="6" Margin="0,20,0,0" HorizontalOptions="Center"></Button>
             <Label Text="Jeśli kolor jest czerwony to przytrzymaj przycisk 5 sekund jak ostatnią cyfrą licznika czasu jest 1"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />

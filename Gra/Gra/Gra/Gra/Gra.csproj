@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <PackageIcon>logo.png</PackageIcon>
+    <Title>Operacja Kooperacja</Title>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -17,6 +19,13 @@
     <EmbeddedResource Remove="Nowy folder\**" />
     <None Remove="Nowy folder1\**" />
     <None Remove="Nowy folder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\Gra.Android\Resources\drawable\logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

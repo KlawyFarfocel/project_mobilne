@@ -17,7 +17,7 @@ namespace Gra
 { 
     public partial class MainPage : ContentPage
     {
-        public MainPage(double dalej,bool hasLost=false)
+        public MainPage(double dalej=0,bool hasLost=false)
         {
             Application.Current.Resources.Clear();
             InitializeComponent();
@@ -119,7 +119,6 @@ namespace Gra
             soundtrack.Stop();
             var dalej1=soundtrack.Volume;
             await Navigation.PushModalAsync(new Page1(dalej1));
-            // await Navigation.PushModalAsync(new deadPage(dalej1));
         }
         async void GoToGameMode(object sender, EventArgs e)
         {

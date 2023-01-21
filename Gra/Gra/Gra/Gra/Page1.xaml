@@ -7,10 +7,10 @@
             <Label Text="Wpisz kod od drugiego gracza :"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <Entry x:Name="entry" Text="0000" 
+            <Entry x:Name="entry" Placeholder="0000" 
                    VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"/>
-            <Button BackgroundColor="Gray" x:Name="ForwardButton" TextColor="Gray" Margin="0" Text="Przejdź dalej" Clicked="ForwardButton_Clicked" FontSize="15"></Button>
+            <Button BackgroundColor="Green" x:Name="ForwardButton" TextColor="White" Margin="20,0,20,10" Text="Przejdź dalej" Clicked="ForwardButton_Clicked" FontSize="15"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

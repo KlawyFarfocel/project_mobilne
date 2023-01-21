@@ -11,6 +11,7 @@ using Xamarin.CommunityToolkit;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Xamarin.CommunityToolkit.Extensions;
 using Newtonsoft.Json.Converters;
+using Xamarin.CommunityToolkit.UI.Views;
 
 namespace Gra
 {
@@ -61,7 +62,7 @@ namespace Gra
         public int TimeLeft = 60;
         async void SetTime()
         {
-            await DisplayAlert("Rozpocznij zagadkę", "Wciśnij OK, aby rozpocząć", "OK");
+            await Navigation.ShowPopupAsync(new GamePopup("Morse"));
             Label TimeCount = (Label)FindByName("TimerCount");
             Label TimeBar = (Label)FindByName("Timer");
             Device.StartTimer(new TimeSpan(0, 0, 1), () =>
@@ -88,7 +89,22 @@ namespace Gra
                 return true;
             });
         }
-
+        protected override bool OnBackButtonPressed()
+        {
+            GoToMenu();
+            return true;
+        }
+        async void GoToMenu()
+        {
+            var MenuState = await Navigation.ShowPopupAsync(new GoToMenuPopup());
+            if ((string)MenuState == "false")
+            {
+                TimeFlag = false;
+                MediaElement soundtrack = (MediaElement)Application.Current.Resources["sound"];
+                soundtrack.Stop();
+                await Navigation.PushModalAsync(new MainPage(soundtrack.Volume));
+            }
+        }
         public FlashlightPage(double dalej1,double wynik1)
         {
             wynik = wynik1;

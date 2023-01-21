@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.CommunityToolkit.Extensions;
+using Xamarin.CommunityToolkit.UI.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 using Xamarin.Forms.Xaml;
@@ -44,7 +45,6 @@ namespace Gra
         }
         async void SetTime()
         {
-            await DisplayAlert("Rozpocznij zagadkę", "Wciśnij OK, aby rozpocząć", "OK");
             Label TimeCount = (Label)FindByName("TimerCount");
             Label TimeBar = (Label)FindByName("Timer");
             Device.StartTimer(new TimeSpan(0, 0, 1), () =>
@@ -67,15 +67,37 @@ namespace Gra
                 return TimeFlag;
             });
         }
+        protected override bool OnBackButtonPressed()
+        {
+            GoToMenu();
+            return true;
+        }
+        async void GoToMenu()
+        {
+            
+            var MenuState = await Navigation.ShowPopupAsync(new GoToMenuPopup());
+            if ((string)MenuState == "false")
+            {
+                TimeFlag = false;
+                MediaElement soundtrack = (MediaElement)Xamarin.Forms.Application.Current.Resources["sound"];
+                soundtrack.Stop();
+                await Navigation.PushModalAsync(new MainPage(soundtrack.Volume));
+            }
+        }
+        async void HandleGameStart()
+        {
+            await Navigation.ShowPopupAsync(new GamePopup("Kolorki"));
+            SetTime();
+            long ktory = RandomCharCount.Next(1, 4);
+            await Task.Delay(250);
+            losowanie(ktory, 1);
+        }
         public Page5(double dalej1,double wynik)
         {
             wynik1 = wynik;
             InitializeComponent();          
             double f = dalej1;
-            SetTime();
-            long ktory = RandomCharCount.Next(1, 4);
-            losowanie(ktory, 1);
-
+            HandleGameStart();
         }
         /*        void resetCheckMarks()
                 {

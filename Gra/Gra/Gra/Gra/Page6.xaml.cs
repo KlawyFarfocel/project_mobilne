@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-
+using Xamarin.CommunityToolkit.Extensions;
+using Xamarin.CommunityToolkit.UI.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -24,7 +25,7 @@ namespace Gra
         Random RandomCharCount = new Random();
         async void SetTime()
         {
-            await DisplayAlert("Rozpocznij zagadkę", "Wciśnij OK, aby rozpocząć", "OK");
+            await Navigation.ShowPopupAsync(new GamePopup("Przycisk"));
             Label TimeCount = (Label)FindByName("TimerCount");
             Label TimeBar = (Label)FindByName("Timer");
             Device.StartTimer(new TimeSpan(0, 0, 1), () =>
@@ -127,6 +128,23 @@ namespace Gra
                 return true;
             });
 
+        }
+        protected override bool OnBackButtonPressed()
+        {
+            GoToMenu();
+            return true;
+        }
+        async void GoToMenu()
+        {
+            
+            var MenuState = await Navigation.ShowPopupAsync(new GoToMenuPopup());
+            if ((string)MenuState == "false")
+            {
+                TimeFlag = false;
+                MediaElement soundtrack = (MediaElement)Application.Current.Resources["sound"];
+                soundtrack.Stop();
+                await Navigation.PushModalAsync(new MainPage(soundtrack.Volume));
+            }
         }
         void losowanie(long ktory)
         {

@@ -32,7 +32,7 @@
     </intent>
   </queries>
   <application android:name="android.app.Application" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:extractNativeLibs="true" android:icon="@drawable/logo" android:label="Operacja Kooperacja" android:theme="@style/MainTheme">
-    <activity android:name="crc64d3f17b915f724049.MainActivity" android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:exported="true" android:icon="@mipmap/icon" android:label="Gra" android:theme="@style/MainTheme">
+    <activity android:name="crc64d3f17b915f724049.MainActivity" android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:exported="true" android:icon="@drawable/logo" android:label="Operacja Kooperacja" android:theme="@style/MainTheme">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

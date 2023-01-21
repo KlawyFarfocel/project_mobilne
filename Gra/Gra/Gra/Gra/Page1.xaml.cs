@@ -17,7 +17,11 @@ namespace Gra
         {
             InitializeComponent();
         }
-
+        protected override bool OnBackButtonPressed()
+        {
+            Navigation.PushModalAsync(new MainPage());
+            return true;
+        }
         private void ForwardButton_Clicked(object sender, EventArgs e)
         {
             string passwd = entry.Text;

@@ -3195,6 +3195,12 @@ D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\drawable\cogw
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\drawable\lightbulb_light.png
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\drawable\lightbulb.png
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\drawable\cogwheel_light.png
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\drawable\title_header.png
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\drawable\arrow_up.gif
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\drawable\arrow_down.gif
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\raw\soundhelix_song_4.mp3
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\raw\soundhelix_song_5.mp3
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\raw\you_died_sound.mp3
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\uploadflags.txt
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\resolvedassemblies.hash
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\link.flag

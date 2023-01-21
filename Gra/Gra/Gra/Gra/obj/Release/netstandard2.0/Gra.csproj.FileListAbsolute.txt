@@ -141,7 +141,10 @@ D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\bin\Release\netstandard2.0\Gra.pdb
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\Gra.csproj.AssemblyReference.cache
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\Gra.GeneratedMSBuildEditorConfig.editorconfig
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\App.xaml.g.cs
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\deadPage.xaml.g.cs
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\FlashlightPage.xaml.g.cs
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\GamePopUp.xaml.g.cs
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\GoToMenuPopup.xaml.g.cs
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\LabirynthPage.xaml.g.cs
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\MainPage.xaml.g.cs
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\NamePopup.xaml.g.cs
@@ -152,8 +155,11 @@ D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\Page4.xaml.g.c
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\Page5.xaml.g.cs
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\Page6.xaml.g.cs
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\Page7.xaml.g.cs
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\Page8.xaml.g.cs
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\ScrabblePage.xaml.g.cs
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\SettingsPage.xaml.g.cs
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\tekst4.xaml.g.cs
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\TryAgainPopup.xaml.g.cs
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\Gra.AssemblyInfoInputs.cache
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\Gra.AssemblyInfo.cs
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra\obj\Release\netstandard2.0\Gra.csproj.CoreCompileInputs.cache

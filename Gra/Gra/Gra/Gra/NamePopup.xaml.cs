@@ -19,7 +19,7 @@ namespace Gra
         void DismissPopUp(object sender, EventArgs e)
         {
             var EntryFrame = (Entry)FindByName("userName");
-            if (EntryFrame.Text == "") Dismiss("undefined");
+            if (EntryFrame.Text == null) Dismiss("undefined");
             Dismiss(EntryFrame.Text);
         }
     }

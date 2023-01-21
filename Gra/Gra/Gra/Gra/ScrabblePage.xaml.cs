@@ -16,6 +16,7 @@ namespace Gra
     public partial class ScrabblePage : ContentPage
     {
         public int HealthCount = 3;
+        MediaElement soundtrack = (MediaElement)Application.Current.Resources["sound"];
         int[] BlockCounters = { 0, 0, 0, 0 };
         readonly string[] TextTable = { "ARAB", "ALGA", "ALFA", "BAZA", "BETA", "BUDA", "BUNT", "GLON", "GONG", "GRAM", "LAWA", "LIRA", "LUFA", "RATA", "ROPA", "RYSY" };
         public char[,] WordTable =
@@ -59,6 +60,21 @@ namespace Gra
                 }
                 return true;
             });
+        }
+        protected override bool OnBackButtonPressed()
+        {
+            GoToMenu();
+            return true;
+        }
+        async void GoToMenu()
+        {
+            var MenuState = await Navigation.ShowPopupAsync(new GoToMenuPopup());
+            if ((string)MenuState == "false")
+            {
+                TimeFlag = false;
+                soundtrack.Stop();
+                await Navigation.PushModalAsync(new MainPage(soundtrack.Volume));
+            }
         }
         void MorseText()
         {

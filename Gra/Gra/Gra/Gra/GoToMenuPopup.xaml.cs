@@ -14,14 +14,14 @@ namespace Gra
     {
         public MediaElement track;
         public bool ExitStatus;
-        public GoToMenuPopup(bool ExitStatus=false)
+        public GoToMenuPopup(bool ExitStatus=false, bool ExitFromScoreBoard=false)
         {
             InitializeComponent();
-            this.ExitStatus= ExitStatus;
-            if(ExitStatus == true) 
+            this.ExitStatus= ExitStatus; 
+            var PopupBody = (Label)FindByName("PopupBody");
+            if (ExitStatus == true) 
             {
                 var PopupHeader = (Label)FindByName("PopupHeader");
-                var PopupBody = (Label)FindByName("PopupBody");
                 var LeaveButton = (Button)FindByName("LeaveButton");
                 var StayButton = (Button)FindByName("StayButton");
 
@@ -30,6 +30,10 @@ namespace Gra
                 PopupBody.TextColor = Color.Black;
                 LeaveButton.Text = "Wychodzę!";
                 StayButton.Text = "Zostaję!";
+            }
+            if(ExitFromScoreBoard == true)
+            {
+                PopupBody.Text = "";
             }
         }
         async void GoToMenu(object sender, EventArgs e)

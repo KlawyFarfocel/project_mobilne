@@ -12,9 +12,20 @@ namespace Gra
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page8 : ContentPage
     {
+        readonly double dalej1 = 13;
         public Page8()
         {
             InitializeComponent();
+        }
+        void GoBack(object sender, EventArgs e)
+        {
+
+            Navigation.PushModalAsync(new Page1(dalej1));
+        }
+        protected override bool OnBackButtonPressed()
+        {
+            Navigation.PushModalAsync(new Page1(dalej1));
+            return true;
         }
     }
 }

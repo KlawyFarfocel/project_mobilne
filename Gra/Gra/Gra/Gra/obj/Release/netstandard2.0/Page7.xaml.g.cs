@@ -8,5 +8,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Gra.Page7.xaml", "Page7.xaml", null)]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Gra.Page7.xaml", "Page7.xaml", typeof(global::Gra.Page7))]
 
+namespace Gra {
+    
+    
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Page7.xaml")]
+    public partial class Page7 : global::Xamarin.Forms.ContentPage {
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.CollectionView collectionView;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private void InitializeComponent() {
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(Page7));
+            collectionView = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.CollectionView>(this, "collectionView");
+        }
+    }
+}

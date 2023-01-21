@@ -378,6 +378,7 @@ namespace Gra
         }
         async void GoToMenu()
         {
+            TimeFlag = false;
             var MenuState=await Navigation.ShowPopupAsync(new GoToMenuPopup());
             if ((string)MenuState == "false")
             {

@@ -26,7 +26,7 @@
   <uses-permission android:name="android.permission.CAMERA" />
   <uses-feature android:name="android.hardware.bluetooth_le" android:required="true" />
   <application android:label="Operacja Kooperacja" android:theme="@style/MainTheme" android:icon="@drawable/logo" android:name="android.app.Application" android:allowBackup="true" android:extractNativeLibs="true">
-    <activity android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:icon="@mipmap/icon" android:label="Gra" android:theme="@style/MainTheme" android:name="crc64d3f17b915f724049.MainActivity" android:exported="true">
+    <activity android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:icon="@drawable/logo" android:label="Operacja Kooperacja" android:theme="@style/MainTheme" android:name="crc64d3f17b915f724049.MainActivity" android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

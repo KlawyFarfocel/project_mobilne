@@ -25,7 +25,8 @@
         <StackLayout Style="{StaticResource baseStyle}"  BackgroundColor="LightGray">
             <Grid>
                 <Label Style="{StaticResource HeaderStyle}"></Label>
-                <CollectionView Grid.Row="0" Margin="0,50,0,0" x:Name="collectionView">
+                <Button Clicked="GoToMenu" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,50,0,0" BackgroundColor="Green" TextColor="White" CornerRadius="6" Grid.Row="0" Grid.Column="0" Text="Powrót do menu"></Button>
+                <CollectionView Grid.Row="0" Margin="0,100,0,0" x:Name="collectionView">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <Frame Margin="30,0" BackgroundColor="Transparent">
