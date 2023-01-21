@@ -36,7 +36,7 @@ namespace Gra
         {
             // double dalej = 12;
             soundtrack.Stop();
-            await Navigation.PushAsync(new MainPage(dalej));
+            await Navigation.PushModalAsync(new MainPage(dalej));
         }
         /* async void OnButtonClicked(object sender, EventArgs e)
 {

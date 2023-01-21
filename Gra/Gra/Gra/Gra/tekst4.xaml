@@ -4,12 +4,8 @@
              x:Class="Gra.tekst4">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="czerwony - zolty
-                         zolty - niebieski
-                         niebieski - zielony
-                         zielony - czerwony"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Button Clicked="GoBack" BackgroundColor="Green" TextColor="White" Text="Przejdź do menu wyboru kodu" CornerRadius="6" Margin="0,20,0,0" HorizontalOptions="Center"></Button>
+            <Image Source="text4" x:Name="zagadka"  IsAnimationPlaying="False"  WidthRequest="600" HeightRequest="1000" VerticalOptions="Center" HorizontalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

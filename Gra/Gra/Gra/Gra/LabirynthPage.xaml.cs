@@ -26,7 +26,7 @@ namespace Gra
         static Random RandomLabirynthNumber = new Random();
         public string LabirynthChoice = "";
         public readonly int LabirynthNumberChoice = RandomLabirynthNumber.Next(101);
-        public int TimeLeft = 60;
+        public int TimeLeft = 90;
 
         public void end()
         {

@@ -5,19 +5,8 @@
     <ContentPage.Content>
         <StackLayout>
             <Button Clicked="GoBack" BackgroundColor="Green" TextColor="White" Text="Przejdź do menu wyboru kodu" CornerRadius="6" Margin="0,20,0,0" HorizontalOptions="Center"></Button>
-            <Label Text="Jeśli kolor jest czerwony to przytrzymaj przycisk 5 sekund jak ostatnią cyfrą licznika czasu jest 1"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Label Text="Jeśli kolor jest niebieski to przytrzymaj przycisk 3 sekundy jak ostatnią cyfrą licznika czasu jest 3"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Label Text="Jeśli kolor jest żółty to przytrzymaj przycisk 4 sekundy jak ostatnią cyfrą licznika czasu jest 2"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Label Text="Jeśli kolor jest czerwony to przytrzymaj przycisk 2 sekundy jak ostatnią cyfrą licznika czasu jest 4"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            
+            <Image Source="text5" x:Name="zagadka"  IsAnimationPlaying="False"  WidthRequest="600" HeightRequest="1000" VerticalOptions="Center" HorizontalOptions="Center"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

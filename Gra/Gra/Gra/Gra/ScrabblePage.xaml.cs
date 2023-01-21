@@ -28,7 +28,7 @@ namespace Gra
         };
         public int ChosenWord;
         public double wynik1=12;
-        public int TimeLeft = 60;
+        public int TimeLeft = 90;
         public bool TimeFlag = true;
         Random RandomCharCount = new Random();
 

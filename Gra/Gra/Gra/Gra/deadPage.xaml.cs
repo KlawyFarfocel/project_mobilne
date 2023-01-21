@@ -24,6 +24,7 @@ namespace Gra
         }
         async void Animation(double soundtrackVolume)
         {
+           await DisplayAlert("s", soundtrackVolume.ToString(), "xd");
             var deadAnimation = (Image)FindByName("dead");
             soundtrack.Volume = 1;
             deadAnimation.IsAnimationPlaying = true;
