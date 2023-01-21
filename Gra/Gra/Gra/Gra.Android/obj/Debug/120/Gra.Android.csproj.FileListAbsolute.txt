@@ -11675,3 +11675,5 @@ C:\Users\misze\Source\Repos\project_mobilnesd\Gra\Gra\Gra\Gra.Android\obj\Debug\
 C:\Users\misze\Source\Repos\project_mobilnesd\Gra\Gra\Gra\Gra.Android\obj\Debug\120\stamp\_ResolveLibraryProjectImports.stamp
 C:\Users\misze\Source\Repos\project_mobilnesd\Gra\Gra\Gra\Gra.Android\obj\Debug\120\res\drawable\text4.png
 C:\Users\misze\Source\Repos\project_mobilnesd\Gra\Gra\Gra\Gra.Android\obj\Debug\120\res\drawable\text5.png
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\res\drawable\text4.png
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Debug\120\res\drawable\text5.png
