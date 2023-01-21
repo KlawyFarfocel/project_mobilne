@@ -12,6 +12,7 @@ namespace Gra
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page4 : ContentPage
     {
+        readonly double dalej1 = 13;
         public Page4()
         {
             InitializeComponent();
