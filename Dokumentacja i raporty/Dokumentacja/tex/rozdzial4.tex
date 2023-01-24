@@ -2,7 +2,7 @@
 \section{Implementacja}		%4
 
 \subsection{Przycisk}
-\hspace{0.60cm}Przyciski to podstawowy i najprostszy element większości aplikacji. Ten element poprzez klikanie w niego wykonuje określoną akcje. Kod przykładowego przycisku w naszej grze można znaleźć na listungu 1:
+Przyciski to podstawowy i najprostszy element większości aplikacji. Ten element poprzez klikanie w niego wykonuje określoną akcje. Kod przykładowego przycisku w naszej grze można znaleźć na listungu 1:
 
 \begin{lstlisting}[caption=Button]
 	<Button Grid.Row="0" 
@@ -17,25 +17,25 @@
 
 \subsubsection{Użyte atrybuty przycisku (listing 1)}
 \begin{itemize}	
-	\item \textbf{Grid - ustawia element na "siatce"}
+	\item \textbf{Grid }- ustawia element na "siatce",
 	\begin{itemize}
-	\item \textbf{Grid.Row (linia 1) - odpowiada za oś Y czyli rząd }
-	\item \textbf{Grid.Column (linia 2) - odpowiada za oś X czyli kolumnę}	
+	\item \textbf{Grid.Row (linia 1)  }- odpowiada za oś Y czyli rząd,
+	\item \textbf{Grid.Column (linia 2) }- odpowiada za oś X czyli kolumnę,
 	\end{itemize}
-	\item \textbf{Text (linia 3) - napis wewnątrz przycisku. W tym wypadku kod szesnastkowy (hexcode) zębatki}
-	\item \textbf{Padding (linia 5) - wewnętrzny margines}
-	\item \textbf{FontSize (linia 7) - rozmiar czcionki}
-	\item \textbf{Clicked (linia 8)- przycisk po kliknięciu odwołuje się do metody o tej nazwie}
-	\item \textbf{CornerRadius - zaokrągla rogi przycisku, przy odpowiednio dużej wartości, przicisk może stać się okrągły}
+	\item \textbf{Text (linia 3) }- napis wewnątrz przycisku. W tym wypadku kod szesnastkowy (hexcode) zębatki,
+	\item \textbf{Padding (linia 5) }- wewnętrzny margines,
+	\item \textbf{FontSize (linia 7) }- rozmiar czcionki,
+	\item \textbf{Clicked (linia 8)} - przycisk po kliknięciu odwołuje się do metody o tej nazwie,
+	\item \textbf{CornerRadius} - zaokrągla rogi przycisku, przy odpowiednio dużej wartości, przicisk może stać się okrągły.
 
 	
 \end{itemize}
 \subsubsection{Inne użyteczne atrybuty}
-\hspace{0.60cm}Można znaleźć na listingu 2. Opisują one polecenie label.
+\textbf{Można znaleźć na listingu 2. Opisują one polecenie label.}
 \begin{itemize}
-	\item \textbf{X:Name (linia 3) - nazwa elementu używana potem w C\#}	
-	\item \textbf{Vertical/HorizontalTextAlignment (linia 6) - ustawia test na osi X/Y w zależności od wybranej opcji}
-	\item \textbf{BackgroundColor (linia 8) -pozwala na zmianę koloru tła }		
+	\item \textbf{X:Name (linia 3) }- nazwa elementu używana potem w C\#,
+	\item \textbf{Vertical/HorizontalTextAlignment (linia 6)} - ustawia test na osi X/Y w zależności od wybranej opcji,
+	\item \textbf{BackgroundColor (linia 8)} -pozwala na zmianę koloru tła.
 \end{itemize}
 
 \begin{lstlisting}[caption=Label]
@@ -50,7 +50,7 @@
 	
 \end{lstlisting}
 \subsubsection{Przyciski w formie zdjęcia}
-\hspace{0.60cm}Inna forma wstawiania przyciusku, w którym zamiast tekstu znajdziemy wstawione zdjęcie jest pokazana na listingu 3.
+Inna forma wstawiania przyciusku, w którym zamiast tekstu znajdziemy wstawione zdjęcie jest pokazana na listingu 3.
 \begin{lstlisting}[caption=ImageButton]
 <ImageButton Grid.Column="0" Grid.Row="0" x:Name="BulbButton" Clicked="ChangeLight" ClassId="0" 
 Source="https://cdn-icons-png.flaticon.com/512/74/74072.png" Aspect="AspectFit" IsVisible="true" >
@@ -73,11 +73,11 @@ Source="https://cdn-icons-png.flaticon.com/512/74/74072.png" Aspect="AspectFit" 
 
 \subsubsection{Użyte atrybuty}
 \begin{itemize}
-	\item \textbf{VisualState  (linie 3-16) - pozwala na zmianę wyglądu w zależności od stanu przycisku. W naszym przypadku state "normal" odnosi się do domyślnego ustawienia. State "Pressed" sprawia, że skala obiektu zmienia się do 0.8 ( zmniejsza się, linia 12) symulując efekt naciśnięcia po czym wraca do state "normal" }
-	\item \textbf{Source (linia 2) - źródło obrazka, w tym wypadku link ale możliwe jest też użycie ścieżki }
+	\item \textbf{VisualState  (linie 3-16)} - pozwala na zmianę wyglądu w zależności od stanu przycisku. W naszym przypadku state "normal" odnosi się do domyślnego ustawienia. State "Pressed" sprawia, że skala obiektu zmienia się do 0.8 (zmniejsza się, linia 12) symulując efekt naciśnięcia po czym wraca do state "normal",
+	\item \textbf{Source (linia 2)} - źródło obrazka, w tym wypadku link ale możliwe jest też użycie ścieżki. 
 \end{itemize}
 \subsection{MainPage}
-\hspace{0.60cm}Funkcja pokazana na listingu 4 służy do sprawdzenia czy jest ustalona wartość głośności muzyki, a następnie ustawia w linii 6 wartość Volume soundtracku właśnie jako tą wartość.
+Funkcja pokazana na listingu 4 służy do sprawdzenia czy jest ustalona wartość głośności muzyki, a następnie ustawia w linii 6 wartość Volume soundtracku właśnie jako tą wartość.
 
 \begin{lstlisting}[caption=MainPage]
 public MainPage(double dalej)
@@ -90,13 +90,13 @@ public MainPage(double dalej)
 \end{lstlisting}
 
 \subsection{OnAppearing}
-\hspace{0.60cm}Na listingu 5 nadpisujemy metodę OnAppearing(), która wykonuje się na starcie.
+Na listingu 5 nadpisujemy metodę OnAppearing(), która wykonuje się na starcie.
 \\
 Metoda FindByName znajduje elementy o podanych nazwach, na następnie wykonuje dla nich metodę Animate\_Pulse().
 \\
-Do zmiennej status przypisany zostaje stan "Uprawnienia do używania aparatu" przez aplikację (potrzebne do użycia lampy błyskowej).
+Do zmiennej status przypisany zostaje stan "Uprawnienia do używania aparatu"~przez aplikację (potrzebne do użycia lampy błyskowej).
 \\
-Następnie w linii 16 sprawdzany jest status. Jeżeli status jest nieznany (unknown) lub odmówiono dostępu aplikacja prosi o przyznanie takiego uprawnienia
+Następnie w linii 16 sprawdzany jest status. Jeżeli status jest nieznany (unknown) lub odmówiono dostępu aplikacja prosi o przyznanie takiego uprawnienia.
 
 \begin{lstlisting}[caption=OnAppearing]
 async protected override void OnAppearing()
@@ -122,20 +122,20 @@ async protected override void OnAppearing()
 \end{lstlisting}
 
 \subsection{Animate\_pulse}
-\hspace{0.60cm}Animate\_pulse zawarte na listingu 6 włącza animacje, w której to skala strzałek zmienia się pomiędzy 1 a 1.2
+Animate\_pulse zawarte na listingu 6 włącza animacje, w której to skala strzałek zmienia się pomiędzy 1 a 1.2.
 \\
-W tym przypadku używane jest ClassId po to, by nazywać animacje różnymi nazwami (te same nazwy nadpisywałby się)
+W tym przypadku używane jest ClassId po to, by nazywać animacje różnymi nazwami (te same nazwy nadpisywałby się).
 \\
-W tym przypadku, przez połowę czasu animacji skala rośnie, by przez drugą połowę maleć
+W tym przypadku, przez połowę czasu animacji skala rośnie, by przez drugą połowę maleć.
 
 \begin{itemize}
-	\item \textbf{  This (linia 9) } – Animacja, która będzie animowana   
-	\item \textbf{  Objname (linia 10) } – nazwa służąca jako uchwyt do animacji  
-	\item \textbf{  16 (linia 11) } – Czas w milisekundach pomiędzy elementami animacji  
-	\item \textbf{  950 (linia 12) } – czas w milisekundach trwania animacji   
-	\item \textbf{  Easing.Linear (linia 13) } – funkcja używana do opisu animacji 
-	\item \textbf{  (v,c) =>>obj.Scale=1 (linia 14) } – co ma zostać wykonane po skończeniu animacji   
-	\item \textbf{  ()=>>true (linia 15) } – czy funkcja ma być zapętlona   
+	\item \textbf{  This (linia 9) } – Animacja, która będzie animowana,   
+	\item \textbf{  Objname (linia 10) } – nazwa służąca jako uchwyt do animacji,  
+	\item \textbf{  16 (linia 11) } – Czas w milisekundach pomiędzy elementami animacji,  
+	\item \textbf{  950 (linia 12) } – czas w milisekundach trwania animacji,   
+	\item \textbf{  Easing.Linear (linia 13) } – funkcja używana do opisu animacji, 
+	\item \textbf{  (v,c) =>>obj.Scale=1 (linia 14) } – co ma zostać wykonane po skończeniu animacji ,  
+	\item \textbf{  ()=>>true (linia 15) } – czy funkcja ma być zapętlona.   
 \end{itemize}
 
 \begin{lstlisting}[caption=Animate\_pulse]
@@ -158,13 +158,13 @@ void Animate_pulse(Label obj)
 \end{lstlisting}
 
 \subsection{FirstTask}
-\hspace{0.60cm}Funkcja zawarta na listingu 7 to funkcja, przyjmująca jako parametry obiekt, który został wciśnięty i argumenty zdarzenia, pozwala na przemieszczanie się pomiędzy stronami aplikacji.
+Funkcja zawarta na listingu 7 to funkcja, przyjmująca jako parametry obiekt, który został wciśnięty i argumenty zdarzenia, pozwala na przemieszczanie się pomiędzy stronami aplikacji.
 \\
-Metoda soundtrack.Stop() (linia 3) sprawia, że soundtrack przestaje grać,
+Metoda soundtrack.Stop() (linia 3) sprawia, że soundtrack przestaje grać.
 \\
 Do zmiennej dalej (linia 4) przekazywana jest aktualna wartość głośności muzyki granej w tle.
 \\
-Następnie (linia 5) asynchronicznie przechodzimy do nowej strony, przekazując jako parametr głośność soundtracku, by ten mógł grać z taką samą głośnością jaka była ustawiona
+Następnie (linia 5) asynchronicznie przechodzimy do nowej strony, przekazując jako parametr głośność soundtracku, by ten mógł grać z taką samą głośnością jaka była ustawiona.
 
 \begin{lstlisting}[caption=FirstTask]
 private async void FirstTask(object sender, EventArgs e)
@@ -176,7 +176,7 @@ private async void FirstTask(object sender, EventArgs e)
 \end{lstlisting}
 
 \subsection{Wciśnięcie złego przycisku}
-\hspace{0.60cm}Funkcja na listingu 8 odpowiada za wciśnięciu złego przycisku. Po wciśnięciu go zmienia się widoczność wszystkich elementów menu, następnie wyświetla się obrazek świadczący o porażce (linia 17), a po odczekaniu 3,5s (linia 19) proces aplikacji kończy się i zwraca wartość 0, co świadczy o poprawnym zamknięciu aplikacji (linia 20).
+Funkcja na listingu 8 odpowiada za wciśnięciu złego przycisku. Po wciśnięciu go zmienia się widoczność wszystkich elementów menu, następnie wyświetla się obrazek świadczący o porażce (linia 17), a po odczekaniu 3,5s (linia 19) proces aplikacji kończy się i zwraca wartość 0, co świadczy o poprawnym zamknięciu aplikacji (linia 20).
 
 \begin{lstlisting}[caption=WrongButton]
 async void WrongButtonClicked(object sender, EventArgs e)
@@ -203,7 +203,7 @@ async void WrongButtonClicked(object sender, EventArgs e)
 \end{lstlisting}
 
 \subsection{HUD}
-\hspace{0.60cm}HUD (ang. heads-up display) – Ważna część gier komputerowych. Jest to sekcja zawierająca informacje na temat rozgrywki, pozwalająca graczowi na odnalezienie informacji o niej. Nazwa wywodzi się od tzw. wyświetlacza przeziernego HUD stosowanego np. przez pilotów samolotów bojowych.
+HUD (ang. heads-up display) – Ważna część gier komputerowych. Jest to sekcja zawierająca informacje na temat rozgrywki, pozwalająca graczowi na odnalezienie informacji o niej. Nazwa wywodzi się od tzw. wyświetlacza przeziernego HUD stosowanego np. przez pilotów samolotów bojowych.
 \\
 W linach 5-7 są opisane życia w postaci serc.
 \\
@@ -227,13 +227,13 @@ Linie 8-9 są odpowiedzialne za timer, jego widoczność, przezroczystość i ci
 \end{lstlisting}
 
 \subsection{Literaki}
-Linia 1 - zmienna zawierająca ilość "żyć" [podejść]
-\\Linia 2 - tablica przechowująca indeks każdego z bloków
-\\Linia 3 - tablica przechowująca słowa mogące wystąpić jako rozwiązanie
-\\Linia 4 - tablica przechowująca wszystkie wartości indeksów każdego z bloków
-\\Linia 11 - zmienna zawierająca indeks wartości z TextTable[], która została wybrana jako rozwiązanie
-\\Linia 12 - zmienna zawierająca pozostały czas na rozwiązanie zagadki
-\\Linia 13 - zmienna zawierająca obiekt klasy Random, służący m.in. do losowania liczby z przedziału
+Linia 1 - zmienna zawierająca ilość "żyć" (podejść),
+\\Linia 2 - tablica przechowująca indeks każdego z bloków,
+\\Linia 3 - tablica przechowująca słowa mogące wystąpić jako rozwiązanie,
+\\Linia 4 - tablica przechowująca wszystkie wartości indeksów każdego z bloków,
+\\Linia 11 - zmienna zawierająca indeks wartości z TextTable[], która została wybrana jako rozwiązanie,
+\\Linia 12 - zmienna zawierająca pozostały czas na rozwiązanie zagadki,
+\\Linia 13 - zmienna zawierająca obiekt klasy Random, służący m.in. do losowania liczby z przedziału.
 \begin{lstlisting}[caption=Literaki]
 public int HealthCount = 3;
 int[] BlockCounters = { 0, 0, 0, 0 };
@@ -251,9 +251,9 @@ Random RandomCharCount = new Random();
 \end{lstlisting}
 
 \subsection{SetTime}
-\hspace{0.60cm}W Linii 4 wyświetla się okno, które należy zamknąć, zanim ruszy zegar. Później uruchamiana jest metoda StartTimer(TimeSpan). TimeSpan przyjmuje trzy wartości - godziny, minuty i sekundy.
+W Linii 4 wyświetla się okno, które należy zamknąć, zanim ruszy zegar. Później uruchamiana jest metoda StartTimer(TimeSpan). TimeSpan przyjmuje trzy wartości - godziny, minuty i sekundy.
 \\W Liniach 8-9 Odejmowane jest 1 od pozostałego czasu, a następnie uzyskana wartość jest wpisywana jako text do obiektu TimeCount.
-\\W linii 10 widoczny jest warunek, który zmienia kolor tekstu na czerwony jeśli mamy mniej czasu niż 15 sekund, a w wypadku gdy się skończy czas wyświetla odpowiedni komunikat
+\\W linii 10 widoczny jest warunek, który zmienia kolor tekstu na czerwony jeśli mamy mniej czasu niż 15 sekund, a w wypadku gdy się skończy czas wyświetla odpowiedni komunikat.
 \begin{lstlisting}[caption=SetTime]
 async void SetTime()
 {
@@ -282,7 +282,7 @@ async void SetTime()
 \end{lstlisting}
 
 \subsection{SetColumns}
-\hspace{0.60cm}W każdej iteracji pętli do zmiennej name wpisywana jest nazwa Bloku, po czym w zmiennej Obj umieszczany jest obiekt o tej nazwie.
+W każdej iteracji pętli do zmiennej name wpisywana jest nazwa Bloku, po czym w zmiennej Obj umieszczany jest obiekt o tej nazwie.
 \\W Linii 6 Losowany jest liczba stałoprzecinkowa z zakresu 0 do rozmiaru tablicy WordTable.
 \\W linii 7 jako wartość atrybutu text umieszczamy wylosowany znak.
 \\Ta funkcja służy początkowemu ustawieniu tekstu w blokach.
@@ -300,7 +300,7 @@ setColumns()
 \end{lstlisting}
 
 \subsection{RandomizeWordTable}
-\hspace{0.60cm}W Linii 7 do zmiennej nextChar wpisywana jest losowa liczba z zakresu <65,90), która następnie zostaje przekonwertowana na char [są to znaki z zakresu A-Z] \\i wpisana jako wartość tablicy WordTable - w ten sposób za każdym razem losowana jest cała tablica ze znakami.
+W Linii 7 do zmiennej nextChar wpisywana jest losowa liczba z zakresu (65,90), która następnie zostaje przekonwertowana na char (są to znaki z zakresu [A-Z]) i~wpisana jako wartość tablicy WordTable - w ten sposób za każdym razem losowana jest cała tablica ze znakami.
 \begin{lstlisting}[caption=RandomizeWordTable]
 RandomizeWordTable()
 {
@@ -322,8 +322,8 @@ RandomizeWordTable()
 \end{lstlisting}
 
 \subsection{RandomizeText}
-\hspace{0.60cm}Sprawia, że do zmiennej ChosenWord wpisywana jest losowa liczba z zakresu od zera do długości tablicy ze słowami. Dzięki temu wylosowane zostało jedno słowo, które zostanie potem użyte jako hasło.
-RandomizeWordTable()
+Sprawia, że do zmiennej ChosenWord wpisywana jest losowa liczba z zakresu od zera do długości tablicy ze słowami. Dzięki temu wylosowane zostało jedno słowo, które zostanie potem użyte jako hasło.
+RandomizeWordTable().
 \begin{lstlisting}[caption=RandomizeText]
 	RandomizeWordTable()
 	{
@@ -345,7 +345,7 @@ RandomizeWordTable()
 \end{lstlisting}
 
 \subsection{MoveUp}
-\hspace{0.60cm}Ta funkcja zbiera informacje na temat bloku o danym ClassId <każdy blok ma swój classId 0-3, classId jest takie same dla przycisku i bloku> i wysyła je do funkcji ChangeBlockText() z parametrem up. 
+Ta funkcja zbiera informacje na temat bloku o danym ClassId (każdy blok ma swój classId 0-3, classId jest takie same dla przycisku i bloku) i wysyła je do funkcji ChangeBlockText() z parametrem up. 
 \begin{lstlisting}[caption=MoveUp]
 	void MoveUp(object sender, EventArgs e)
 	{
@@ -358,8 +358,8 @@ RandomizeWordTable()
 \end{lstlisting}
 
 \subsection{ChangeBlockText}
-\hspace{0.60cm}W zależności od podanego parametru, wartość indeksu BlockCounters[blockNumber] zwiększa się (dla parametru down) lub zmniejsza się (dla parametru up) sprawiając efekt "przewijania się" po liście znaków. 
-\\Jeżeli będziemy chcieli wyjść poza zakres znaków w tablicy, to wartość indeksu zmieni się na pierwszy (dla parametru dow) lub ostatni (dla parametru up)
+W zależności od podanego parametru, wartość indeksu BlockCounters[blockNumber] zwiększa się (dla parametru down) lub zmniejsza się (dla parametru up) sprawiając efekt "przewijania się"~po liście znaków. 
+\\Jeżeli będziemy chcieli wyjść poza zakres znaków w tablicy, to wartość indeksu zmieni się na pierwszy (dla parametru dow) lub ostatni (dla parametru up).
 \begin{lstlisting}[caption=ChangeBlockText]
 	        void ChangeBlockText(Label block, int blockNumber, string where)
 	{
@@ -385,7 +385,7 @@ RandomizeWordTable()
 \end{lstlisting}
 
 \subsection{CheckIfWin}
-\hspace{0.60cm}Ta funkcja sprawdza warunek zwycięstwa (ciąg znaków zgadza się z elementem z tablicy WordTable). 
+Ta funkcja sprawdza warunek zwycięstwa (ciąg znaków zgadza się z elementem z tablicy WordTable). 
 \\W linii 4 ustawiana jest flaga WinFlag jako false (false oznacza brak zgodności, true zgodność). 
 \\W liniach 5-10 odczytywana jest wartość z elementów Block0 - Block3, po czym jest to sklejane w jeden ciąg, umieszczony w zmiennej userGuess.
 \\W liniach 11-17 iterujemy po wszystkich elementach tablicy WordTable (tam są słowa możliwe do uzyskania). 
