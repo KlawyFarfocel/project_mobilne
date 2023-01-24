@@ -3114,6 +3114,12 @@ C:\Users\misze\Source\Repos\project_mobilne66\Gra\Gra\Gra\Gra.Android\obj\Releas
 C:\Users\misze\Source\Repos\project_mobilne66\Gra\Gra\Gra\Gra.Android\obj\Release\120\stamp\_GenerateJavaStubs.stamp
 C:\Users\misze\Source\Repos\project_mobilne66\Gra\Gra\Gra\Gra.Android\obj\Release\120\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\misze\Source\Repos\project_mobilne66\Gra\Gra\Gra\Gra.Android\obj\Release\120\stamp\_ResolveLibraryProjectImports.stamp
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\androidx\navigation\ui\R.java
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\com\google\android\material\R.java
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\crc642e1c7a98bdb5c44a\PopupRenderer.java
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\crc643f46942d9dd1fff9\AccessibilityDelegateAutomationId.java
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\crc643f46942d9dd1fff9\ActionSheetRenderer.java
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\crc643f46942d9dd1fff9\ActivityIndicatorRenderer.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\bin\Release\Gra.Android.dll
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\bin\Release\Gra.Android.pdb
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\bin\Release\Operatsiya_Kooperatsiya.apk.apk
@@ -3201,6 +3207,8 @@ D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\drawable\arro
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\raw\soundhelix_song_4.mp3
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\raw\soundhelix_song_5.mp3
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\raw\you_died_sound.mp3
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\drawable\text4.png
+D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\res\drawable\text5.png
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\uploadflags.txt
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\resolvedassemblies.hash
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\link.flag
@@ -3363,7 +3371,6 @@ D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\andro
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\androidx\media\R.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\androidx\navigation\common\R.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\androidx\navigation\R.java
-D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\androidx\navigation\ui\R.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\androidx\preference\R.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\androidx\recyclerview\R.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\androidx\savedstate\R.java
@@ -3372,7 +3379,6 @@ D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\andro
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\androidx\viewpager2\R.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\com\google\android\exoplayer2\ext\mediasession\R.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\com\google\android\exoplayer2\ui\R.java
-D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\com\google\android\material\R.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\crc64087678da79fdfe22\BluetoothStatusBroadcastReceiver.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\crc64087678da79fdfe22\BondStatusBroadcastReceiver.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\crc640d7c6d57b8a5f296\Adapter_Api18BleScanCallback.java
@@ -3389,13 +3395,9 @@ D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\crc64
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\crc642e1c7a98bdb5c44a\FormsVideoView.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\crc642e1c7a98bdb5c44a\ImageAvailableListener.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\crc642e1c7a98bdb5c44a\MediaElementRenderer.java
-D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\crc642e1c7a98bdb5c44a\PopupRenderer.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\crc642e1c7a98bdb5c44a\SemanticOrderViewRenderer.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\crc642e1c7a98bdb5c44a\TextSwitcherRenderer.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\crc642e1c7a98bdb5c44a\ThumbFrameRenderer.java
-D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\crc643f46942d9dd1fff9\AccessibilityDelegateAutomationId.java
-D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\crc643f46942d9dd1fff9\ActionSheetRenderer.java
-D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\crc643f46942d9dd1fff9\ActivityIndicatorRenderer.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\crc643f46942d9dd1fff9\AHorizontalScrollView.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\crc643f46942d9dd1fff9\AndroidActivity.java
 D:\KOD\project_mobilne\Gra\Gra\Gra\Gra.Android\obj\Release\120\android\src\crc643f46942d9dd1fff9\BaseCellAppCompatView.java

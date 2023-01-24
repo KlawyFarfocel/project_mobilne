@@ -203,7 +203,6 @@ namespace Gra
             RandomizeWordTable();
             setColumns();
             SetTime();
-            DisplayAlert("Hasło", TextTable[ChosenWord], "Dzieki");
         }
         public ScrabblePage(double dalej,double wynik)
         {

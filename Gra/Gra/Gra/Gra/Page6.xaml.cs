@@ -77,7 +77,6 @@ namespace Gra
                 
                 if (TimeLeft+jeden==Int32.Parse(text.Text))
                 {
-                    DisplayAlert("kozacko2", "):", "dales rade");
                     Timebutt = 10;
                     wynik += TimeLeft;
                     double dalej1 = 14;

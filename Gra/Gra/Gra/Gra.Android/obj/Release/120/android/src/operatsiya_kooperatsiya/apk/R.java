@@ -10203,11 +10203,13 @@ public final class R {
     public static final int test_custom_background=0x7f0700c3;
     public static final int text2=0x7f0700c4;
     public static final int text3=0x7f0700c5;
-    public static final int title_header=0x7f0700c6;
-    public static final int tooltip_frame_dark=0x7f0700c7;
-    public static final int tooltip_frame_light=0x7f0700c8;
-    public static final int yellow_button=0x7f0700c9;
-    public static final int zagadka1=0x7f0700ca;
+    public static final int text4=0x7f0700c6;
+    public static final int text5=0x7f0700c7;
+    public static final int title_header=0x7f0700c8;
+    public static final int tooltip_frame_dark=0x7f0700c9;
+    public static final int tooltip_frame_light=0x7f0700ca;
+    public static final int yellow_button=0x7f0700cb;
+    public static final int zagadka1=0x7f0700cc;
   }
   public static final class id {
     public static final int ALT=0x7f080000;

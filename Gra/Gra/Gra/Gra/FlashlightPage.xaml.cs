@@ -252,7 +252,6 @@ namespace Gra
             RandomizeWordTable();
             setColumns();
             SetTime();
-            DisplayAlert("Hasło", MorseTextTable[ChosenWord], "Dzieki");
         }
     }
 
